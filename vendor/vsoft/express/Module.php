@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\vsoft\express;
+namespace vsoft\express;
 
 class Module extends \yii\base\Module
 {

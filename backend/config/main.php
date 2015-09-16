@@ -24,6 +24,9 @@ return [
                 ]
             ],
         ],
+        'express' => [
+            'class' => 'vsoft\express\Module',
+        ]
     ],
     'components' => [
         /*'user' => [
