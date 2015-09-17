@@ -1,6 +1,6 @@
 <?php
 
-namespace vendor\vsoft\express\controllers;
+namespace vsoft\express\controllers\backend;
 
 use yii\web\Controller;
 

@@ -15,6 +15,11 @@ return [
     'modules'=>[
         'express' => [
             'class' => 'vsoft\express\Module',
+            'controllerNamespace' => 'vsoft\express\controllers\frontend'
+        ],
+        'cms' => [
+            'class' => 'funson86\cms\Module',
+            'controllerNamespace' => 'funson86\cms\controllers\frontend'
         ],
     ],
     'components' => [
@@ -39,6 +44,9 @@ return [
                     '@vsoft/express/views' => '@webroot/themes/lancaster1/views/express',
                 ],
             ],
+        ],
+        'setting' => [
+            'class' => 'funson86\setting\Setting',
         ],
     ],
     'params' => $params,
