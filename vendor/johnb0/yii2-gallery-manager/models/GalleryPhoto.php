@@ -112,7 +112,7 @@ class GalleryPhoto extends ActiveRecord
 
         // get file instance
         $this->file = UploadedFile::getInstance($this, 'file');
-        $filename = uniqid($this->gallery_id) . '.' . $this->file->extension; 
+        $filename = uniqid($this->gallery_id) . '.' . $this->file->extension;
 
         // checks for existing url in db
         if (self::findByUrl($folderName, $filename)) {
@@ -328,8 +328,8 @@ class GalleryPhoto extends ActiveRecord
         $basePath = Yii::getAlias($this->module->imagePath);
         $filePath = "$basePath/{$this->getFilePath()}";
         $dirName = dirname($filePath);
-        
-        if(unlink($filePath)) {
+
+        if(file_exists($filePath) && unlink($filePath)) {
             if(count(glob($dirName . "/*")) == 0) {
                 rmdir($dirName);
                 return;
