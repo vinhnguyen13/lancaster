@@ -135,6 +135,8 @@ return array(
             'alias' =>
                 array(
                     '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
+                    '@Imagine/Image' => $vendorDir . '/yiisoft/yii-imagine-master/lib/Image',
+                    '@Imagine/Gd' => $vendorDir . '/yiisoft/yii-imagine-master/lib/Gd',
                 ),
         ),
     'newerton' =>

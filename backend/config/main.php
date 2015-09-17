@@ -64,6 +64,10 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'imagine' => array(
+            'class' => "ext.imagine.ImagineYii",
+            //'driver' => 'gd2'
+        )
     ],
     'params' => $params,
 ];

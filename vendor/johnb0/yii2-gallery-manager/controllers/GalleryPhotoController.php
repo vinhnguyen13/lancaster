@@ -19,7 +19,7 @@ class GalleryPhotoController extends \yii\web\Controller
     public function actionUpload($id)
     {
         
-//        Yii::$app->response->format = Response::FORMAT_JSON;
+        Yii::$app->response->format = Response::FORMAT_JSON;
 
         $model = new GalleryPhoto();
         $model->gallery_id = (int)$id;        
