@@ -54,9 +54,11 @@ class Optimizer {
         }
 
         $ids = [];
-        foreach ($this->_languageSources as $messages) {
-            foreach ($messages as $id) {
-                $ids[$id] = true;           // Duplication filtering
+        if(!empty($this->_languageSources)){
+            foreach ($this->_languageSources as $messages) {
+                foreach ($messages as $id) {
+                    $ids[$id] = true;           // Duplication filtering
+                }
             }
         }
 

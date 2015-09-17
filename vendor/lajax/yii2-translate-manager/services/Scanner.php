@@ -69,10 +69,6 @@ class Scanner {
 
         $scanningFile = new scanners\ScannerFile($this->_languageItems);
         $this->_languageItems = $scanningFile->scanning();
-echo "<pre>";
-print_r($scanningFile);
-echo "</pre>";
-exit();
         $scanningDatabase = new scanners\ScannerDatabase($this->_languageItems);
         $this->_languageItems = $scanningDatabase->scanning();
     }
