@@ -34,6 +34,14 @@ return [
             'class' => 'johnb0\gallery\Module',
             'imageUrl' => '/store/gallery'
         ],
+        'cms' => [
+            'class' => 'funson86\cms\Module',
+            'controllerNamespace' => 'funson86\cms\controllers\backend'
+        ],
+        'blog' => [
+            'class' => 'funson86\blog\Module',
+            'controllerNamespace' => 'funson86\blog\controllers\backend'
+        ],
     ],
     'components' => [
         /*'user' => [

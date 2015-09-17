@@ -12,6 +12,11 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules'=>[
+        'express' => [
+            'class' => 'vsoft\express\Module',
+        ],
+    ],
     'components' => [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -31,6 +36,7 @@ return [
                 'baseUrl' => '@webroot/themes/lancaster1',
                 'pathMap' => [
                     '@app/views' => '@webroot/themes/lancaster1/views',
+                    '@vsoft/express/views' => '@webroot/themes/lancaster1/views/express',
                 ],
             ],
         ],
