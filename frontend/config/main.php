@@ -11,6 +11,7 @@ return [
     'name'=>'Lancaster',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language'=>'vi',
     'controllerNamespace' => 'frontend\controllers',
     'modules'=>[
         'express' => [

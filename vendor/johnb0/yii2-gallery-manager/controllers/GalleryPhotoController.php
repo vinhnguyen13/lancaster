@@ -51,7 +51,7 @@ class GalleryPhotoController extends \yii\web\Controller
     public function actionDelete($id)
     {        
         
-//        Yii::$app->response->format = Response::FORMAT_JSON;
+        Yii::$app->response->format = Response::FORMAT_JSON;
 
         $model = GalleryPhoto::findOne($id);
 
