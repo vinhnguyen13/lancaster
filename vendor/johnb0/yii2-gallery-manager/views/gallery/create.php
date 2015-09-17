@@ -7,9 +7,9 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\gallery\models\Gallery */
 
-$this->title = 'Добавление галереи';
-$this->params['breadcrumbs'][] = ['label' => 'Модуль Галерея', 'url' => Url::toRoute('/gallery')];
-$this->params['breadcrumbs'][] = ['label' => 'Список галерей', 'url' => ['index']];
+$this->title = 'Adding Photos';
+$this->params['breadcrumbs'][] = ['label' => 'Gallery', 'url' => Url::toRoute('/gallery')];
+$this->params['breadcrumbs'][] = ['label' => 'List of galleries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="gallery-create">

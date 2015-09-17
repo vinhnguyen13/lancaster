@@ -49,9 +49,9 @@ class Gallery extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Наименование',
-            'description' => 'Описание',
-            'status' => 'Статус',
+            'name' => 'Name',
+            'description' => 'Description',
+            'status' => 'Status',
         ];
     }
         
@@ -79,8 +79,8 @@ class Gallery extends \yii\db\ActiveRecord
     
     public static function getGalleryStatusesArray() {
         return [
-            self::STATUS_DRAFT => 'Черновик',
-            self::STATUS_PUBLISHED => 'Опубликована'
+            self::STATUS_DRAFT => 'Draft',
+            self::STATUS_PUBLISHED => 'Published'
         ];
     }
     

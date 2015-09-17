@@ -49,7 +49,7 @@ use newerton\fancybox\FancyBox;
                     <?= Html::a(Html::img($photo->getThumbUrl('small')), $photo->url, ['rel' => 'fancybox']); ?>                   
                 </p>
                 <p class="text-center">
-                    <?= Html::button('<i class="glyphicon glyphicon-trash"></i> Удалить', 
+                    <?= Html::button('<i class="glyphicon glyphicon-trash"></i> Remove',
                             [
                                 'class' => 'btn btn-danger btn-xs gallery-photo-delete', 
                                 'data-url' => yii\helpers\Url::toRoute(['gallery-photo/delete', 'id' => $photo->id])
@@ -60,6 +60,6 @@ use newerton\fancybox\FancyBox;
             <?php endforeach; ?>
         </ul>
     <?php else: ?>
-        <p><i>Нет изображений</i></p>        
+        <p><i>No images</i></p>
     <?php endif; ?>
 </div>

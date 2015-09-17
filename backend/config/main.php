@@ -11,6 +11,9 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'aliases' => [
+        '@statics/web/gallery/images/'=>dirname(dirname(__DIR__)).'/store/gallery'
+    ],
     'modules' => [
         'gii' => [
             'class' => 'yii\gii\Module',
@@ -26,7 +29,11 @@ return [
         ],
         'express' => [
             'class' => 'vsoft\express\Module',
-        ]
+        ],
+        'gallery' => [
+            'class' => 'johnb0\gallery\Module',
+            'imageUrl' => '/store/gallery'
+        ],
     ],
     'components' => [
         /*'user' => [

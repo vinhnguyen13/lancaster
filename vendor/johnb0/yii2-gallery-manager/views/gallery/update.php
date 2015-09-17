@@ -6,11 +6,11 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\gallery\models\Gallery */
 
-$this->title = 'Редактирование галереи: ' . ' ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Модуль Галерея', 'url' => Url::toRoute('/gallery')];
-$this->params['breadcrumbs'][] = ['label' => 'Список галерей', 'url' => ['index']];
+$this->title = 'Editing gallery: ' . ' ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Gallery', 'url' => Url::toRoute('/gallery')];
+$this->params['breadcrumbs'][] = ['label' => 'List of galleries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['update', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Редактирование';
+$this->params['breadcrumbs'][] = 'Editing';
 ?>
 <div class="gallery-update">
 

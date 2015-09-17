@@ -8,11 +8,11 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $photoModel backend\modules\gallery\models\GalleryPhoto */
 
-$this->title = 'Изображения галереи: ' . ' ' . $galleryModel->name;
-$this->params['breadcrumbs'][] = ['label' => 'Модуль Галерея', 'url' => Url::toRoute('/gallery')];
-$this->params['breadcrumbs'][] = ['label' => 'Список галерей', 'url' => ['index']];
+$this->title = 'Photos gallery: ' . ' ' . $galleryModel->name;
+$this->params['breadcrumbs'][] = ['label' => 'Gallery', 'url' => Url::toRoute('/gallery')];
+$this->params['breadcrumbs'][] = ['label' => 'List of galleries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $galleryModel->name, 'url' => ['photos', 'id' => $galleryModel->id]];
-$this->params['breadcrumbs'][] = 'Изображения';
+$this->params['breadcrumbs'][] = 'Photos';
 ?>
 <div class="gallery-photos">       
         
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = 'Изображения';
            ");
         ?>
     <?php else: ?>
-    <p><i>Нет изображений</i></p>
+    <p><i>No images</i></p>
     <?php endif; ?>        
 
     <?= FileUploadUI::widget([

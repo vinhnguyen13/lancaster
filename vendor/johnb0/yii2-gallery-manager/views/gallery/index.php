@@ -7,8 +7,8 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Список галерей';
-$this->params['breadcrumbs'][] = ['label' => 'Модуль Галерея', 'url' => Url::toRoute('/gallery')];
+$this->title = 'List of galleries';
+$this->params['breadcrumbs'][] = ['label' => 'Gallery', 'url' => Url::toRoute('/gallery')];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="gallery-index">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <h2><?= Html::encode($this->title) ?></h2>
         </div>            
         <div class="model-view-section-controls">
-            <?= Html::a('<i class="glyphicon glyphicon-plus"></i> Добавить галерею', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
+            <?= Html::a('<i class="glyphicon glyphicon-plus"></i> Create', ['create'], ['class' => 'btn btn-success btn-sm']) ?>
         </div>                            
     </div>
     <div class="model-view-section-body">                        
