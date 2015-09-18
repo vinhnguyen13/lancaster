@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model vsoft\express\models\LcBuilding */
 /* @var $form yii\widgets\ActiveForm */
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 ?>
 
 <div class="lc-building-form">
@@ -26,9 +27,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'created_at')->hiddenInput(['value'=> '2015-09-17'])->label(false) ?>
+    <?= $form->field($model, 'created_at')->hiddenInput(['value'=> time()])->label(false) ?>
 
+    <?= $form->field($model, 'updated_at')->hiddenInput(['value'=> time()])->label(false) ?>
 
+    <?= $form->field($model, 'created_by')->hiddenInput(['value'=> Yii::$app->user->getId()])->label(false) ?>
+
+    <?= $form->field($model, 'updated_by')->hiddenInput(['value'=> Yii::$app->user->getId()])->label(false) ?>
 
     <?= $form->field($model, 'isbooking')->checkbox(); ?>
 
