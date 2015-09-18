@@ -2,6 +2,7 @@
 
 namespace vsoft\express\models;
 
+use vsoft\express\models\base\LcBannerBase;
 use Yii;
 
 /**
@@ -18,46 +19,9 @@ use Yii;
  * @property string $updated_at
  * @property integer $updated_by
  */
-class LcBanner extends \yii\db\ActiveRecord
+class LcBanner extends LcBannerBase
 {
     /**
-     * @inheritdoc
+     * TODO: Write function for banner
      */
-    public static function tableName()
-    {
-        return 'lc_banner';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['height', 'width', 'created_by', 'updated_by'], 'integer'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['name'], 'string', 'max' => 60],
-            [['description'], 'string', 'max' => 255],
-            [['url'], 'string', 'max' => 500]
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'lc_banner_id' => 'Lc Banner ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'url' => 'Url',
-            'height' => 'Height',
-            'width' => 'Width',
-            'created_at' => 'Created At',
-            'created_by' => 'Created By',
-            'updated_at' => 'Updated At',
-            'updated_by' => 'Updated By',
-        ];
-    }
 }

@@ -54,19 +54,19 @@ class LcBuildingBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'lc_building_id' => 'Lc Building ID',
-            'building_name' => 'Building Name',
-            'address' => 'Address',
-            'phone' => 'Phone',
-            'fax' => 'Fax',
-            'email' => 'Email',
-            'hotline' => 'Hotline',
-            'description' => 'Description',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
-            'isbooking' => 'Isbooking',
+            'lc_building_id' => Yii::t('building', 'Lc Building ID'),
+            'building_name' => Yii::t('building', 'Building Name'),
+            'address' => Yii::t('building', 'Address'),
+            'phone' => Yii::t('building', 'Phone'),
+            'fax' => Yii::t('building', 'Fax'),
+            'email' => Yii::t('building', 'Email'),
+            'hotline' => Yii::t('building', 'Hotline'),
+            'description' => Yii::t('building', 'Description'),
+            'created_at' => Yii::t('building', 'Created At'),
+            'updated_at' => Yii::t('building', 'Updated At'),
+            'created_by' => Yii::t('building', 'Created By'),
+            'updated_by' => Yii::t('building', 'Updated By'),
+            'isbooking' => Yii::t('building', 'Isbooking'),
         ];
     }
 

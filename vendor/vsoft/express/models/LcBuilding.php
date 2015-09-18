@@ -2,6 +2,7 @@
 
 namespace vsoft\express\models;
 
+use vsoft\express\models\base\LcBuildingBase;
 use Yii;
 
 /**
@@ -23,58 +24,29 @@ use Yii;
  *
  * @property LcBooking[] $lcBookings
  */
-class LcBuilding extends \yii\db\ActiveRecord
+class LcBuilding extends LcBuildingBase
 {
     /**
-     * @inheritdoc
+     * TODO: Write function for building
      */
-    public static function tableName()
-    {
-        return 'lc_building';
-    }
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['building_name'], 'required'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['created_by', 'updated_by', 'isbooking'], 'integer'],
-            [['building_name', 'email'], 'string', 'max' => 60],
-            [['address', 'description'], 'string', 'max' => 255],
-            [['phone', 'fax', 'hotline'], 'string', 'max' => 20]
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
+    // Modify Label
     public function attributeLabels()
     {
         return [
-            'lc_building_id' => 'Lc Building ID',
-            'building_name' => 'Building Name',
-            'address' => 'Address',
-            'phone' => 'Phone',
-            'fax' => 'Fax',
-            'email' => 'Email',
-            'hotline' => 'Hotline',
-            'description' => 'Description',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
-            'isbooking' => 'Isbooking',
+//            'lc_building_id' => 'Lc Building ID',
+//            'building_name' => 'Building Name',
+//            'address' => 'Address',
+//            'phone' => 'Phone',
+//            'fax' => 'Fax',
+//            'email' => 'Email',
+//            'hotline' => 'Hotline',
+//            'description' => 'Description',
+//            'created_at' => 'Created At',
+//            'updated_at' => 'Updated At',
+//            'created_by' => 'Created By',
+//            'updated_by' => 'Updated By',
+            'isbooking' => 'Booking',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLcBookings()
-    {
-        return $this->hasMany(LcBooking::className(), ['lc_building_id' => 'lc_building_id']);
     }
 }

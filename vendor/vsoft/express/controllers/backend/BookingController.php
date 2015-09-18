@@ -1,22 +1,36 @@
 <?php
 
-namespace vendor\vsoft\express\controllers;
+namespace vsoft\express\controllers\backend;
 
 use Yii;
-use vsoft\express\models\LcBuilding;
-use vsoft\express\models\LcBuildingSearch;
+use vsoft\express\models\LcBooking;
+use vsoft\express\models\LcBookingSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BuildingController implements the CRUD actions for LcBuilding model.
+ * BookingController implements the CRUD actions for LcBooking model.
  */
-class BuildingController extends Controller
+class BookingController extends Controller
 {
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -27,12 +41,12 @@ class BuildingController extends Controller
     }
 
     /**
-     * Lists all LcBuilding models.
+     * Lists all LcBooking models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new LcBuildingSearch();
+        $searchModel = new LcBookingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,7 +56,7 @@ class BuildingController extends Controller
     }
 
     /**
-     * Displays a single LcBuilding model.
+     * Displays a single LcBooking model.
      * @param integer $id
      * @return mixed
      */
@@ -54,16 +68,16 @@ class BuildingController extends Controller
     }
 
     /**
-     * Creates a new LcBuilding model.
+     * Creates a new LcBooking model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new LcBuilding();
+        $model = new LcBooking();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->lc_building_id]);
+            return $this->redirect(['view', 'id' => $model->lc_booking_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -72,7 +86,7 @@ class BuildingController extends Controller
     }
 
     /**
-     * Updates an existing LcBuilding model.
+     * Updates an existing LcBooking model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -82,7 +96,7 @@ class BuildingController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->lc_building_id]);
+            return $this->redirect(['view', 'id' => $model->lc_booking_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -91,7 +105,7 @@ class BuildingController extends Controller
     }
 
     /**
-     * Deletes an existing LcBuilding model.
+     * Deletes an existing LcBooking model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +118,15 @@ class BuildingController extends Controller
     }
 
     /**
-     * Finds the LcBuilding model based on its primary key value.
+     * Finds the LcBooking model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return LcBuilding the loaded model
+     * @return LcBooking the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = LcBuilding::findOne($id)) !== null) {
+        if (($model = LcBooking::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

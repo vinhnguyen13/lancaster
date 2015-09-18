@@ -15,6 +15,8 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
+    <?= $form->field($model, 'lc_building_id') ?>
+
     <?= $form->field($model, 'building_name') ?>
 
     <?= $form->field($model, 'address') ?>
@@ -23,13 +25,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fax') ?>
 
-    <?= $form->field($model, 'email') ?>
+    <?php // echo $form->field($model, 'email') ?>
 
-    <?= $form->field($model, 'hotline') ?>
+    <?php // echo $form->field($model, 'hotline') ?>
 
-    <?= $form->field($model, 'description') ?>
+    <?php // echo $form->field($model, 'description') ?>
 
-    <?= $form->field($model, 'isbooking') ?>
+    <?php // echo $form->field($model, 'created_at') ?>
+
+    <?php // echo $form->field($model, 'updated_at') ?>
+
+    <?php // echo $form->field($model, 'created_by') ?>
+
+    <?php // echo $form->field($model, 'updated_by') ?>
+
+    <?php // echo $form->field($model, 'isbooking') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

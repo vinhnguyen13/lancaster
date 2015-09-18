@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel vsoft\express\models\LcBuildingSearch */
+/* @var $searchModel vsoft\express\models\LcContactSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lc Buildings';
+$this->title = 'Lc Contacts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="lc-building-index">
+<div class="lc-contact-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lc Building', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Lc Contact', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,19 +25,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'lc_building_id',
-            'building_name',
+            'lc_contact_id',
+            'name',
             'address',
-            'phone',
-            'fax',
-            'email',
-            'hotline',
-            'description',
-            'created_at',
-            'updated_at',
-            'created_by',
-            'updated_by',
-            'isbooking',
+            'title',
+            'message:ntext',
+            // 'ip',
+            // 'agent',
+            // 'browser_type',
+            // 'browser_name',
+            // 'browser_version',
+            // 'platform',
+            // 'created_at',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

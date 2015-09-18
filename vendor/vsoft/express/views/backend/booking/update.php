@@ -1,0 +1,21 @@
+<?php
+
+use yii\helpers\Html;
+
+/* @var $this yii\web\View */
+/* @var $model vsoft\express\models\LcBooking */
+
+$this->title = 'Update Lc Booking: ' . ' ' . $model->lc_booking_id;
+$this->params['breadcrumbs'][] = ['label' => 'Lc Bookings', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->lc_booking_id, 'url' => ['view', 'id' => $model->lc_booking_id]];
+$this->params['breadcrumbs'][] = 'Update';
+?>
+<div class="lc-booking-update">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
+
+</div>

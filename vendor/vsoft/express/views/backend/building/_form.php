@@ -26,7 +26,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'isbooking')->textInput() ?>
+    <?= $form->field($model, 'created_at')->hiddenInput(['value'=> '2015-09-17'])->label(false) ?>
+
+
+
+    <?= $form->field($model, 'isbooking')->checkbox(); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

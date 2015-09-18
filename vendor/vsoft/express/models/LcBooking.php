@@ -2,6 +2,7 @@
 
 namespace vsoft\express\models;
 
+use vsoft\express\models\base\LcBookingBase;
 use Yii;
 
 /**
@@ -30,69 +31,9 @@ use Yii;
  *
  * @property LcBuilding $lcBuilding
  */
-class LcBooking extends \yii\db\ActiveRecord
+class LcBooking extends LcBookingBase
 {
     /**
-     * @inheritdoc
+     * TODO: Write function for booking
      */
-    public static function tableName()
-    {
-        return 'lc_booking';
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['lc_building_id', 'apart_type', 'floorplan'], 'integer'],
-            [['checkin', 'checkout', 'created_at'], 'safe'],
-            [['info'], 'string'],
-            [['fullname', 'agent'], 'string', 'max' => 100],
-            [['phone', 'passport_no'], 'string', 'max' => 15],
-            [['email', 'nationality', 'browser_name', 'platform'], 'string', 'max' => 60],
-            [['address'], 'string', 'max' => 255],
-            [['ip'], 'string', 'max' => 40],
-            [['browser_type'], 'string', 'max' => 45],
-            [['browser_version'], 'string', 'max' => 10]
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'lc_booking_id' => 'Lc Booking ID',
-            'lc_building_id' => 'Lc Building ID',
-            'checkin' => 'Checkin',
-            'checkout' => 'Checkout',
-            'apart_type' => 'Apart Type',
-            'floorplan' => 'Floorplan',
-            'fullname' => 'Fullname',
-            'phone' => 'Phone',
-            'email' => 'Email',
-            'address' => 'Address',
-            'passport_no' => 'Passport No',
-            'nationality' => 'Nationality',
-            'info' => 'Info',
-            'ip' => 'Ip',
-            'agent' => 'Agent',
-            'browser_type' => 'Browser Type',
-            'browser_name' => 'Browser Name',
-            'browser_version' => 'Browser Version',
-            'platform' => 'Platform',
-            'created_at' => 'Created At',
-        ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getLcBuilding()
-    {
-        return $this->hasOne(LcBuilding::className(), ['lc_building_id' => 'lc_building_id']);
-    }
 }
