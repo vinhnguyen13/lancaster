@@ -5,6 +5,10 @@ $this->title = Yii::t('booking', 'Booking');
  * User: Nhut Tran
  * Date: 9/18/2015 11:16 AM
  */
+use kartik\datetime\DateTimePicker;
+
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 ?>
 
 <div class="container-fluid booking">
@@ -35,10 +39,21 @@ $this->title = Yii::t('booking', 'Booking');
                 </div>
                 <div class="rormright">
                     <div class="live">
-                        <input class="form-control" name="firstname" placeholder="Select" type="text" required autofocus /><span class="glyphicon glyphicon-calendar"></span>
+                        <!-- <input class="form-control" name="checkin" placeholder="Select" type="text" required autofocus /><span class="glyphicon glyphicon-calendar"></span> -->
+                        <?php
+//                        echo '<input class="form-control" name="checkin" />';
+                        echo DateTimePicker::widget([
+                            'name' => 'checkin',
+                            'type' => DateTimePicker::TYPE_COMPONENT_APPEND,
+                            'options' => ['placeholder' => 'Enter check in time ...'],
+                            'pluginOptions' => [
+                                'autoclose'=>true,
+                                'format' => 'dd-M-yyyy HH:ii'
+                            ]
+                        ]); ?>
                     </div>
                     <div class="live">
-                        <input class="form-control" name="firstname" placeholder="Select" type="text" required autofocus /><span class="glyphicon glyphicon-calendar"></span>
+                        <input class="form-control" name="checkout" placeholder="Select" type="text" required autofocus /><!--<span class="glyphicon glyphicon-calendar"></span>-->
                     </div>
                     <div class="live">
                         <select class="form-control">
