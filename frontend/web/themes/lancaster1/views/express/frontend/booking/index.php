@@ -1,4 +1,5 @@
 <?php
+$this->title = Yii::t('booking', 'Booking');
 /**
  * Created by PhpStorm.
  * User: Nhut Tran
