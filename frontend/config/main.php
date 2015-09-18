@@ -69,6 +69,13 @@ return [
         'setting' => [
             'class' => 'funson86\setting\Setting',
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
