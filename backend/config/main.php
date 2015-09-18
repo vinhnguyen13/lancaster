@@ -6,6 +6,7 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 
+$baseUrl = str_replace('/backend/web', '/admin', (new \yii\web\Request())->getBaseUrl());
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
@@ -46,8 +47,15 @@ return [
             'class' => 'funson86\blog\Module',
             'controllerNamespace' => 'funson86\blog\controllers\backend'
         ],
+        'setting' => [
+            'class' => 'funson86\setting\Module',
+            'controllerNamespace' => 'funson86\setting\controllers'
+        ],
     ],
     'components' => [
+        'request' => [
+            'baseUrl' => $baseUrl,
+        ],
         /*'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
