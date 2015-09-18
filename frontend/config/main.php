@@ -39,7 +39,7 @@ return [
         'view' => [
             'theme' => [
                 'basePath' => '@webroot/themes/lancaster1',
-                'baseUrl' => 'frontend/web/themes/lancaster1',
+                'baseUrl' => '/frontend/web/themes/lancaster1',
                 'pathMap' => [
                     '@app/views' => '@webroot/themes/lancaster1/views',
                     '@vsoft/express/views' => '@webroot/themes/lancaster1/views/express',
