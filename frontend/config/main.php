@@ -5,7 +5,8 @@ $params = array_merge(
     require(__DIR__ . '/params.php'),
     require(__DIR__ . '/params-local.php')
 );
-
+use \yii\web\Request;
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 return [
     'id' => 'app-frontend',
     'name'=>'Lancaster',
@@ -24,6 +25,25 @@ return [
         ],
     ],
     'components' => [
+        'request' => [
+            'baseUrl' => $baseUrl,
+        ],
+        'urlManager' => [
+            'class' => 'yii\web\UrlManager',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+                'contact' => 'express/contact',
+                'booking' => 'express/booking',
+                'about' => 'express/about',
+                'news' => 'express/news',
+//                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+//                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+//                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+
+            ]
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

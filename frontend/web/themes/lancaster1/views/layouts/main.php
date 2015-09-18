@@ -43,9 +43,9 @@ AppAsset::register($this);
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">About Us<span class="sr-only">(current)</span></a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="active"><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>">About Us<span class="sr-only">(current)</span></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news')?>">News</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact')?>">Contact</a></li>
                 <li><a>|</a></li>
                 <li><a href="#">En</a></li>
                 <li><a href="#">Vi</a></li>
@@ -53,22 +53,14 @@ AppAsset::register($this);
             <div class="text_pagecontent">LANCASTER LEGACY <i class="glyphicon glyphicon-menu-down"></i></div>
             <ul class="nav navbar-nav navbar-right">
                 <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
-                <li class="rightbgmenu"><a href="#" class="book">Book Now</a></li>
+                <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking')?>" class="book">Book Now</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<div class="container-fluid menutop">
-    <ul>
-        <li><a href="#" class="active">THE BUILDING</a></li>
-        <li><a href="#">apartmentS</a></li>
-        <li><a href="#">AMENITIES</a> </li>
-        <li><a href="#">Views</a></li>
-        <li><a href="#">NEIGHBORHOOD</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Location</a></li>
-    </ul>
-</div>
+<?php $this->beginContent('@app/views/layouts/_partials/menutop.php'); ?>
+<?php $this->endContent();?>
+
 <!-- Carousel
 ================================================== -->
 <?= $content ?>

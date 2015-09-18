@@ -8,7 +8,7 @@
 
 <div class="container-fluid booking">
     <div class="row main_content">
-        <span class="btn_back"><img src="/frontend/web/themes/lancaster1/resources/IMG/btn_back.png">Back to Lancaster Legacy</span>
+        <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
         <p>booking</p>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mainbooking">
             <div class="btnpic">
