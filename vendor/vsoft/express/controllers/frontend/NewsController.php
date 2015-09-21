@@ -30,7 +30,7 @@ class NewsController extends \yii\web\Controller
             ->limit($pagination->limit)
             ->all();
 
-        return $this->render('index', ['news'=>$news]);
+        return $this->render('index', ['news'=>$news, 'pagination' => $pagination]);
     }
 
     public function actionDetail()

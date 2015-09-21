@@ -9,17 +9,18 @@ use yii\helpers\Html;
         <p><?=\Yii::t('express/news', 'News');?></p>
         <div class="btn_paging">
 
-            <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">next</a></li>
-            </ul>
+            <?=\yii\widgets\LinkPager::widget([
+                'pagination' => $pagination,
+                'nextPageLabel' => 'next',
+                'prevPageLabel' => 'prev',
+            ]) ?>
             <span aria-hidden="true"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_next.png"></span>
         </div>
 <!--        --><?php //foreach ($news as $new) {
 //            echo Html::tag('li', Html::a($new->title, \yii\helpers\Url::toRoute(['/express/news/detail', 'id' => $new->id, 'slug' => $new->slug])) . Html::tag('span', Yii::$app->formatter->asDate($new->created_at)). '<div class="clear"></div>', ['class' => 'clearfix']);
 //        }
 //        ?>
+
 
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 mainleft">
             <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/newsbanner.png">
