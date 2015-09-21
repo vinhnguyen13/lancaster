@@ -154,5 +154,14 @@ return array(
                     '@Zelenin/Slugifier' => $vendorDir . '/zelenin/slugifier',
                 ),
         ),
+    'kartik' =>
+        array(
+            'alias' =>
+                array(
+                    '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker-master',
+                    '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base-master',
+                ),
+        ),
+
 
 );
