@@ -3,8 +3,11 @@
 namespace funson86\cms\models;
 
 use Yii;
+use yii\behaviors\AttributeBehavior;
+use yii\behaviors\SluggableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\BlameableBehavior;
+use yii\db\ActiveRecord;
 use yii\db\Expression;
 use funson86\cms\Module;
 
@@ -48,7 +51,27 @@ class CmsShow extends \yii\db\ActiveRecord
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+            'slug' => [
+                'class' => SluggableBehavior::className(),
+                'attribute' => 'title',
+                 'slugAttribute' => 'slug',
+            ],
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',
+                'updatedAtAttribute' => 'updated_at',
+                'value' => new Expression('NOW()'),
+            ],
+            [
+                'class' => AttributeBehavior::className(),
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => 'create_by',
+                    ActiveRecord::EVENT_BEFORE_UPDATE => 'update_by',
+                ],
+                'value' => function ($event) {
+                    return Yii::$app->user->id;
+                },
+            ],
             // BlameableBehavior::className(),
         ];
     }

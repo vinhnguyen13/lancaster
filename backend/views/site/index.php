@@ -32,6 +32,7 @@ $this->title = 'My Yii Application';
                 <ol class="list-unstyled">
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['cms/cms-show'])?>">Content</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['cms/cms-catalog'])?>">Categories</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['gallery'])?>">Gallery</a></li>
                 </ol>
             </div>
 

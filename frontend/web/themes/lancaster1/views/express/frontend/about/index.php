@@ -1,6 +1,7 @@
 <?php
 $this->title = Yii::t('about', 'About Us');
 /* @var $this yii\web\View */
+use yii\helpers\Html;
 ?>
 <div class="container-fluid abaout">
     <div class="row main_content">
@@ -14,6 +15,10 @@ $this->title = Yii::t('about', 'About Us');
             </ul>
         </div>
     </div>
+<!--    --><?php //foreach ($news as $new) {
+//        echo Html::tag('li', Html::a($new->title, \yii\helpers\Url::toRoute(['/express/about/detail', 'id' => $new->id, 'slug' => $new->slug])) . Html::tag('span', Yii::$app->formatter->asDate($new->created_at)). '<div class="clear"></div>', ['class' => 'clearfix']);
+//    }
+//    ?>
     <div class="row contentbody">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 img">
             <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/item01.png">
