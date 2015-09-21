@@ -18,7 +18,7 @@ class LcBuildingSearch extends LcBuilding
     public function rules()
     {
         return [
-            [['lc_building_id', 'created_by', 'updated_by', 'isbooking'], 'integer'],
+            [['lc_building_id', 'created_by', 'updated_by', 'isbooking', 'floor'], 'integer'],
             [['building_name', 'address', 'phone', 'fax', 'email', 'hotline', 'description', 'created_at', 'updated_at'], 'safe'],
         ];
     }
@@ -62,6 +62,7 @@ class LcBuildingSearch extends LcBuilding
             'created_by' => $this->created_by,
             'updated_by' => $this->updated_by,
             'isbooking' => $this->isbooking,
+            'floor' => $this->floor,
         ]);
 
         $query->andFilterWhere(['like', 'building_name', $this->building_name])
