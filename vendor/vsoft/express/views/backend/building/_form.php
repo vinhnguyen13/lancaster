@@ -15,6 +15,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
     <?= $form->field($model, 'building_name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'floor')->textInput(['maxlength' => 3]) ?>
+
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>

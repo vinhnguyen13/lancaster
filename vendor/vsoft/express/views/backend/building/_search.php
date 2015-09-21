@@ -19,6 +19,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'building_name') ?>
 
+    <?= $form->field($model, 'floor') ?>
+
     <?= $form->field($model, 'address') ?>
 
     <?= $form->field($model, 'phone') ?>
