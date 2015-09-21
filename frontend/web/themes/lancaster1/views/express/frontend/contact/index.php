@@ -1,7 +1,9 @@
 <?php
-$this->title = Yii::t('contact', 'Contact');
+$this->title = Yii::t('express', 'Contact');
 /* @var $this yii\web\View */
 ?>
+<?=Yii::$app->language?>
+
 <div class="container-fluid contactt">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>

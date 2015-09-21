@@ -2,9 +2,9 @@
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     // set target language to be Russian
-    'language' => 'en',
+    'language' => 'en-US',
     // set source language to be English
-    'sourceLanguage' => 'en',
+    'sourceLanguage' => 'en-US',
     'aliases' => array(
 //        'webvimark' => dirname(dirname(__DIR__)) . '/vendor/webvimark'
     ),
@@ -127,6 +127,11 @@ return [
             'class' => 'yii\web\DbSession',
             // 'db' => 'mydb',
             'sessionTable' => 'session',
+            'cookieParams' => [
+                /*'domain' => '.lancaster.vn',
+                'httpOnly' => true,
+                'path' => '/',*/
+            ],
         ],
         'i18n' => [
             'translations' => [
@@ -146,7 +151,20 @@ return [
                     'fileMap'        => [
                         'modules/user/user' => 'user.php',
                     ],
-                ]
+                ],
+                'express*' => [
+                    'class'          => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-US',
+                    'forceTranslation' => true,
+                    'basePath'       => '@vendor/vsoft/express/messages',
+                    'fileMap'        => [
+                        'express' => 'express.php',
+                        'express/about' => 'about.php',
+                        'express/booking' => 'booking.php',
+                        'express/contact' => 'contact.php',
+                        'express/news' => 'news.php',
+                    ],
+                ],
             ]
         ],
         'mailer' => [

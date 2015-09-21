@@ -31,7 +31,7 @@ $this->title = 'My Yii Application';
                 <p>Content management systems</p>
                 <ol class="list-unstyled">
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['cms/cms-show'])?>">Content</a></li>
-                    <li><a href="<?=Yii::$app->urlManager->createUrl(['cms/cms-show'])?>">Categories</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['cms/cms-catalog'])?>">Categories</a></li>
                 </ol>
             </div>
 

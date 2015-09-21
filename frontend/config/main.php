@@ -11,8 +11,17 @@ return [
     'id' => 'app-frontend',
     'name'=>'Lancaster',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
-    'language'=>'vi',
+    'aliases' => array(
+//        'webvimark' => dirname(dirname(__DIR__)) . '/vendor/webvimark'
+    ),
+    'bootstrap' => [
+        'log',
+        'languageSelector' => [
+            'class' => 'frontend\components\LanguageSelector',
+            'supportedLanguages' => ['en-US', 'vi-VN'],
+        ],
+    ],
+    'language'=>'vi-VN',
     'controllerNamespace' => 'frontend\controllers',
     'modules'=>[
         'express' => [

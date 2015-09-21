@@ -131,7 +131,7 @@ class CmsCatalogController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $model->banner = UploadedFile::getInstance($model, 'banner');
-            $model->page_type = $oldPageType;
+//            $model->page_type = $oldPageType;
             if ($model->validate()) {
                 if($model->banner){
                     $bannerName = Yii::$app->params['blogUploadPath'] . date('Ymdhis') . rand(1000, 9999) . '.' . $model->banner->extension;

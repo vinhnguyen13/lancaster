@@ -42,13 +42,14 @@ AppAsset::register($this);
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
+            <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>">About Us<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>"><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/news')?>">News</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact')?>">Contact</a></li>
                 <li><a>|</a></li>
-                <li><a href="#">En</a></li>
-                <li><a href="#">Vi</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
             </ul>
             <div class="text_pagecontent">LANCASTER LEGACY <i class="glyphicon glyphicon-menu-down"></i></div>
             <ul class="nav navbar-nav navbar-right">
