@@ -5,7 +5,7 @@ $this->title = Yii::t('news', 'News');
 <div class="container-fluid news">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
-        <p>news</p>
+        <p><?=\Yii::t('express/news', 'News');?></p>
         <div class="btn_paging">
 
             <ul class="pagination">

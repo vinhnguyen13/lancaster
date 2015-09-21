@@ -5,7 +5,7 @@ $this->title = Yii::t('about', 'About Us');
 <div class="container-fluid abaout">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
-        <p>About Us</p>
+        <p><?=\Yii::t('express/about', 'About Us');?></p>
         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 mainleft"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/aboutbanner.png"></div>
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 mainright">
             <ul>
