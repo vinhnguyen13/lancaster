@@ -56,6 +56,7 @@ class LcBuildingBase extends \yii\db\ActiveRecord
         return [
             'lc_building_id' => Yii::t('building', 'Lc Building ID'),
             'building_name' => Yii::t('building', 'Building Name'),
+            'floor' => Yii::t('building', 'Floor'),
             'address' => Yii::t('building', 'Address'),
             'phone' => Yii::t('building', 'Phone'),
             'fax' => Yii::t('building', 'Fax'),
