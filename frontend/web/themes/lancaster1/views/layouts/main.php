@@ -54,7 +54,7 @@ AppAsset::register($this);
             <div class="text_pagecontent">LANCASTER LEGACY <i class="glyphicon glyphicon-menu-down"></i></div>
             <ul class="nav navbar-nav navbar-right">
                 <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
-                <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking')?>" class="book">Book Now</a></li>
+                <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
