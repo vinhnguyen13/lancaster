@@ -4,6 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
+<?= Yii::$app->session->getFlash('reLog'); ?>
 <div class="site-index">
 
     <div class="jumbotron">

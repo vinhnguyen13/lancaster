@@ -163,6 +163,14 @@ return array(
                     '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers-master',
                 ),
         ),
+    'mervick' =>
+        array(
+            'alias' =>
+                array(
+                    '@mervick/image' => $vendorDir . '/mervick/yii2-image-master',
+                    '@mervick/image/drivers' => $vendorDir . '/mervick/yii2-image-master/drivers',
+                ),
+        ),
 
 
 );

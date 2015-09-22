@@ -5,7 +5,7 @@ $this->title = Yii::t('news', 'News');
 <div class="container-fluid newsdetail">
     <div class="row main_content">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsleft">
-            <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
+            <span class="btn_pre"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
             <span class="btn_next"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::toRoute(['/express/news'])?>">Back to News</a></span>
             <div class="imgnewdetail"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/newsbanner.png"></div>
             <div class="relatedpost">
@@ -32,12 +32,12 @@ $this->title = Yii::t('news', 'News');
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsright">
             <span class="blockempty"></span>
-            <p><?=$detail->title;?></p>
+            <h2><?=$detail->title;?></h2>
             <ul>
                 <li class="textcontent">
                     <?=$detail->content;?>
                 </li>
-                <li class="textfooter"><span class="footer">27 Aug 2015</span><span class="share">Share</span><span class="facebookblack"></span>
+                <li class="textfooter"><span class="footer"><?=date('d M Y', $detail->created_at)?></span><span class="share">Share</span><span class="facebookblack"></span>
                     <span class="google"></span></li>
             </ul>
         </div>

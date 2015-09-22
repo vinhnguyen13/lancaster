@@ -13,12 +13,13 @@ use yii\helpers\Html;
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
         <h1>news</h1>
         <div class="btn_paging">
-
+            <?php if($pagination){?>
             <?=\yii\widgets\LinkPager::widget([
                 'pagination' => $pagination,
                 'nextPageLabel' => 'next',
                 'prevPageLabel' => 'prev',
             ]) ?>
+            <?php }?>
             <span aria-hidden="true"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_next.png"></span>
         </div>
         <?php foreach ($news as $key=>$new) {?>
@@ -26,7 +27,7 @@ use yii\helpers\Html;
             <?php
                 echo Html::tag('div',
                     Html::tag('div',
-                        Html::a(Html::img(Yii::$app->view->theme->baseUrl.'/resources/IMG/aboutbanner.png'), \yii\helpers\Url::toRoute(['/express/news/detail', 'id' => $new->id, 'slug' => $new->slug])).
+                        Html::a(Html::img($new->getUrlBanner($new->banner)), \yii\helpers\Url::toRoute(['/express/news/detail', 'id' => $new->id, 'slug' => $new->slug])).
                         Html::tag('div',
                             Html::tag('ul',
                                 Html::tag('li',date('d', $new->created_at)).

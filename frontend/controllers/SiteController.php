@@ -73,6 +73,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        \Yii::$app->getSession()->setFlash('reLog', 'Password Changed Successfully.');
         return $this->render('index');
     }
 

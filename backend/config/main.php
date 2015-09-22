@@ -75,7 +75,11 @@ return [
         'imagine' => array(
             'class' => "ext.imagine.ImagineYii",
             //'driver' => 'gd2'
-        )
+        ),
+        'image' => array(
+            'class' => 'mervick\image\Component',
+            'driver' => 'mervick\image\drivers\GD',  //GD or Imagick
+        ),
     ],
     'params' => $params,
 ];

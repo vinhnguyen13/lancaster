@@ -2,6 +2,7 @@
 
 namespace funson86\cms\models;
 
+use mervick\image\Image;
 use Yii;
 use yii\behaviors\AttributeBehavior;
 use yii\behaviors\SluggableBehavior;
@@ -10,6 +11,9 @@ use yii\behaviors\BlameableBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 use funson86\cms\Module;
+use yii\helpers\Inflector;
+use yii\helpers\Url;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "cms_show".
@@ -148,5 +152,36 @@ class CmsShow extends \yii\db\ActiveRecord
         parent::afterSave($insert, $changedAttributes);
         // add your code here
     }*/
+    public function upload()
+    {
+        $image = UploadedFile::getInstance($this, 'banner');
+        if(!empty($image)){
+            $fileName = Inflector::slug($image->baseName) . '.' . $image->extension;
+            $file = \Yii::getAlias('@store/cms').'/' . $fileName;
+            list($width, $height, $type, $attr) = getimagesize($image->tempName);
+
+            if($width > 950){
+                $master = Image::WIDTH;
+            }elseif($height > 610){
+                $master = Image::HEIGHT;
+            }
+            $image->saveAs($file);
+            $image = Yii::$app->image->load($file);
+            $isSaved = $image->resize(950, 610, $master)->crop(950, 610)->sharpen(20)->save();
+            if($isSaved){
+                $this->banner = "$fileName";
+            }
+        }
+    }
+
+    public function getPathBanner($fileName = null)
+    {
+        return \Yii::getAlias('@store/cms/').(!empty($fileName) ? $fileName: '');
+    }
+
+    public function getUrlBanner($fileName = null)
+    {
+        return Url::to('/store/cms/').(!empty($fileName) ? $fileName: '');
+    }
 
 }
