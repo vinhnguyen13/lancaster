@@ -6,7 +6,7 @@ $this->title = Yii::t('express/contact', 'Contact');
 <div class="container-fluid contactt">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
-        <h1><?=Yii::t('express/contact', 'Contact')?></h1>
+        <h1 class="title"><?=Yii::t('express/contact', 'Contact')?></h1>
         <div class="btnsociety">
             <span class="facebook"></span>
             <span class="images"></span>
