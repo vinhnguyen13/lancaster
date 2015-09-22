@@ -49,10 +49,10 @@ class LcBookingBase extends \yii\db\ActiveRecord
             [['lc_building_id', 'apart_type', 'floorplan'], 'integer'],
             [['checkin', 'checkout', 'created_at'], 'safe'],
             [['info'], 'string'],
-            [['fullname', 'agent'], 'string', 'max' => 100],
+            [['fullname'], 'string', 'max' => 100],
             [['phone', 'passport_no'], 'string', 'max' => 15],
             [['email', 'nationality', 'browser_name', 'platform'], 'string', 'max' => 60],
-            [['address'], 'string', 'max' => 255],
+            [['address', 'agent'], 'string', 'max' => 255],
             [['ip'], 'string', 'max' => 40],
             [['browser_type'], 'string', 'max' => 45],
             [['browser_version'], 'string', 'max' => 10]
