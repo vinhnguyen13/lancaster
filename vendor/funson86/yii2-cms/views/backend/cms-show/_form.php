@@ -45,6 +45,22 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'banner')->textInput(['maxlength' => 255]) ?>
 
+    <?php
+    echo  \dosamigos\fileupload\FileUploadUI::widget([
+        'model' => $model,
+        'attribute' => 'banner',
+        'url' => ['upload', 'id' => 'test'],
+        'gallery' => false,
+        'fieldOptions' => [
+            'accept' => 'image/*'
+        ],
+        'clientOptions' => [
+            'maxFileSize' => 2000000
+        ]
+    ]);
+
+    ?>
+
     <?= $form->field($model, 'template_show')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => 255]) ?>

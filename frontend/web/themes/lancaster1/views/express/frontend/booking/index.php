@@ -19,7 +19,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
         <span class="btn_back"><img src="<?= Yii::$app->view->theme->baseUrl ?>/resources/IMG/btn_back.png"><a
                 href="<?= \yii\helpers\Url::home() ?>">Back to Lancaster Legacy</a></span>
 
-        <p>booking</p>
+        <h1>booking</h1>
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mainbooking">
             <div class="btnpic">
