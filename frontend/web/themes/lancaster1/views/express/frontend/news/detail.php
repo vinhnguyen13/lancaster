@@ -5,8 +5,8 @@ $this->title = Yii::t('news', 'News');
 <div class="container-fluid newsdetail">
     <div class="row main_content">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 newsleft">
-            <span class="btn_pre"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png">Back to Lancaster Legacy</span>
-            <span class="btn_next"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png">Back to News</span>
+            <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
+            <span class="btn_next"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::toRoute(['/express/news'])?>">Back to News</a></span>
             <div class="imgnewdetail"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/newsbanner.png"></div>
             <div class="relatedpost">
                 <p>Related post</p>
