@@ -15,4 +15,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".forximg").first().addClass('big');
 });
+$(document).ready(function(){
+    $(".mainblockitem").first().addClass('mainblockbig');
+});
 
