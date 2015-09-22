@@ -23,14 +23,17 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mainbooking">
             <div class="btnpic">
-                <button class="btnclick" type="submit">Click here <span class="glyphicon glyphicon-play-circle"></span>
-                </button>
+                <a href="http://www.be3.com/asia/vietnam/ho_chi_minh_city/lancaster_saigon_serviced_apartments_le_thanh_ton.html?cur=USD&setcookienew=1">
+                    <button class="btnclick" type="submit">Click here <span class="glyphicon glyphicon-play-circle"></span>
+                    </button>
+                </a>
             </div>
             <!-- <form action="#" method="post" class="form" role="form"> -->
             <?php
             $model = new \vsoft\express\models\LcBooking();
             $form = \yii\widgets\ActiveForm::begin([
-                'id' => 'active-form',
+                'id' => 'booking-form',
+                'action' => Url::toRoute('/express/booking/booking-hotel'),
                 'options' => [
                     'class' => 'form',
                     'role' => 'form',
@@ -56,7 +59,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
             </div>
             <div class="rormright">
                 <div class="live">
-                    <?= $form->field($model, 'checkin')->widget(DateTimePicker::className(), [
+                    <?= $form->field($model, 'checkin')->hiddenInput()->label(false) ?>
+                    <?= DateTimePicker::widget([
                         'name' => 'check_in',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
                         'options' => [
@@ -67,15 +71,18 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd-M-yyyy HH:ii:ss ',
-                            'pickerPosition' => 'bottom-left',
+                            'format' => 'dd M yyyy hh:ii',
+//                            'pickerPosition' => 'bottom-left',
+                            'linkField' =>  Html::getInputId($model, 'checkin'),
+                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
-                    ])->label(false) ?>
+                    ]) ?>
                 </div>
                 <div class="live">
                     <!--<input class="form-control" name="checkout" placeholder="Select" type="text" required
                            autofocus/><span class="glyphicon glyphicon-calendar"></span>-->
-                    <?= $form->field($model, 'checkout')->widget(DateTimePicker::className(), [
+                    <?= $form->field($model, 'checkout')->hiddenInput()->label(false) ?>
+                    <?= DateTimePicker::widget([
                         'name' => 'check_out',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
                         'options' => [
@@ -86,17 +93,19 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd-M-yyyy HH:ii:ss',
-                            'pickerPosition' => 'bottom-left',
+                            'format' => 'dd M yyyy hh:ii',
+//                            'pickerPosition' => 'bottom-left',
+                            'linkField' =>  Html::getInputId($model, 'checkout'),
+                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
-                    ])->label(false) ?>
+                    ])?>
                 </div>
                 <div class="live">
                     <!--<select class="form-control">
                         <option value="Year">Year</option>
                     </select>-->
                     <?php
-                    $buildings = \vsoft\express\models\LcBuilding::find()->select('lc_building_id,building_name,floor')->all();
+                    $buildings = \vsoft\express\models\LcBuilding::find()->all();
                     $listData = ArrayHelper::map($buildings, 'lc_building_id', 'building_name');
                     echo $form->field($model, 'lc_building_id')->dropDownList($listData, [
                         'onchange' => '
@@ -134,7 +143,6 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                             </select>-->
                             <?php
                             $floorNum = [];
-                            $floor = 22;
                             foreach($buildings as $building){
                                 if($building->building_name === 'Lancaster Legacy'){
                                     for($x=1;$x <= $building->floor; $x++){
@@ -142,36 +150,54 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                                     }
                                 }
                             }
-                            echo $form->field($model, 'floorplan')->dropDownList($floorNum)->label(false);
-                            ?>
+                            echo $form->field($model, 'floorplan')->dropDownList($floorNum,
+                                [
+                                    'options' => [22 => ['selected ' => true]],
+//                                    'class' => 'form-control medium-width'
+                                ]
+                            )->label(false) ?>
                         </li>
                     </ul>
                 </div>
                 <div class="namephone">
-                    <input class="form-control" name="" placeholder="Full name" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Full name" type=""/>-->
+                    <?= $form->field($model, 'fullname')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <input class="form-control" name="" placeholder="Phone number" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Phone number" type=""/>-->
+                    <?= $form->field($model, 'phone')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <input class="form-control" name="" placeholder="Email" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Email" type=""/>-->
+                    <?= $form->field($model, 'email')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <input class="form-control" name="" placeholder="Address" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Address" type=""/>-->
+                    <?= $form->field($model, 'address')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <input class="form-control" name="" placeholder="Passport No" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Passport No" type=""/>-->
+                    <?= $form->field($model, 'passport_no')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <input class="form-control" name="" placeholder="Nationality" type=""/>
+<!--                    <input class="form-control" name="" placeholder="Nationality" type=""/>-->
+                    <?= $form->field($model, 'nationality')->textInput(['maxlength' => true])->label(false) ?>
                 </div>
                 <div class="deafall">
-                    <textarea class="form-control" name="" placeholder="Text here" cols="" rows="5"></textarea>
+<!--                    <textarea class="form-control" name="" placeholder="Text here" cols="" rows="5"></textarea>-->
+                    <?= $form->field($model, 'info')->textarea(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'ip')->hiddenInput(['value'=> Yii::$app->request->userIP])->label(false) ?>
+                    <?= $form->field($model, 'agent')->hiddenInput(['value'=> Yii::$app->request->userAgent])->label(false) ?>
+                    <?= $form->field($model, 'browser_type')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['code']])->label(false) ?>
+                    <?= $form->field($model, 'browser_name')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['name']])->label(false) ?>
+                    <?= $form->field($model, 'browser_version')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['version']])->label(false) ?>
+                    <?= $form->field($model, 'platform')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['platform']])->label(false) ?>
                 </div>
                 <div class="btnsubmit">
-                    <button class="btn btn-lg btn_primary btn-block" type="submit">
-                        Submit
-                    </button>
+<!--                    <button class="btn btn-lg btn_primary btn-block" type="submit">-->
+<!--                        Submit-->
+<!--                    </button>-->
+                    <?= Html::submitButton('Submit', ['class' => 'btn btn-lg btn_primary btn-block']) ?>
                 </div>
             </div>
             <?php \yii\widgets\ActiveForm::end(); ?>

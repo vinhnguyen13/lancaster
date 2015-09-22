@@ -45,6 +45,7 @@ return [
             'rules' => [
                 'contact' => 'express/contact',
                 'booking' => 'express/booking',
+                'booking/booking-hotel' => 'express/booking/booking-hotel',
                 'about' => 'express/about',
                 'about/view/<id:\d+>-<slug>' => 'express/about/detail',
                 'news' => 'express/news',
