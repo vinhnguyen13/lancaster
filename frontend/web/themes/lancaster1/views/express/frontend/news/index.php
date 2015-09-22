@@ -3,6 +3,11 @@ $this->title = Yii::t('news', 'News');
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 ?>
+<style>
+    .pagination .disabled{
+        display: none;
+    }
+</style>
 <div class="container-fluid news">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
@@ -21,7 +26,7 @@ use yii\helpers\Html;
             <?php
                 echo Html::tag('div',
                     Html::tag('div',
-                        Html::img(Yii::$app->view->theme->baseUrl.'/resources/IMG/aboutbanner.png').
+                        Html::a(Html::img(Yii::$app->view->theme->baseUrl.'/resources/IMG/aboutbanner.png'), \yii\helpers\Url::toRoute(['/express/news/detail', 'id' => $new->id, 'slug' => $new->slug])).
                         Html::tag('div',
                             Html::tag('ul',
                                 Html::tag('li',date('d', $new->created_at)).
@@ -42,24 +47,6 @@ use yii\helpers\Html;
                 );
             ?>
         <?php }?>
-        <div class="mainblockitem" style="display: none;">
-            <div class="block">
-                <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/newsbanner.png">
-                <div class="marks">
-                    <ul>
-                        <li>27</li>
-                        <li>AUG</li>
-                    </ul>
-                </div>
-                <div class="lockcontentleft">
-                    <ul>
-                        <li class="title">Lorem ipsum dolor sit amet dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ... <a href="#">more</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
 
     </div>
 </div>

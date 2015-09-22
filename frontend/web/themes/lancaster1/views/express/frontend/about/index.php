@@ -13,7 +13,7 @@ use yii\helpers\Html;
             <?php
                 echo Html::tag('div',
                     Html::tag('div',
-                        Html::img(Yii::$app->view->theme->baseUrl.'/resources/IMG/aboutbanner.png'),
+                        Html::a(Html::img(Yii::$app->view->theme->baseUrl.'/resources/IMG/aboutbanner.png'), \yii\helpers\Url::toRoute(['/express/about/detail', 'id' => $new->id, 'slug' => $new->slug])),
                         ['class'=>'mainleft']
                     ).
                     Html::tag('div',
