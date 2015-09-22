@@ -36,4 +36,13 @@ class LcBooking extends LcBookingBase
     /**
      * TODO: Write function for booking
      */
+    public function rules()
+    {
+        return array_merge(
+            parent::rules(),
+            [
+                [['phone', 'fullname', 'email'], 'required'],
+                [['email'], 'email']
+            ]);
+    }
 }
