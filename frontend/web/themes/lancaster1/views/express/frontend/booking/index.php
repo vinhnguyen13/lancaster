@@ -59,24 +59,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                     'method' => 'post'
                 ]
             ]); ?>
-            <div class="formleft">
-                <ul class="live">
-                    <li>Checkin date <i>*</i></li>
-                    <li>Checkout date <i>*</i></li>
-                    <li>Building <i>*</i></li>
-                    <li>Apartment type <i>*</i></li>
-                </ul>
-                <ul class="formname">
-                    <li>Full name <i>*</i></li>
-                    <li>Phone number <i>*</i></li>
-                    <li>Email <i>*</i></li>
-                    <li>Address</li>
-                    <li>Passport No.</li>
-                    <li>Nationality</li>
-                    <li>Infomation</li>
-                </ul>
-            </div>
-            <div class="rormright">
+            
+            <div class="frorminput">
                 <div class="live">
                     <?= $form->field($model, 'checkin')->widget(DateTimePicker::className(),[
                         'name' => 'check_in',
@@ -138,8 +122,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                     ?>
                 </div>
                 <div class="apartment">
-                    <ul>
-                        <li>
+                    
+                        <div class="inputapert">
                             <!--<select class="form-control">
                                 <option value="1">1-Bed</option>
                                 <option value="2">2-Bed</option>
@@ -154,9 +138,9 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                                 ]
                             );
                             ?>
-                        </li>
-                        <li class="textapar">Floorplan <i>*</i></li>
-                        <li>
+                        </div>
+                        <div class="textapar">Floorplan <i>*</i></div>
+                        <div class="inputapert">
                             <!--<select class="form-control">
                                 <option value="Year">22</option>
                             </select>-->
@@ -175,8 +159,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 //                                    'class' => 'form-control medium-width'
                                 ]
                             ) ?>
-                        </li>
-                    </ul>
+                        </div>
+                   
                 </div>
                 <div class="namephone">
 <!--                    <input class="form-control" name="" placeholder="Full name" type=""/>-->
