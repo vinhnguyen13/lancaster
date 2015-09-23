@@ -40,9 +40,9 @@ if (Yii::$app->getSession()->hasFlash('reSent')) {
         $buildings = LcBuilding::find()->all();
         foreach ($buildings as $building) {
             ?>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 blockitem">
+            <div class="blockitem">
                 <span class="iconcontact"></span>
-                <p><?= $building->building_name ?></p>
+                <p class="noticaitalic"><?= $building->building_name ?></p>
                 <ul>
                     <li class="litextleft">Address</li>
                     <li class="litextright"><?= $building->address?></li>
@@ -67,7 +67,7 @@ if (Yii::$app->getSession()->hasFlash('reSent')) {
                 'method' => 'post',
             ]
         ]); ?>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 block">
+        <div class="blockfrom">
             <p>Contact form</p>
             <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'tabIndex' => '1', 'class' => 'name', 'placeholder' => 'Your Name'])->label(false) ?>
             <?= $form->field($model, 'address')->textInput(['maxlength' => true, 'tabIndex' => '2', 'class' => 'address', 'placeholder' => 'Your Address'])->label(false) ?>
