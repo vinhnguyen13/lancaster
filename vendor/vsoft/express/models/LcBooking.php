@@ -48,4 +48,18 @@ class LcBooking extends LcBookingBase
             ]);
     }
 
+    public function getLcBuildingName()
+    {
+        return $this->lcBuilding->building_name;
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'checkin' => Yii::t('building', 'Check In'),
+            'checkout' => Yii::t('building', 'Check Out'),
+            'fullname' => Yii::t('building', 'Full Name'),
+            'floorplan' => Yii::t('building', 'Floor'),
+        ];
+    }
 }

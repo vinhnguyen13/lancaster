@@ -1,9 +1,7 @@
 <?php
 
-use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
 use yii\grid\GridView;
-use vsoft\express\models\LcBuilding;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $searchModel vsoft\express\models\LcBookingSearch */
@@ -32,28 +30,37 @@ $this->params['breadcrumbs'][] = $this->title;
 //                'value' => 'lc_building.building_name'
 //            ],
             [
-                'attribute' => 'building',
+                'label' => 'Building',
+                'attribute' => 'lc_building_id',
                 'value' => function ($model) {
-                    echo "<pre>";
-                    print_r($model);
-                    echo "<pre>";
-                    exit();
-//                    if($model->getLcBuilding()){
-//                        $name = $model->getLcBuilding()->building_name;
-//                        return $name;
-//                    }
+                    if ($model->getLcBuilding()) {
+                        $name = $model->getLcBuilding()->building_name;
+                        return $name;
+                    }
                     return '';
                 },
             ],
-            'checkin',
-            'checkout',
+//            'id',
+//            'buildingName',
+//            'checkin',
+//            'checkout',
+            [
+                'attribute' => 'checkin',
+                'format' =>  ['date', 'php:d-m-Y H:i'],
+//                'options' => ['width' => '200']
+            ],
+            [
+                'attribute' => 'checkout',
+                'format' =>  ['date', 'php:d-m-Y H:i'],
+//                'options' => ['width' => '200']
+            ],
 //            'apart_type',
-             'floorplan',
-             'fullname',
-             'phone',
-            // 'email:email',
-            // 'address',
-            // 'passport_no',
+            'fullname',
+            'floorplan',
+            'phone',
+            'email:email',
+            'address',
+            'passport_no',
             // 'nationality',
             // 'info:ntext',
             // 'ip',
@@ -62,7 +69,12 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'browser_name',
             // 'browser_version',
             // 'platform',
-             'created_at:datetime',
+            [
+                'label' => 'Booking Date',
+                'attribute' => 'created_at',
+                'format' =>  ['date', 'php:d-m-Y H:i'],
+//                'options' => ['width' => '200']
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

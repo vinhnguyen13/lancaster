@@ -2,7 +2,6 @@
 
 namespace vsoft\express\models\base;
 
-use vsoft\express\models\LcBuilding;
 use Yii;
 
 /**
@@ -28,6 +27,7 @@ use Yii;
  * @property string $browser_version
  * @property string $platform
  * @property string $created_at
+ * @property string $updated_at
  *
  * @property LcBuilding $lcBuilding
  */
@@ -48,7 +48,7 @@ class LcBookingBase extends \yii\db\ActiveRecord
     {
         return [
             [['lc_building_id', 'apart_type', 'floorplan'], 'integer'],
-            [['checkin', 'checkout', 'created_at'], 'safe'],
+            [['checkin', 'checkout', 'created_at', 'updated_at'], 'safe'],
             [['info'], 'string'],
             [['fullname'], 'string', 'max' => 100],
             [['phone', 'passport_no'], 'string', 'max' => 15],
@@ -66,26 +66,27 @@ class LcBookingBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('building', 'ID'),
-            'lc_building_id' => Yii::t('building', 'Lc Building ID'),
-            'checkin' => Yii::t('building', 'Checkin'),
-            'checkout' => Yii::t('building', 'Checkout'),
-            'apart_type' => Yii::t('building', 'Apart Type'),
-            'floorplan' => Yii::t('building', 'Floorplan'),
-            'fullname' => Yii::t('building', 'Fullname'),
-            'phone' => Yii::t('building', 'Phone'),
-            'email' => Yii::t('building', 'Email'),
-            'address' => Yii::t('building', 'Address'),
-            'passport_no' => Yii::t('building', 'Passport No'),
-            'nationality' => Yii::t('building', 'Nationality'),
-            'info' => Yii::t('building', 'Info'),
-            'ip' => Yii::t('building', 'Ip'),
-            'agent' => Yii::t('building', 'Agent'),
-            'browser_type' => Yii::t('building', 'Browser Type'),
-            'browser_name' => Yii::t('building', 'Browser Name'),
-            'browser_version' => Yii::t('building', 'Browser Version'),
-            'platform' => Yii::t('building', 'Platform'),
-            'created_at' => Yii::t('building', 'Created At'),
+            'id' => Yii::t('booking', 'ID'),
+            'lc_building_id' => Yii::t('booking', 'Lc Building ID'),
+            'checkin' => Yii::t('booking', 'Checkin'),
+            'checkout' => Yii::t('booking', 'Checkout'),
+            'apart_type' => Yii::t('booking', 'Apart Type'),
+            'floorplan' => Yii::t('booking', 'Floorplan'),
+            'fullname' => Yii::t('booking', 'Fullname'),
+            'phone' => Yii::t('booking', 'Phone'),
+            'email' => Yii::t('booking', 'Email'),
+            'address' => Yii::t('booking', 'Address'),
+            'passport_no' => Yii::t('booking', 'Passport No'),
+            'nationality' => Yii::t('booking', 'Nationality'),
+            'info' => Yii::t('booking', 'Info'),
+            'ip' => Yii::t('booking', 'Ip'),
+            'agent' => Yii::t('booking', 'Agent'),
+            'browser_type' => Yii::t('booking', 'Browser Type'),
+            'browser_name' => Yii::t('booking', 'Browser Name'),
+            'browser_version' => Yii::t('booking', 'Browser Version'),
+            'platform' => Yii::t('booking', 'Platform'),
+            'created_at' => Yii::t('booking', 'Created At'),
+            'updated_at' => Yii::t('booking', 'Updated At'),
         ];
     }
 
