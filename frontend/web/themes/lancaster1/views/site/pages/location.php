@@ -12,36 +12,38 @@ use vsoft\express\models\LcBuilding;
     <div class="row main_content">
         <!-- Info -->
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 locationleft">
-            <div class="panel-group" id="accordion">
+            <div id="accordion1">
                 <?php
                 $buildings = LcBuilding::find()->all();
                 $i = 1;
                 foreach ($buildings as $building) {
                     ?>
-                    <p class="linetext" data-toggle="collapse" data-parent="#accordion"
-                       href="#collapse<?= $i ?>"><?= $building->building_name ?></p>
-
-                    <div id="collapse<?= $i ?>" class="panel-collapse collapse <?= $i==1 ? 'in' : '' ?>">
-                        <div class="panel-body">
-                            <ul class="lineone">
-                                <li>Address<br>
-                                    <?= $building->address ?><br>
-                                </li>
-                                <li>Phone<br>
-                                    <?= $building->phone ?><br></li>
-                                <li>Fax<br>
-                                    <?= $building->fax ?><br></li>
-                                <li>Email<br>
-                                    <?= $building->email ? $building->email : 'sales@trungthuygroup.vn' ?><br></li>
-                                <li><b>Hotline<br>
-                                        <?= $building->hotline ? $building->hotline : '0903 090 909' ?></b></li>
-                            </ul>
+                    <div class="panel">
+                        <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapse<?= $i ?>">
+                            <h4 class="panel-title linetext"><?= $building->building_name ?></h4>
+                        </div>
+                        <div id="collapse<?= $i ?>" class="panel-collapse collapse <?= $i == 1 ? 'in' : '' ?>">
+                            <div class="panel-body">
+                                <ul class="lineone">
+                                    <li>Address<br>
+                                        <?= $building->address ?><br>
+                                    </li>
+                                    <li>Phone<br>
+                                        <?= $building->phone ?><br></li>
+                                    <li>Fax<br>
+                                        <?= $building->fax ?><br></li>
+                                    <li>Email<br>
+                                        <?= $building->email ? $building->email : 'sales@trungthuygroup.vn' ?><br></li>
+                                    <li><b>Hotline<br>
+                                            <?= $building->hotline ? $building->hotline : '0903 090 909' ?></b></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
                     <?php
                     $i = $i + 1;
                 } ?>
+
             </div>
         </div>
         <!-- Map -->
