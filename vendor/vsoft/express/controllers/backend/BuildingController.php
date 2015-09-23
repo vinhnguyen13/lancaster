@@ -39,14 +39,14 @@ class BuildingController extends Controller
                     'delete' => ['post'],
                 ],
             ],
-            'timestamp' => [
-                'class' => 'yii\behaviors\TimestampBehavior',
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-                'value' => new Expression('NOW()'),
-            ],
+//            'timestamp' => [
+//                'class' => 'yii\behaviors\TimestampBehavior',
+//                'attributes' => [
+//                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+//                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+//                ],
+//                'value' => new Expression('NOW()'),
+//            ],
 
         ];
     }
@@ -88,7 +88,7 @@ class BuildingController extends Controller
         $model = new LcBuilding();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->lc_building_id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
@@ -108,7 +108,7 @@ class BuildingController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->lc_building_id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
             return $this->redirect(['index']);
         } else {
             return $this->render('update', [

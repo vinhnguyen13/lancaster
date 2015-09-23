@@ -2,8 +2,10 @@
 
 namespace vsoft\express\models;
 
+use kartik\helpers\Enum;
 use vsoft\express\models\base\LcContactBase;
 use Yii;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "lc_contact".
@@ -26,4 +28,32 @@ class LcContact extends LcContactBase
     /**
      * TODO: Write function for contact
      */
+    public function rules()
+    {
+        return array_merge(
+            parent::rules(),
+            [
+                [['name', 'address', 'title'], 'required'],
+            ]);
+    }
+
+    public function beforeSave($insert)
+    {
+        $at = new Expression('NOW()');
+        if ($this->isNewRecord || empty($this->created_at)) {
+            $this->created_at = $at;
+            $this->created_by = Yii::$app->user->id;
+        }
+        $this->updated_at = $at;
+        $this->updated_by = Yii::$app->user->id;
+
+        $this->ip = Yii::$app->request->userIP;
+        $this->agent = Yii::$app->request->userAgent;
+        $this->browser_type = Enum::getBrowser()['code'];
+        $this->browser_name = Enum::getBrowser()['name'];
+        $this->browser_version = Enum::getBrowser()['version'];
+        $this->platform = Enum::getBrowser()['platform'];
+        return parent::beforeSave($insert);
+    }
+
 }

@@ -18,7 +18,7 @@ class LcContactSearch extends LcContact
     public function rules()
     {
         return [
-            [['lc_contact_id'], 'integer'],
+            [['id'], 'integer'],
             [['name', 'address', 'title', 'message', 'ip', 'agent', 'browser_type', 'browser_name', 'browser_version', 'platform', 'created_at'], 'safe'],
         ];
     }
@@ -56,7 +56,7 @@ class LcContactSearch extends LcContact
         }
 
         $query->andFilterWhere([
-            'lc_contact_id' => $this->lc_contact_id,
+            'id' => $this->id,
             'created_at' => $this->created_at,
         ]);
 

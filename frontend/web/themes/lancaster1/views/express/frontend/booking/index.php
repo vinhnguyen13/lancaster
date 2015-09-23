@@ -204,14 +204,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 </div>
                 <div class="deafall">
 <!--                    <textarea class="form-control" name="" placeholder="Text here" cols="" rows="5"></textarea>-->
-                    <?= $form->field($model, 'info')->textarea(['maxlength' => true])->label(false) ?>
-                    <?= $form->field($model, 'created_at')->hiddenInput(['value'=> time()])->label(false) ?>
-                    <?= $form->field($model, 'ip')->hiddenInput(['value'=> Yii::$app->request->userIP])->label(false) ?>
-                    <?= $form->field($model, 'agent')->hiddenInput(['value'=> Yii::$app->request->userAgent])->label(false) ?>
-                    <?= $form->field($model, 'browser_type')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['code']])->label(false) ?>
-                    <?= $form->field($model, 'browser_name')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['name']])->label(false) ?>
-                    <?= $form->field($model, 'browser_version')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['version']])->label(false) ?>
-                    <?= $form->field($model, 'platform')->hiddenInput(['value'=> \kartik\helpers\Enum::getBrowser()['platform']])->label(false) ?>
+                    <?= $form->field($model, 'info')->textarea(['maxlength' => true, 'rows' => '4'])->label(false) ?>
                 </div>
                 <div class="btnsubmit">
 <!--                    <button class="btn btn-lg btn_primary btn-block" type="submit">-->

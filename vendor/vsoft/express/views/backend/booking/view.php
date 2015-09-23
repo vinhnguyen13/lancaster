@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+//            'id',
             'lc_building_id',
             'checkin',
             'checkout',
@@ -41,13 +41,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'passport_no',
             'nationality',
             'info:ntext',
-            'ip',
-            'agent',
-            'browser_type',
-            'browser_name',
-            'browser_version',
-            'platform',
-//            'created_at',
+//            'ip',
+//            'agent',
+//            'browser_type',
+//            'browser_name',
+//            'browser_version',
+//            'platform',
+            'created_at',
         ],
     ]) ?>
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace vsoft\express\models\base;
+
 use vsoft\express\models\LcBuilding;
 use Yii;
 
@@ -28,6 +29,8 @@ use Yii;
  * @property string $platform
  * @property string $created_at
  * @property string $updated_at
+ * @property integer $created_by
+ * @property integer $updated_by
  *
  * @property LcBuilding $lcBuilding
  */
@@ -47,7 +50,7 @@ class LcBookingBase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['lc_building_id', 'apart_type', 'floorplan'], 'integer'],
+            [['lc_building_id', 'apart_type', 'floorplan', 'created_by', 'updated_by'], 'integer'],
             [['checkin', 'checkout', 'created_at', 'updated_at'], 'safe'],
             [['info'], 'string'],
             [['fullname'], 'string', 'max' => 100],
@@ -87,6 +90,8 @@ class LcBookingBase extends \yii\db\ActiveRecord
             'platform' => Yii::t('booking', 'Platform'),
             'created_at' => Yii::t('booking', 'Created At'),
             'updated_at' => Yii::t('booking', 'Updated At'),
+            'created_by' => Yii::t('booking', 'Created By'),
+            'updated_by' => Yii::t('booking', 'Updated By'),
         ];
     }
 

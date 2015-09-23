@@ -1,6 +1,24 @@
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 $this->title = Yii::t('express/contact', 'Contact');
 /* @var $this yii\web\View */
+?>
+
+<?php
+if(Yii::$app->getSession()->hasFlash('reSent')) {
+    \yii\bootstrap\Alert::begin([
+        'options' => [
+            'class' => 'alert alert-success',
+        ],
+    ]);
+
+    echo Yii::$app->getSession()->getFlash('reSent');
+    \yii\bootstrap\Alert::end();
+}
 ?>
 
 <div class="container-fluid contactt">
@@ -95,9 +113,18 @@ $this->title = Yii::t('express/contact', 'Contact');
             </ul>
         </div>
 
+        <?php
+        $model = new \vsoft\express\models\LcContact();
+        $form = \yii\widgets\ActiveForm::begin([
+            'id' => 'contact-form',
+            'action' => Url::toRoute('/express/contact/send-contact'),
+            'options' => [
+                'method' => 'post'
+            ]
+        ]); ?>
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 block">
             <p>Contact form</p>
-            <div class="name"><input class="form-control" name="" placeholder="Your name" type="" />
+           <!-- <div class="name"><input class="form-control" name="" placeholder="Your name" type="" />
             </div>
             <div class="address"><input class="form-control" name="" placeholder="Your Address" type="" />
             </div>
@@ -105,8 +132,14 @@ $this->title = Yii::t('express/contact', 'Contact');
             </div>
             <div class="textareadefault"><textarea class="form-control" name="" placeholder="Your massage" cols="" rows="5"></textarea>
             </div>
-            <div class="btnsend"><a href="#">send</a></div>
+            <div class="btnsend"><a href="#">send</a></div> -->
 
+            <?= $form->field($model, 'name')->textInput(['maxlength' => true,'tabIndex'=>'1','class' => 'name','placeholder' => 'Your Name'])->label(false) ?>
+            <?= $form->field($model, 'address')->textInput(['maxlength' => true,'tabIndex'=>'2','class' => 'address','placeholder' => 'Your Address'])->label(false) ?>
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true,'tabIndex'=>'3','class' => 'inputdefault','placeholder' => 'Title'])->label(false) ?>
+            <?= $form->field($model, 'message')->textarea(['maxlength' => true,'tabIndex'=>'4','class' => 'textareadefault','placeholder' => 'Your message','rows' => '6'])->label(false) ?>
+            <?= Html::submitButton('Submit', ['class' => 'btnsend']) ?>
         </div>
+        <?php \yii\widgets\ActiveForm::end(); ?>
     </div>
 </div>

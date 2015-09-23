@@ -18,7 +18,7 @@ class LcBannerSearch extends LcBanner
     public function rules()
     {
         return [
-            [['lc_banner_id', 'height', 'width', 'created_by', 'updated_by'], 'integer'],
+            [['id', 'height', 'width', 'created_by', 'updated_by'], 'integer'],
             [['name', 'description', 'url', 'created_at', 'updated_at'], 'safe'],
         ];
     }
@@ -56,7 +56,7 @@ class LcBannerSearch extends LcBanner
         }
 
         $query->andFilterWhere([
-            'lc_banner_id' => $this->lc_banner_id,
+            'id' => $this->id,
             'height' => $this->height,
             'width' => $this->width,
             'created_at' => $this->created_at,

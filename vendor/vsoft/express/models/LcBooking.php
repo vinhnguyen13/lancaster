@@ -2,8 +2,10 @@
 
 namespace vsoft\express\models;
 
+use kartik\helpers\Enum;
 use vsoft\express\models\base\LcBookingBase;
 use Yii;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "lc_booking".
@@ -41,7 +43,7 @@ class LcBooking extends LcBookingBase
         return array_merge(
             parent::rules(),
             [
-                [['phone', 'fullname', 'email'], 'required'],
+                [['checkin','checkout','phone', 'fullname', 'email'], 'required'],
                 [['email'], 'email'],
 //                [['checkin'], 'compare', 'compareAttribute'=>'checkout', 'operator'=>'<', 'skipOnEmpty'=>true],
                 [['checkout'], 'compare', 'compareAttribute'=>'checkin', 'operator'=>'>'],
@@ -61,5 +63,24 @@ class LcBooking extends LcBookingBase
             'fullname' => Yii::t('building', 'Full Name'),
             'floorplan' => Yii::t('building', 'Floor'),
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        $at = new Expression('NOW()');
+        if ($this->isNewRecord || empty($this->created_at)) {
+            $this->created_at = $at;
+            $this->created_by = Yii::$app->user->id;
+        }
+        $this->updated_at = $at;
+        $this->updated_by = Yii::$app->user->id;
+
+        $this->ip = Yii::$app->request->userIP;
+        $this->agent = Yii::$app->request->userAgent;
+        $this->browser_type = Enum::getBrowser()['code'];
+        $this->browser_name = Enum::getBrowser()['name'];
+        $this->browser_version = Enum::getBrowser()['version'];
+        $this->platform = Enum::getBrowser()['platform'];
+        return parent::beforeSave($insert);
     }
 }

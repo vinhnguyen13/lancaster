@@ -39,14 +39,14 @@ class BookingController extends Controller
                     'delete' => ['post'],
                 ],
             ],
-            'timestamp' => [
-                'class' => 'yii\behaviors\TimestampBehavior',
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-                'value' => new Expression('NOW()'),
-            ],
+//            'timestamp' => [
+//                'class' => 'yii\behaviors\TimestampBehavior',
+//                'attributes' => [
+//                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+//                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+//                ],
+//                'value' => new Expression('NOW()'),
+//            ],
 
         ];
     }
@@ -88,7 +88,8 @@ class BookingController extends Controller
         $model = new LcBooking();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->lc_booking_id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -107,7 +108,8 @@ class BookingController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->lc_booking_id]);
+//            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,

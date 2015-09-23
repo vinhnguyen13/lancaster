@@ -15,22 +15,6 @@ use yii\web\Controller;
 
 class BookingController extends Controller
 {
-
-    public function behaviors()
-    {
-        return [
-            'timestamp' => [
-                'class' => 'yii\behaviors\TimestampBehavior',
-                'attributes' => [
-                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
-                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
-                ],
-                'value' => new Expression('NOW()'),
-            ],
-
-        ];
-    }
-
     public function actionIndex()
     {
         return $this->render('index');

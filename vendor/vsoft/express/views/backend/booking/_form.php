@@ -1,5 +1,7 @@
 <?php
 
+use vsoft\express\models\LcBuilding;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -10,9 +12,15 @@ use yii\widgets\ActiveForm;
 
 <div class="lc-booking-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php
+        $form = ActiveForm::begin();
+    $buildings = \vsoft\express\models\LcBuilding::find()->all();
+    $listData = ArrayHelper::map($buildings, 'id', 'building_name');
+    ?>
 
-    <?= $form->field($model, 'lc_building_id')->textInput() ?>
+    <?= $form->field($model, 'lc_building_id')->dropDownList($listData,[
+        'options' => [$model->lc_building_id => ['selected ' => true]],
+    ])->label('Building Name') ?>
 
     <?= $form->field($model, 'checkin')->textInput() ?>
 
@@ -36,17 +44,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'info')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'ip')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'agent')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'browser_type')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'browser_name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'browser_version')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'platform')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
