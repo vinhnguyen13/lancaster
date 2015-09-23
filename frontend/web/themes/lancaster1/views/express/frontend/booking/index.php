@@ -78,7 +78,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
             </div>
             <div class="rormright">
                 <div class="live">
-                    <?= DateTimePicker::widget([
+                    <?= $form->field($model, 'checkin')->widget(DateTimePicker::className(),[
                         'name' => 'check_in',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
                         'options' => [
@@ -100,7 +100,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 <div class="live">
                     <!--<input class="form-control" name="checkout" placeholder="Select" type="text" required
                            autofocus/><span class="glyphicon glyphicon-calendar"></span>-->
-                    <?= DateTimePicker::widget([
+                    <?= $form->field($model, 'checkout')->widget(DateTimePicker::className(),[
                         'name' => 'check_out',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
                         'options' => [
@@ -134,7 +134,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                                     }
                                 );
                             ',
-                    ])->label(false);
+                    ]);
                     ?>
                 </div>
                 <div class="apartment">
@@ -152,7 +152,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                                     'options' => [1 => ['selected ' => true]],
 //                                    'class' => 'form-control medium-width'
                                 ]
-                            )->label(false);
+                            );
                             ?>
                         </li>
                         <li class="textapar">Floorplan <i>*</i></li>
@@ -174,37 +174,37 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                                     'options' => [22 => ['selected ' => true]],
 //                                    'class' => 'form-control medium-width'
                                 ]
-                            )->label(false) ?>
+                            ) ?>
                         </li>
                     </ul>
                 </div>
                 <div class="namephone">
 <!--                    <input class="form-control" name="" placeholder="Full name" type=""/>-->
-                    <?= $form->field($model, 'fullname')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'fullname')->textInput(['maxlength' => true])?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Phone number" type=""/>-->
-                    <?= $form->field($model, 'phone')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Email" type=""/>-->
-                    <?= $form->field($model, 'email')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Address" type=""/>-->
-                    <?= $form->field($model, 'address')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Passport No" type=""/>-->
-                    <?= $form->field($model, 'passport_no')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'passport_no')->textInput(['maxlength' => true])?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Nationality" type=""/>-->
-                    <?= $form->field($model, 'nationality')->textInput(['maxlength' => true])->label(false) ?>
+                    <?= $form->field($model, 'nationality')->textInput(['maxlength' => true]) ?>
                 </div>
                 <div class="deafall">
 <!--                    <textarea class="form-control" name="" placeholder="Text here" cols="" rows="5"></textarea>-->
-                    <?= $form->field($model, 'info')->textarea(['maxlength' => true, 'rows' => '4'])->label(false) ?>
+                    <?= $form->field($model, 'info')->textarea(['maxlength' => true, 'rows' => '4'])?>
                 </div>
                 <div class="btnsubmit">
 <!--                    <button class="btn btn-lg btn_primary btn-block" type="submit">-->

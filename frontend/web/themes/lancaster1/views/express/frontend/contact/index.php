@@ -78,8 +78,6 @@ if(Yii::$app->getSession()->hasFlash('reSent')) {
                 <li class="litextright"><b>0903 090 909</b></li>
             </ul>
         </div>
-    </div>
-    <div class="row main_row">
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 blockitem">
             <span class="iconcontact"></span>
             <p>Lancaster Legacy</p>
@@ -112,6 +110,9 @@ if(Yii::$app->getSession()->hasFlash('reSent')) {
                 <li class="litextright"><b>0903 090 909</b></li>
             </ul>
         </div>
+    </div>
+    <div class="row main_row">
+
 
         <?php
         $model = new \vsoft\express\models\LcContact();
