@@ -1,9 +1,9 @@
 <?php
-
 /* @var $this \yii\web\View */
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -44,9 +44,9 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
             <ul class="nav navbar-nav">
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>" class="active"><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news')?>"><?=\Yii::t('express/news', 'News');?></a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact')?>"><?=\Yii::t('express/contact', 'Contact');?></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
                 <li><a>|</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
@@ -54,7 +54,7 @@ AppAsset::register($this);
             <div class="text_pagecontent"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"> <i class="glyphicon glyphicon-menu-down"></i></div>
             <ul class="nav navbar-nav navbar-right">
                 <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
-                <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
+                <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking/index')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
