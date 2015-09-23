@@ -44,7 +44,7 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>"><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about')?>" class="active"><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/news')?>"><?=\Yii::t('express/news', 'News');?></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact')?>"><?=\Yii::t('express/contact', 'Contact');?></a></li>
                 <li><a>|</a></li>
