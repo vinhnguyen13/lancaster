@@ -40,7 +40,7 @@ class LcContact extends LcContactBase
     public function beforeSave($insert)
     {
         $at = new Expression('NOW()');
-        if ($this->isNewRecord || empty($this->created_at)) {
+        if ($this->isNewRecord || empty($this->created_at)  || $this->created_at < 1) {
             $this->created_at = $at;
             $this->created_by = Yii::$app->user->id;
         }

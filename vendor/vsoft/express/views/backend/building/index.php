@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'fax',
             'email:email',
             'hotline',
-//            'description',
+            'description',
 //            'created_at',
 //            'updated_at',
 //            'created_by',

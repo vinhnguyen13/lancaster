@@ -29,14 +29,6 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'created_at')->hiddenInput(['value'=> time()])->label(false) ?>
-
-    <?= $form->field($model, 'updated_at')->hiddenInput(['value'=> time()])->label(false) ?>
-
-    <?= $form->field($model, 'created_by')->hiddenInput(['value'=> Yii::$app->user->getId()])->label(false) ?>
-
-    <?= $form->field($model, 'updated_by')->hiddenInput(['value'=> Yii::$app->user->getId()])->label(false) ?>
-
     <?= $form->field($model, 'isbooking')->checkbox(); ?>
 
     <div class="form-group">

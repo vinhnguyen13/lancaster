@@ -4,6 +4,7 @@ namespace vsoft\express\models;
 
 use vsoft\express\models\base\LcBuildingBase;
 use Yii;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "lc_building".
@@ -34,7 +35,19 @@ class LcBuilding extends LcBuildingBase
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(),
-            [ 'isbooking' => 'Booking' ]);
+            ['isbooking' => 'Booking']);
+    }
+
+    public function beforeSave($insert)
+    {
+        $at = new Expression('NOW()');
+        if ($this->isNewRecord || empty($this->created_at) || $this->created_at < 1) {
+            $this->created_at = $at;
+            $this->created_by = Yii::$app->user->id;
+        }
+        $this->updated_at = $at;
+        $this->updated_by = Yii::$app->user->id;
+        return parent::beforeSave($insert);
     }
 
 }
