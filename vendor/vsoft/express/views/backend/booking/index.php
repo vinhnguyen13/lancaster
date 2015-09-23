@@ -2,6 +2,7 @@
 
 use yii\grid\GridView;
 use yii\helpers\Html;
+use vsoft\express\models\LcBuilding;
 
 /* @var $this yii\web\View */
 /* @var $searchModel vsoft\express\models\LcBookingSearch */
@@ -32,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Building',
                 'attribute' => 'lc_building_id',
-                'value' => function ($model) {
-                    if ($model->getLcBuilding()) {
-                        $name = $model->getLcBuilding()->building_name;
+                'value' => function ($data) {
+                    if ($data->getLcBuilding()) {
+                        $name = $data->getLcBuilding()->building_name;
                         return $name;
                     }
                     return '';

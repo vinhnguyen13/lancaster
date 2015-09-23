@@ -1,7 +1,7 @@
 <?php
 
 namespace vsoft\express\models\base;
-
+use vsoft\express\models\LcBuilding;
 use Yii;
 
 /**
@@ -95,6 +95,7 @@ class LcBookingBase extends \yii\db\ActiveRecord
      */
     public function getLcBuilding()
     {
-        return $this->hasOne(LcBuilding::className(), ['id' => 'lc_building_id']);
+        return LcBuilding::findOne($this->lc_building_id);
+//        return $this->hasOne(LcBuilding::className(), ['id' => 'lc_building_id']);
     }
 }

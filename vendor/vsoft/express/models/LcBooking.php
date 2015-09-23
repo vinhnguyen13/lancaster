@@ -48,10 +48,10 @@ class LcBooking extends LcBookingBase
             ]);
     }
 
-    public function getLcBuildingName()
-    {
-        return $this->lcBuilding->building_name;
-    }
+//    public function getLcBuildingName()
+//    {
+//        return $this->lcBuilding->building_name;
+//    }
 
     public function attributeLabels()
     {
