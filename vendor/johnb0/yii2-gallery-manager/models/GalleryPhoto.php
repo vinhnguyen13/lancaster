@@ -66,14 +66,14 @@ class GalleryPhoto extends ActiveRecord
         return [
             'id' => 'ID',
             'gallery_id' => 'Gallery ID',
-            'name' => 'Имя',
-            'description' => 'Описание',
-            'filename' => 'Имя файла',
-            'sort' => 'Сортировка',
-            'type' => 'Тип',
-            'size' => 'Размер',
-            'thumbs' => 'Превью',
-            'dirname' => 'dirname',
+            'name' => 'Name',
+            'description' => 'Description',
+            'filename' => 'Filename',
+            'sort' => 'Sort',
+            'type' => 'Type',
+            'size' => 'Size',
+            'thumbs' => 'Thumbs',
+            'dirname' => 'Dirname',
             'alt' => 'Alt',
         ];
     }

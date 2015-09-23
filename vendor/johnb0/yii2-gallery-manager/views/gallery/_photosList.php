@@ -49,12 +49,19 @@ use newerton\fancybox\FancyBox;
                     <?= Html::a(Html::img($photo->getThumbUrl('small')), $photo->url, ['rel' => 'fancybox']); ?>                   
                 </p>
                 <p class="text-center">
+                    <?= Html::button('<i class="glyphicon glyphicon-edit"></i> Edit',
+                            [
+                                'class' => 'btn btn-danger btn-xs gallery-photo-edit',
+                                'data-id' => $photo->id,
+                                'data-url' => yii\helpers\Url::toRoute(['gallery-photo/edit-photo-info', 'id' => $photo->id])
+                            ]); 
+                    ?>
                     <?= Html::button('<i class="glyphicon glyphicon-trash"></i> Remove',
                             [
-                                'class' => 'btn btn-danger btn-xs gallery-photo-delete', 
+                                'class' => 'btn btn-danger btn-xs gallery-photo-delete',
                                 'data-url' => yii\helpers\Url::toRoute(['gallery-photo/delete', 'id' => $photo->id])
-                            ]); 
-                    ?>                                
+                            ]);
+                    ?>
                 </p>
             </li>
             <?php endforeach; ?>
@@ -63,3 +70,36 @@ use newerton\fancybox\FancyBox;
         <p><i>No images</i></p>
     <?php endif; ?>
 </div>
+
+<!--Popup Edit photo info-->
+<?php yii\bootstrap\Modal::begin([
+    'headerOptions' => ['id' => 'modalHeader'],
+    'header' => '<h2 class="titleHeader">Edit Photo</h2>',
+    'id' => 'loginModal',
+    'size' => 'modal-lg',
+    //keeps from closing modal with esc key or by clicking out of the modal.
+    // user must click cancel or X to close
+    'clientOptions' => [],
+    'options' => ['aria-labelledby'=>'loginLabel', 'aria-hidden'=>'true', 'backdrop' => 'static', 'keyboard' => 'false']
+]);?>
+<?php yii\bootstrap\Modal::end();?>
+<?php
+$this->registerJs('
+    (function($) {
+        $(".gallery-photo-edit").click(function () {
+            var pid = $(this).data("id");
+            $.ajax({
+                url: $(this).data("url"),
+                success: (function(data) {
+                    $("#loginModal").find(".modal-body").html(data);
+                    $("#loginModal").find(".titleHeader").html("Edit Photo: " + pid);
+                    $("#loginModal").modal("show");
+                }),
+                dataType: "html"
+            });
+
+        });
+    })(jQuery);
+');
+?>
+<!--Popup Edit photo info-->

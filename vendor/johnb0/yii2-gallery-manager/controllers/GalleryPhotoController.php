@@ -65,4 +65,20 @@ class GalleryPhotoController extends \yii\web\Controller
         return ['success' => 'true'];
     }
 
+    public function actionEditPhotoInfo($id)
+    {
+        Yii::$app->response->format = Response::FORMAT_HTML;
+        $model = GalleryPhoto::findOne($id);
+        if(Yii::$app->request->isAjax && Yii::$app->request->post()){
+            $model->load(Yii::$app->request->post());
+            $model->validate();
+            if(!$model->hasErrors()){
+                $model->save();
+            }
+        }
+        return $this->renderAjax('/gallery/_editPhotoInfo', [
+            'model' => $model
+        ]);
+    }
+
 }
