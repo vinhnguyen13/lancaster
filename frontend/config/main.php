@@ -10,6 +10,7 @@ $baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 return [
     'id' => 'app-frontend',
     'name'=>'Lancaster',
+    'language'=>'vi-VN',
     'basePath' => dirname(__DIR__),
     'aliases' => array(
 //        'webvimark' => dirname(dirname(__DIR__)) . '/vendor/webvimark'
