@@ -21,7 +21,7 @@ use vsoft\express\models\LcBuilding;
                     <p class="linetext" data-toggle="collapse" data-parent="#accordion"
                        href="#collapse<?= $i ?>"><?= $building->building_name ?></p>
 
-                    <div id="collapse<?= $i ?>" class="panel-collapse collapse in">
+                    <div id="collapse<?= $i ?>" class="panel-collapse collapse <?= $i==1 ? 'in' : '' ?>">
                         <div class="panel-body">
                             <ul class="lineone">
                                 <li>Address<br>
