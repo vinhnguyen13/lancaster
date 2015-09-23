@@ -70,10 +70,13 @@ class LcBooking extends LcBookingBase
         $at = new Expression('NOW()');
         if ($this->isNewRecord || empty($this->created_at) || $this->created_at < 1) {
             $this->created_at = $at;
-            $this->created_by = Yii::$app->user->id;
+//            $this->created_by = Yii::$app->user->id;
         }
+        $this->checkin = date("Y-m-d H:i:s", strtotime($this->checkin));
+        $this->checkout = date("Y-m-d H:i:s", strtotime($this->checkout));
+
         $this->updated_at = $at;
-        $this->updated_by = Yii::$app->user->id;
+//        $this->updated_by = Yii::$app->user->id;
 
         $this->ip = Yii::$app->request->userIP;
         $this->agent = Yii::$app->request->userAgent;

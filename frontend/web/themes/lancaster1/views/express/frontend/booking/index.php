@@ -75,11 +75,11 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                             'autoclose' => true,
                             'format' => 'dd MM yyyy HH:ii P',
 //                            'pickerPosition' => 'bottom-left',
-                            'linkField' =>  Html::getInputId($model, 'checkin'),
-                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
+//                            'linkField' =>  Html::getInputId($model, 'checkin'),
+//                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
                     ]) ?>
-                    <?= $form->field($model, 'checkin')->hiddenInput()->label(false) ?>
+
                 </div>
                 <div class="live">
                     <!--<input class="form-control" name="checkout" placeholder="Select" type="text" required
@@ -97,11 +97,11 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                             'autoclose' => true,
                             'format' => 'dd MM yyyy HH:ii P',
 //                            'pickerPosition' => 'bottom-left',
-                            'linkField' =>  Html::getInputId($model, 'checkout'),
-                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
+//                            'linkField' =>  Html::getInputId($model, 'checkout'),
+//                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
                     ])?>
-                    <?= $form->field($model, 'checkout')->hiddenInput()->label(false) ?>
+
                 </div>
                 <div class="live">
                     <!--<select class="form-control">
@@ -124,11 +124,6 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 <div class="apartment">
                     
                         <div class="inputapert">
-                            <!--<select class="form-control">
-                                <option value="1">1-Bed</option>
-                                <option value="2">2-Bed</option>
-                                <option value="3">3-Bed</option>
-                            </select>-->
                             <?php
                             echo $form->field($model, 'apart_type')->dropDownList(
                                 [ '1' => '1-Bed', '2' => '2-Bed',  '3' => '3-Bed' ],
@@ -139,11 +134,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                             );
                             ?>
                         </div>
-                        <div class="textapar">Floorplan <i>*</i></div>
                         <div class="inputapert">
-                            <!--<select class="form-control">
-                                <option value="Year">22</option>
-                            </select>-->
                             <?php
                             $floorNum = [];
                             foreach($buildings as $building){
