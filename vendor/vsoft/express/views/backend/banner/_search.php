@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'height') ?>
 
-    <?php // echo $form->field($model, 'width') ?>
+    <?= $form->field($model, 'width') ?>
 
     <?php // echo $form->field($model, 'created_at') ?>
 

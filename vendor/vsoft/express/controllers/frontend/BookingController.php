@@ -59,20 +59,10 @@ class BookingController extends Controller
 
     public function actionBookingHotel()
     {
-//        $request = Yii::$app->request;
-
-//        $booking->load(Yii::$app->request->post());
-//        echo "<pre>";
-//        print_r($booking->attributes);
-////        print_r($request->getBodyParam('agent'));
-//        print_r($request->post());
-//        echo "<pre>";
-//        exit();
-//
-
         $booking = new LcBooking();
 
         if($booking->load(Yii::$app->request->post()) && $booking->save()){
+            Yii::$app->getSession()->setFlash('reSuccess', 'Create booking successfully.');
             return $this->redirect(['/booking']);
         }
         else

@@ -6,6 +6,7 @@ $this->title = Yii::t('booking', 'Booking');
  * Date: 9/18/2015 11:16 AM
  */
 use kartik\datetime\DateTimePicker;
+use yii\bootstrap\Modal;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -20,8 +21,26 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 href="<?= \yii\helpers\Url::home() ?>">Back to Lancaster Legacy</a></span>
 
         <h1>booking</h1>
+        <?php
+        if(Yii::$app->getSession()->hasFlash('reSuccess')) {
+            \yii\bootstrap\Alert::begin([
+                'options' => [
+                    'class' => 'alert alert-success',
+                ],
+            ]);
 
+            echo Yii::$app->getSession()->getFlash('reSuccess');
+
+            \yii\bootstrap\Alert::end();
+        }
+        ?>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mainbooking">
+            <div class="btnpic">
+                <a href="http://www.be3.com/asia/vietnam/ho_chi_minh_city/lancaster_saigon_serviced_apartments_le_thanh_ton.html?cur=USD&setcookienew=1">
+                    <button class="btnclick" type="submit">Click here <span class="glyphicon glyphicon-play-circle"></span>
+                    </button>
+                </a>
+            </div>
             <div class="btnpic">
                 <a href="http://www.be3.com/asia/vietnam/ho_chi_minh_city/lancaster_saigon_serviced_apartments_le_thanh_ton.html?cur=USD&setcookienew=1">
                     <button class="btnclick" type="submit">Click here <span class="glyphicon glyphicon-play-circle"></span>
@@ -32,7 +51,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
             <?php
             $model = new \vsoft\express\models\LcBooking();
             $form = \yii\widgets\ActiveForm::begin([
-                'id' => 'booking-form',
+                'id' => 'create-booking-form',
                 'action' => Url::toRoute('/express/booking/booking-hotel'),
                 'options' => [
                     'class' => 'form',
@@ -59,7 +78,6 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
             </div>
             <div class="rormright">
                 <div class="live">
-                    <?= $form->field($model, 'checkin')->hiddenInput()->label(false) ?>
                     <?= DateTimePicker::widget([
                         'name' => 'check_in',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
@@ -71,17 +89,17 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd M yyyy hh:ii',
+                            'format' => 'dd MM yyyy HH:ii P',
 //                            'pickerPosition' => 'bottom-left',
                             'linkField' =>  Html::getInputId($model, 'checkin'),
                             'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
                     ]) ?>
+                    <?= $form->field($model, 'checkin')->hiddenInput()->label(false) ?>
                 </div>
                 <div class="live">
                     <!--<input class="form-control" name="checkout" placeholder="Select" type="text" required
                            autofocus/><span class="glyphicon glyphicon-calendar"></span>-->
-                    <?= $form->field($model, 'checkout')->hiddenInput()->label(false) ?>
                     <?= DateTimePicker::widget([
                         'name' => 'check_out',
                         'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
@@ -93,12 +111,13 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd M yyyy hh:ii',
+                            'format' => 'dd MM yyyy HH:ii P',
 //                            'pickerPosition' => 'bottom-left',
                             'linkField' =>  Html::getInputId($model, 'checkout'),
                             'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
                         ],
                     ])?>
+                    <?= $form->field($model, 'checkout')->hiddenInput()->label(false) ?>
                 </div>
                 <div class="live">
                     <!--<select class="form-control">
@@ -106,7 +125,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                     </select>-->
                     <?php
                     $buildings = \vsoft\express\models\LcBuilding::find()->all();
-                    $listData = ArrayHelper::map($buildings, 'lc_building_id', 'building_name');
+                    $listData = ArrayHelper::map($buildings, 'id', 'building_name');
                     echo $form->field($model, 'lc_building_id')->dropDownList($listData, [
                         'onchange' => '
                                 $.get( "' . Url::toRoute('/express/booking/view-floor-by-building') . '", { id: $(this).val() } )
@@ -214,4 +233,5 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 <script src="<?= Yii::$app->view->theme->baseUrl ?>/js/bootstrap.js"></script>
 <script src="<?= Yii::$app->view->theme->baseUrl ?>/js/holder.htm"></script>
 <script src="<?= Yii::$app->view->theme->baseUrl ?>/js/ie10-viewport-bug-workaround.js"></script>
+
 

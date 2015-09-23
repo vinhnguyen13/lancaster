@@ -7,10 +7,11 @@ use Yii;
 /**
  * This is the model class for table "lc_banner".
  *
- * @property integer $lc_banner_id
+ * @property integer $id
  * @property string $name
  * @property string $description
  * @property string $url
+ * @property string $ad_link
  * @property integer $height
  * @property integer $width
  * @property string $created_at
@@ -38,7 +39,7 @@ class LcBannerBase extends \yii\db\ActiveRecord
             [['created_at', 'updated_at'], 'safe'],
             [['name'], 'string', 'max' => 60],
             [['description'], 'string', 'max' => 255],
-            [['url'], 'string', 'max' => 500]
+            [['url', 'ad_link'], 'string', 'max' => 500]
         ];
     }
 
@@ -48,16 +49,17 @@ class LcBannerBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'lc_banner_id' => 'Lc Banner ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'url' => 'Url',
-            'height' => 'Height',
-            'width' => 'Width',
-            'created_at' => 'Created At',
-            'created_by' => 'Created By',
-            'updated_at' => 'Updated At',
-            'updated_by' => 'Updated By',
+            'id' => Yii::t('building', 'ID'),
+            'name' => Yii::t('building', 'Name'),
+            'description' => Yii::t('building', 'Description'),
+            'url' => Yii::t('building', 'Url'),
+            'ad_link' => Yii::t('building', 'Ad Link'),
+            'height' => Yii::t('building', 'Height'),
+            'width' => Yii::t('building', 'Width'),
+            'created_at' => Yii::t('building', 'Created At'),
+            'created_by' => Yii::t('building', 'Created By'),
+            'updated_at' => Yii::t('building', 'Updated At'),
+            'updated_by' => Yii::t('building', 'Updated By'),
         ];
     }
 }

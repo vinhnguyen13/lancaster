@@ -1,13 +1,15 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use vsoft\express\models\LcBuilding;
 
 /* @var $this yii\web\View */
 /* @var $searchModel vsoft\express\models\LcBookingSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lc Bookings';
+$this->title = 'Bookings';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-booking-index">
@@ -25,14 +27,30 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'lc_booking_id',
-            'lc_building_id',
+//            [
+//                'attribute' => 'lc_building',
+//                'value' => 'lc_building.building_name'
+//            ],
+            [
+                'attribute' => 'building',
+                'value' => function ($model) {
+                    echo "<pre>";
+                    print_r($model);
+                    echo "<pre>";
+                    exit();
+//                    if($model->getLcBuilding()){
+//                        $name = $model->getLcBuilding()->building_name;
+//                        return $name;
+//                    }
+                    return '';
+                },
+            ],
             'checkin',
             'checkout',
-            'apart_type',
-            // 'floorplan',
-            // 'fullname',
-            // 'phone',
+//            'apart_type',
+             'floorplan',
+             'fullname',
+             'phone',
             // 'email:email',
             // 'address',
             // 'passport_no',
@@ -44,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'browser_name',
             // 'browser_version',
             // 'platform',
-            // 'created_at',
+             'created_at:datetime',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

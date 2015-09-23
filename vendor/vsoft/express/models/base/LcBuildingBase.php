@@ -2,12 +2,13 @@
 
 namespace vsoft\express\models\base;
 
+use vsoft\express\models\LcBooking;
 use Yii;
 
 /**
  * This is the model class for table "lc_building".
  *
- * @property integer $lc_building_id
+ * @property integer $id
  * @property string $building_name
  * @property string $address
  * @property string $phone
@@ -20,6 +21,7 @@ use Yii;
  * @property integer $created_by
  * @property integer $updated_by
  * @property integer $isbooking
+ * @property integer $floor
  *
  * @property LcBooking[] $lcBookings
  */
@@ -41,7 +43,7 @@ class LcBuildingBase extends \yii\db\ActiveRecord
         return [
             [['building_name'], 'required'],
             [['created_at', 'updated_at'], 'safe'],
-            [['created_by', 'updated_by', 'isbooking'], 'integer'],
+            [['created_by', 'updated_by', 'isbooking', 'floor'], 'integer'],
             [['building_name', 'email'], 'string', 'max' => 60],
             [['address', 'description'], 'string', 'max' => 255],
             [['phone', 'fax', 'hotline'], 'string', 'max' => 20]
@@ -54,9 +56,8 @@ class LcBuildingBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'lc_building_id' => Yii::t('building', 'Lc Building ID'),
+            'id' => Yii::t('building', 'ID'),
             'building_name' => Yii::t('building', 'Building Name'),
-            'floor' => Yii::t('building', 'Floor'),
             'address' => Yii::t('building', 'Address'),
             'phone' => Yii::t('building', 'Phone'),
             'fax' => Yii::t('building', 'Fax'),
@@ -68,6 +69,7 @@ class LcBuildingBase extends \yii\db\ActiveRecord
             'created_by' => Yii::t('building', 'Created By'),
             'updated_by' => Yii::t('building', 'Updated By'),
             'isbooking' => Yii::t('building', 'Isbooking'),
+            'floor' => Yii::t('building', 'Floor'),
         ];
     }
 
@@ -76,6 +78,6 @@ class LcBuildingBase extends \yii\db\ActiveRecord
      */
     public function getLcBookings()
     {
-        return $this->hasMany(LcBooking::className(), ['lc_building_id' => 'lc_building_id']);
+        return $this->hasMany(LcBooking::className(), ['lc_building_id' => 'id']);
     }
 }

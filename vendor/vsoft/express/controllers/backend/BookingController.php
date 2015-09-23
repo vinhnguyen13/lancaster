@@ -5,6 +5,8 @@ namespace vsoft\express\controllers\backend;
 use Yii;
 use vsoft\express\models\LcBooking;
 use vsoft\express\models\LcBookingSearch;
+use yii\db\ActiveRecord;
+use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -37,6 +39,15 @@ class BookingController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
+
         ];
     }
 

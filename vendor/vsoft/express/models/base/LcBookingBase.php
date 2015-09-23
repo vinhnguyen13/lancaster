@@ -2,12 +2,13 @@
 
 namespace vsoft\express\models\base;
 
+use vsoft\express\models\LcBuilding;
 use Yii;
 
 /**
  * This is the model class for table "lc_booking".
  *
- * @property integer $lc_booking_id
+ * @property integer $id
  * @property integer $lc_building_id
  * @property string $checkin
  * @property string $checkout
@@ -65,26 +66,26 @@ class LcBookingBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'lc_booking_id' => 'Lc Booking ID',
-            'lc_building_id' => 'Lc Building ID',
-            'checkin' => 'Checkin',
-            'checkout' => 'Checkout',
-            'apart_type' => 'Apart Type',
-            'floorplan' => 'Floorplan',
-            'fullname' => 'Fullname',
-            'phone' => 'Phone',
-            'email' => 'Email',
-            'address' => 'Address',
-            'passport_no' => 'Passport No',
-            'nationality' => 'Nationality',
-            'info' => 'Info',
-            'ip' => 'Ip',
-            'agent' => 'Agent',
-            'browser_type' => 'Browser Type',
-            'browser_name' => 'Browser Name',
-            'browser_version' => 'Browser Version',
-            'platform' => 'Platform',
-            'created_at' => 'Created At',
+            'id' => Yii::t('building', 'ID'),
+            'lc_building_id' => Yii::t('building', 'Lc Building ID'),
+            'checkin' => Yii::t('building', 'Checkin'),
+            'checkout' => Yii::t('building', 'Checkout'),
+            'apart_type' => Yii::t('building', 'Apart Type'),
+            'floorplan' => Yii::t('building', 'Floorplan'),
+            'fullname' => Yii::t('building', 'Fullname'),
+            'phone' => Yii::t('building', 'Phone'),
+            'email' => Yii::t('building', 'Email'),
+            'address' => Yii::t('building', 'Address'),
+            'passport_no' => Yii::t('building', 'Passport No'),
+            'nationality' => Yii::t('building', 'Nationality'),
+            'info' => Yii::t('building', 'Info'),
+            'ip' => Yii::t('building', 'Ip'),
+            'agent' => Yii::t('building', 'Agent'),
+            'browser_type' => Yii::t('building', 'Browser Type'),
+            'browser_name' => Yii::t('building', 'Browser Name'),
+            'browser_version' => Yii::t('building', 'Browser Version'),
+            'platform' => Yii::t('building', 'Platform'),
+            'created_at' => Yii::t('building', 'Created At'),
         ];
     }
 
@@ -93,6 +94,6 @@ class LcBookingBase extends \yii\db\ActiveRecord
      */
     public function getLcBuilding()
     {
-        return $this->hasOne(LcBuilding::className(), ['lc_building_id' => 'lc_building_id']);
+        return $this->hasOne(LcBuilding::className(), ['id' => 'lc_building_id']);
     }
 }

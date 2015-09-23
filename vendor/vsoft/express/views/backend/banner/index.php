@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel vsoft\express\models\LcBannerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lc Banners';
+$this->title = 'Banners';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-banner-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lc Banner', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Banner', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description',
             'url:url',
             'height',
-            // 'width',
+            'width',
             // 'created_at',
             // 'created_by',
             // 'updated_at',

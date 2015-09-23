@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "lc_contact".
  *
- * @property integer $lc_contact_id
+ * @property integer $id
  * @property string $name
  * @property string $address
  * @property string $title
@@ -53,18 +53,18 @@ class LcContactBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'lc_contact_id' => 'Lc Contact ID',
-            'name' => 'Name',
-            'address' => 'Address',
-            'title' => 'Title',
-            'message' => 'Message',
-            'ip' => 'Ip',
-            'agent' => 'Agent',
-            'browser_type' => 'Browser Type',
-            'browser_name' => 'Browser Name',
-            'browser_version' => 'Browser Version',
-            'platform' => 'Platform',
-            'created_at' => 'Created At',
+            'id' => Yii::t('building', 'ID'),
+            'name' => Yii::t('building', 'Name'),
+            'address' => Yii::t('building', 'Address'),
+            'title' => Yii::t('building', 'Title'),
+            'message' => Yii::t('building', 'Message'),
+            'ip' => Yii::t('building', 'Ip'),
+            'agent' => Yii::t('building', 'Agent'),
+            'browser_type' => Yii::t('building', 'Browser Type'),
+            'browser_name' => Yii::t('building', 'Browser Name'),
+            'browser_version' => Yii::t('building', 'Browser Version'),
+            'platform' => Yii::t('building', 'Platform'),
+            'created_at' => Yii::t('building', 'Created At'),
         ];
     }
 }

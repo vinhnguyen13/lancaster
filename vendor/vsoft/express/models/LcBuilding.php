@@ -8,7 +8,7 @@ use Yii;
 /**
  * This is the model class for table "lc_building".
  *
- * @property integer $lc_building_id
+ * @property integer $id
  * @property string $building_name
  * @property string $address
  * @property string $phone
@@ -33,20 +33,8 @@ class LcBuilding extends LcBuildingBase
     // Modify Label
     public function attributeLabels()
     {
-        return [
-//            'lc_building_id' => 'Lc Building ID',
-//            'building_name' => 'Building Name',
-//            'address' => 'Address',
-//            'phone' => 'Phone',
-//            'fax' => 'Fax',
-//            'email' => 'Email',
-//            'hotline' => 'Hotline',
-//            'description' => 'Description',
-//            'created_at' => 'Created At',
-//            'updated_at' => 'Updated At',
-//            'created_by' => 'Created By',
-//            'updated_by' => 'Updated By',
-            'isbooking' => 'Booking',
-        ];
+        return array_merge(parent::attributeLabels(),
+            [ 'isbooking' => 'Booking' ]);
     }
+
 }

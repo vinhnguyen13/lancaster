@@ -8,7 +8,7 @@ use Yii;
 /**
  * This is the model class for table "lc_booking".
  *
- * @property integer $lc_booking_id
+ * @property integer $id
  * @property integer $lc_building_id
  * @property string $checkin
  * @property string $checkout
@@ -42,7 +42,10 @@ class LcBooking extends LcBookingBase
             parent::rules(),
             [
                 [['phone', 'fullname', 'email'], 'required'],
-                [['email'], 'email']
+                [['email'], 'email'],
+//                [['checkin'], 'compare', 'compareAttribute'=>'checkout', 'operator'=>'<', 'skipOnEmpty'=>true],
+                [['checkout'], 'compare', 'compareAttribute'=>'checkin', 'operator'=>'>'],
             ]);
     }
+
 }

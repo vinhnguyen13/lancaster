@@ -34,10 +34,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'url:url',
             'height',
             'width',
-            'created_at',
-            'created_by',
-            'updated_at',
-            'updated_by',
+//            'created_at',
+//            'created_by',
+//            'updated_at',
+//            'updated_by',
         ],
     ]) ?>
 

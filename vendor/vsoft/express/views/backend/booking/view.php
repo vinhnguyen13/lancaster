@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'browser_name',
             'browser_version',
             'platform',
-            'created_at',
+//            'created_at',
         ],
     ]) ?>
 

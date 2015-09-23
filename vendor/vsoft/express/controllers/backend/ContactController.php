@@ -7,6 +7,8 @@ use vsoft\express\models\LcContactSearch;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\db\ActiveRecord;
+use yii\db\Expression;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -37,6 +39,15 @@ class ContactController extends Controller
                     'delete' => ['post'],
                 ],
             ],
+            'timestamp' => [
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                    ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+                'value' => new Expression('NOW()'),
+            ],
+
         ];
     }
 
