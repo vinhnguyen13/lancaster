@@ -13,10 +13,10 @@
         <!-- Indicators -->
         <div class="ckeckitem">
             <ul>
-                <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Living room</li>
-                <li data-target="#myCarousel" data-slide-to="1">Kitchen</li>
-                <li data-target="#myCarousel" data-slide-to="2">Bathroom</li>
-                <li data-target="#myCarousel" data-slide-to="3">Bedroom</li>
+                <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Swimming Pool</li>
+                <li data-target="#myCarousel" data-slide-to="1">Fitness Center</li>
+                <li data-target="#myCarousel" data-slide-to="2">Healthy Care</li>
+                <li data-target="#myCarousel" data-slide-to="3">Skybar</li>
             </ul>
         </div>
         <ol class="carousel-indicators">
