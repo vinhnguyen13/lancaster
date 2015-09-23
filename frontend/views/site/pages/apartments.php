@@ -5,22 +5,10 @@
  * Date: 9/23/2015
  * Time: 2:10 PM
  */
+use yii\web\View;
+Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources/js/function.js', ['position'=>View::POS_END]);
 ?>
 <div class="container-fluid layoutapartments">
-    <!---
-    <div class="row main_content">
-      <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/02.png">
-    </div>
-    <div class="bannerblock">
-      <ul>
-        <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logo_01.png"></li>
-        <li class="title">Lancaster Legacy offers you a sweeping panoramic view of the city skyline </li>
-        <li>Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.</li>
-      </ul>
-    </div>
-    -->
-    <!-- Carousel
-    ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <div class="ckeckitem">
