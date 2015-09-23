@@ -5,38 +5,46 @@
  * Date: 9/23/2015
  * Time: 2:14 PM
  */
+use vsoft\express\models\LcBuilding;
+
 ?>
 <div class="container layoutlocation">
     <div class="row main_content">
+        <!-- Info -->
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 locationleft">
-            <p class="linetext">Lancaster Legacy</p>
-            <ul class="lineone">
-                <li>Address<br>
-                    78 Ton That Thuyet St, 16 Ward,<br>
-                    Dist 4, HCMC, Vietnam<br><br>
-                </li>
-                <li>Phone<br>
-                    + 84 8 3 8246810<br><br></li>
-                <li>Fax<br>
-                    + 84 8 3 8298163.<br><br> </li>
-                <li>Email<br>
-                    sales@trungthuygroup.vn<br><br></li>
-                <li><b>Hotline<br>
-                        0903 090 909</b></li>
-            </ul>
-            <p class="linetext2">Lancaster Le Thanh Ton</p>
-            <ul class="lineone2">
-                <li>View Address <i class="glyphicon glyphicon-menu-down"></i></li>
-            </ul>
-            <p class="linetext2">Lancaster Nguyen Trai </p>
-            <ul class="lineone2">
-                <li>View Address <i class="glyphicon glyphicon-menu-down"></i></li>
-            </ul>
-            <p class="linetext2">Lancaster Hanoi</p>
-            <ul class="lineone2">
-                <li>View Address <i class="glyphicon glyphicon-menu-down"></i></li>
-            </ul>
+            <div class="panel-group" id="accordion">
+                <?php
+                $buildings = LcBuilding::find()->all();
+                $i = 1;
+                foreach ($buildings as $building) {
+                    ?>
+                    <p class="linetext" data-toggle="collapse" data-parent="#accordion"
+                       href="#collapse<?= $i ?>"><?= $building->building_name ?></p>
+
+                    <div id="collapse<?= $i ?>" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul class="lineone">
+                                <li>Address<br>
+                                    <?= $building->address ?><br>
+                                </li>
+                                <li>Phone<br>
+                                    <?= $building->phone ?><br></li>
+                                <li>Fax<br>
+                                    <?= $building->fax ?><br></li>
+                                <li>Email<br>
+                                    <?= $building->email ? $building->email : 'sales@trungthuygroup.vn' ?><br></li>
+                                <li><b>Hotline<br>
+                                        <?= $building->hotline ? $building->hotline : '0903 090 909' ?></b></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <?php
+                    $i = $i + 1;
+                } ?>
+            </div>
         </div>
+        <!-- Map -->
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 locationright">
             <div class="iconmap">
                 <span class="facebook"></span>
@@ -44,9 +52,10 @@
                 <span class="images"></span>
             </div>
             <div class="map">
-                <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/map.png">
+                <img src="<?= Yii::$app->view->theme->baseUrl ?>/resources/IMG/map.png">
             </div>
         </div>
+
     </div>
 </div><!--end content-->
 <div class="container-fluid layoutlocation">
@@ -67,8 +76,11 @@
                 <li>News</li>
                 <li>Contact</li>
                 <li>Newsletter</li>
-                <li class="btnfooter"><button type="submit" class="btn-lg btn_primary btn-block">
-                        booknow</button></li>
+                <li class="btnfooter">
+                    <button type="submit" class="btn-lg btn_primary btn-block">
+                        booknow
+                    </button>
+                </li>
             </ul>
 
         </div>
