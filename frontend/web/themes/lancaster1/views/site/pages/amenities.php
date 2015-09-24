@@ -15,7 +15,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <div class="ckeckitem">
-            <ul>
+            <ul class="carousel-indicators">
                 <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Swimming Pool</li>
                 <li data-target="#myCarousel" data-slide-to="1">Fitness Center</li>
                 <li data-target="#myCarousel" data-slide-to="2">Healthy Care</li>
