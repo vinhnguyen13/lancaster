@@ -28,7 +28,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/01.png" alt="First slide">
+                <div class="imgcontent"><img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/01.png" alt="First slide"></div>
                 <div class="container">
                     <div class="carousel-caption">
                         <div class="viewbanner">
@@ -53,21 +53,21 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
                 </div>
             </div>
             <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/item01.png" alt="First slide">
+                <div class="imgcontent"><img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/item01.png" alt="First slide"></div>
                 <div class="container">
                     <div class="carousel-caption">
                     </div>
                 </div>
             </div>
             <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/03.png" alt="First slide">
+                <div class="imgcontent"><img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/03.png" alt="First slide"></div>
                 <div class="container">
                     <div class="carousel-caption">
                     </div>
                 </div>
             </div>
             <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/04.png" alt="First slide">
+                <div class="imgcontent"><img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/04.png" alt="First slide"></div>
                 <div class="container">
                     <div class="carousel-caption">
                     </div>

@@ -57,7 +57,7 @@
         </table>
         <div class="btn_booknow">
             <button class="btn btn-primary btn-lg" type="button" onclick="window.location='<?=\yii\helpers\Url::toRoute('/express/booking/index')?>'">booknow</button>
-            <span class="noticabold_italic"><i class="glyphicon glyphicon-earphone icon"></i>Call <b>0903 090 909 </b>for more infomation</span>
+            <span class="noticaitalic"><i class="glyphicon glyphicon-earphone icon"></i>Call <b>0903 090 909 </b>for more infomation</span>
         </div>
     </div>
 
