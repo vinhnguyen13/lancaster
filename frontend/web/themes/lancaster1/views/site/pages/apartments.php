@@ -53,7 +53,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
                 </div>
             </div>
             <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/02.png" alt="First slide">
+                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/item01.png" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
                     </div>
