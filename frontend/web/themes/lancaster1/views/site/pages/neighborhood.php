@@ -3,8 +3,21 @@
  * Created by PhpStorm.
  * User: vinhnguyen
  * Date: 9/23/2015
- * Time: 2:14 PM
+ * Time: 2:10 PM
  */
+use vsoft\express\models\LcHomeGallery;
+use yii\web\View;
+Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources/js/express.js', ['position'=>View::POS_BEGIN]);
+Yii::$app->getView()->registerJs('
+    (function($) {
+        Express.HomeToogleInfomation();
+        Express.cropResize();
+        $( window ).resize(function() {
+            Express.cropResize();
+        });
+        $( "body" ).css({overflow: "hidden"});
+    })(jQuery);
+', View::POS_END);
 ?>
 <div class="container-fluid layoutneighborhood">
     <!-- Carousel
@@ -12,71 +25,54 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <div class="ckeckitem">
-            <ul>
-                <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Restaurants</li>
-                <li data-target="#myCarousel" data-slide-to="1">Markets</li>
-                <li data-target="#myCarousel" data-slide-to="2">Shopping</li>
-                <li data-target="#myCarousel" data-slide-to="3">Entertainment</li>
-                <li data-target="#myCarousel" data-slide-to="3">Parks</li>
-            </ul>
+            <div class="livercenter">
+                <ul class="carousel-indicators">
+                    <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Living room</li>
+                    <li data-target="#myCarousel" data-slide-to="1"><span class="arrow-up"></span>Kitchen</li>
+                    <li data-target="#myCarousel" data-slide-to="2"><span class="arrow-up"></span>Bathroom</li>
+                    <li data-target="#myCarousel" data-slide-to="3"><span class="arrow-up"></span>Bedroom</li>
+                </ul>
+            </div>
         </div>
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-            <li class="" data-target="#myCarousel" data-slide-to="1"></li>
-            <li class="active" data-target="#myCarousel" data-slide-to="2"></li>
-            <li class="" data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/00.png" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <div class="lastblock">
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 colum01">
-                                <ul class="gaucho">
-                                    <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/imgnewcomlum01.png"></li>
-                                    <li class="title">El Gaucho</li>
-                                    <li class="bg_line">   Steakhouse<br>
-                                        74 Hai Ba Trung St, Ben Nghe Ward, Dist.1<br>
-                                        +84 8 3827 2090</li>
-                                </ul>
-                                <i class="boderbt"></i>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 colum02">
-                                <ul class="gaucho">
-                                    <li class="title">Le Jardin </li>
-                                    <li class="bg_line"> French Cuisine<br>
-                                        31 Thai Van Lung St, Ben Nghe Ward, Dist.1<br>
-                                        +84 8 3825 8465</li>
-                                    <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/imgnewcomlum02.png"></li>
-                                </ul>
-                                <i class="boderbt"></i>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 colum03">
-                                <ul class="gaucho">
-                                    <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/imgnewcomlum04.png"></li>
-                                    <li class="title">Red wine bar</li>
-                                    <li class="bg_line">  Wine & bar<br>
-                                        21, Nguyen Trung Ngan St, Ben Nghe Ward, Dist.1<br>
-                                        +84 8 3827 2090</li>
-                                </ul>
-                                <i class="boderbt"></i>
-                            </div>
-                            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 colum04">
-                                <ul class="gaucho">
-                                    <li class="title">Monocle
-                                    </li>
-                                    <li class="bg_line">Coffee shop<br>
-                                        31 Thai Van Lung St, Ben Nghe Ward, Dist.1<br>
-                                        +84 8 3825 8465</li>
-                                    <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/imgnewcomlum03.png"></li>
-                                </ul>
-                                <i class="boderbt"></i>
+            <?php
+            $slideHome = LcHomeGallery::find()->where(['code'=>'NEIGHBORHOOD'])->one();
+            if($slideHome->getGallery()->one()){
+                $photos = $slideHome->getGallery()->one()->getPhotos()->all();
+            }
+            if(!empty($photos)){
+                foreach($photos as $key=>$photo){
+                    ?>
+                    <div class="item<?=($key==0) ? ' active' : ''?>">
+                        <div class="imgcontent"><img class="first-slide" src="<?=$photo->getThumbUrl('original')?>" alt="First slide"></div>
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <div class="viewbanner">
+                                    <ul>
+                                        <li class="boleft"></li>
+                                        <li>Swimming Pool</li>
+                                        <li class="robotoitalic">Swimming Pool</li>
+                                        <li>Lancaster offers you a sweeping panoramic view of the city skyline from virtually every window.
+                                            Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.</li>
+                                        <li class="btn_hide">Hide<span class="glyphicon glyphicon-menu-up"></span></li>
+                                    </ul>
+                                </div>
+                                <div class="viewshow">
+                                    <ul>
+                                        <li class="boleft"></li>
+                                        <li class="noticaitalic">Swimming Pool</li>
+                                        <li class="btn_show">Info<span class="glyphicon glyphicon-menu-down"></span></li>
+                                    </ul>
+                                    <span class="lineg"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <?php
+                }
+            }
+            ?>
+
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

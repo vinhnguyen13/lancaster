@@ -77,14 +77,3 @@ $('.bg-1,.bg-3').parallax({
 $('.bg-2').parallax({
     speed: 0.25
 });
-/*-----------end demo1------------------------*/
-
-
-/*-------------active--------------------------
-
-$(document).ready(function() {
-   $(".carousel-indicators li:first").addClass("active");
-        $(".arrow-up").show();
-   });
-});
------------end active------------------------*/
