@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model vsoft\express\models\LcBooking */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Lc Bookings', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Bookings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-booking-view">
@@ -29,10 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
 //            'id',
-            'lc_building_id',
+//            'lc_building_id',
+            [
+                'label' => 'Building',
+                'attribute' => 'lc_building_id',
+                'value' => $model->getLcBuilding()->building_name,
+            ],
             'checkin',
             'checkout',
-            'apart_type',
+//            'apart_type',
+            [
+                'label' => 'Apartment Type',
+                'attribute' => 'apart_type',
+                'value' => $model->getApartType()->one()->name,
+            ],
             'floorplan',
             'fullname',
             'phone',

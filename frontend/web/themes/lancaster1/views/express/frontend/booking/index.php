@@ -64,7 +64,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 <div class="live">
                     <?= $form->field($model, 'checkin')->widget(DateTimePicker::className(),[
                         'name' => 'check_in',
-                        'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
+                        'type' => DateTimePicker::TYPE_COMPONENT_APPEND,
                         'options' => [
                             'placeholder' => 'Input check in date & time ...',
                             'size' => '100%',
@@ -73,7 +73,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd MM yyyy HH:ii P',
+                            'format' => 'yyyy-mm-dd hh:ii',
+                            'todayHighlight' => true
 //                            'pickerPosition' => 'bottom-left',
 //                            'linkField' =>  Html::getInputId($model, 'checkin'),
 //                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
@@ -86,7 +87,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                            autofocus/><span class="glyphicon glyphicon-calendar"></span>-->
                     <?= $form->field($model, 'checkout')->widget(DateTimePicker::className(),[
                         'name' => 'check_out',
-                        'type' => DateTimePicker::TYPE_COMPONENT_PREPEND,
+                        'type' => DateTimePicker::TYPE_COMPONENT_APPEND,
                         'options' => [
                             'placeholder' => 'Input check out date & time ...',
                             'size' => '100%',
@@ -95,7 +96,8 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                         'removeButton' => false,
                         'pluginOptions' => [
                             'autoclose' => true,
-                            'format' => 'dd MM yyyy HH:ii P',
+                            'format' => 'yyyy-mm-dd hh:ii',
+                            'todayHighlight' => true
 //                            'pickerPosition' => 'bottom-left',
 //                            'linkField' =>  Html::getInputId($model, 'checkout'),
 //                            'linkFormat' => 'yyyy-mm-dd hh:ii:ss',
@@ -125,8 +127,10 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                     
                         <div class="inputapert">
                             <?php
+                            $apart_type = \vsoft\express\models\LcApartmentType::find()->all();
+                            $apart_data = ArrayHelper::map($apart_type, 'id', 'name');
                             echo $form->field($model, 'apart_type')->dropDownList(
-                                [ '1' => '1-Bed', '2' => '2-Bed',  '3' => '3-Bed' ],
+                                $apart_data,
                                 [
                                     'options' => [1 => ['selected ' => true]],
 //                                    'class' => 'form-control medium-width'

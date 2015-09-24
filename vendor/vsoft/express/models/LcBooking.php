@@ -50,11 +50,6 @@ class LcBooking extends LcBookingBase
             ]);
     }
 
-//    public function getLcBuildingName()
-//    {
-//        return $this->lcBuilding->building_name;
-//    }
-
     public function attributeLabels()
     {
         return [
@@ -85,5 +80,10 @@ class LcBooking extends LcBookingBase
         $this->browser_version = Enum::getBrowser()['version'];
         $this->platform = Enum::getBrowser()['platform'];
         return parent::beforeSave($insert);
+    }
+
+    public function getApartType()
+    {
+        return $this->hasOne(LcApartmentType::className(), ['id' => 'apart_type']);
     }
 }
