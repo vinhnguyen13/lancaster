@@ -19,21 +19,22 @@ use vsoft\express\models\LcBuilding;
                 foreach ($buildings as $building) {
                     ?>
                     <div class="panel">
-                        <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapse<?= $i ?>">
+                        <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse"
+                             data-parent="#accordion1" data-target="#collapse<?= $i ?>">
                             <h4 class="panel-title linetext"><?= $building->building_name ?></h4>
                         </div>
                         <div id="collapse<?= $i ?>" class="panel-collapse collapse <?= $i == 1 ? 'in' : '' ?>">
                             <div class="panel-body">
                                 <ul class="lineone">
                                     <li>Address<br>
-                                        <?= $building->address ?><br>
+                                        <?= $building->address ?><br><br>
                                     </li>
                                     <li>Phone<br>
-                                        <?= $building->phone ?><br></li>
+                                        <?= $building->phone ?><br><br></li>
                                     <li>Fax<br>
-                                        <?= $building->fax ?><br></li>
+                                        <?= $building->fax ?><br><br></li>
                                     <li>Email<br>
-                                        <?= $building->email ? $building->email : 'sales@trungthuygroup.vn' ?><br></li>
+                                        <?= $building->email ? $building->email : 'sales@trungthuygroup.vn' ?><br><br></li>
                                     <li><b>Hotline<br>
                                             <?= $building->hotline ? $building->hotline : '0903 090 909' ?></b></li>
                                 </ul>
@@ -79,9 +80,11 @@ use vsoft\express\models\LcBuilding;
                 <li>Contact</li>
                 <li>Newsletter</li>
                 <li class="btnfooter">
-                    <button type="submit" class="btn-lg btn_primary btn-block">
-                        booknow
-                    </button>
+                    <a href="<?= \yii\helpers\Url::toRoute('/express/booking') ?>" style="text-decoration: none;">
+                        <button type="submit" class="btn-lg btn_primary btn-block">
+                            booknow
+                        </button>
+                    </a>
                 </li>
             </ul>
 
