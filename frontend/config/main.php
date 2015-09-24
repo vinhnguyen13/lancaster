@@ -92,6 +92,12 @@ return [
                 'yii\bootstrap\BootstrapAsset' => [
                     'css' => [],
                 ],
+                'yii\web\JqueryAsset' => [
+                    'jsOptions' => ['position'=>\yii\web\View::POS_HEAD]
+                ],
+                'yii\web\YiiAsset' => [
+                    'jsOptions' => ['position'=>\yii\web\View::POS_HEAD]
+                ],
             ],
         ],
     ],

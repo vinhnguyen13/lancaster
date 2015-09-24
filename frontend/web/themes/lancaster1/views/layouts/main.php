@@ -59,33 +59,9 @@ AppAsset::register($this);
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<?php $this->beginContent('@app/views/layouts/_partials/menutop.php'); ?>
-<?php $this->endContent();?>
-
-<!-- Carousel
-================================================== -->
+<?php $this->beginContent('@app/views/layouts/_partials/menutop.php'); ?><?php $this->endContent();?>
 <?= $content ?>
-
-<!--
-<div class="container-fluid layout">
-  <div class="row main_content">
-    <img src="IMG\01.png">
-  </div>
-  <div class="bannerblock">
-    <ul>
-      <li><img src="IMG\logo_01.png"></li>
-      <li class="title">Lancaster Legacy offers you a sweeping panoramic view of the city skyline </li>
-      <li>Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.</li>
-    </ul>
-  </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- -->
-<script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/jquery.js"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/bootstrap.js"></script>
-<script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/holder.htm"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/ie10-viewport-bug-workaround.js"></script>
 
 <?php $this->endBody() ?>
