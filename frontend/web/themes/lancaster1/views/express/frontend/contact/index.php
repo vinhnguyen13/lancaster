@@ -9,19 +9,6 @@ $this->title = Yii::t('express/contact', 'Contact');
 /* @var $this yii\web\View */
 ?>
 
-<?php
-if (Yii::$app->getSession()->hasFlash('reSent')) {
-    \yii\bootstrap\Alert::begin([
-        'options' => [
-            'class' => 'alert alert-success',
-        ],
-    ]);
-
-    echo Yii::$app->getSession()->getFlash('reSent');
-    \yii\bootstrap\Alert::end();
-}
-?>
-
 <div class="container-fluid contactt">
     <div class="row main_content">
         <span class="btn_back"><img src="<?= Yii::$app->view->theme->baseUrl ?>/resources/IMG/btn_back.png"><a
@@ -35,6 +22,18 @@ if (Yii::$app->getSession()->hasFlash('reSent')) {
             <span class="youtube"></span>
         </div>
     </div>
+    <?php echo '<br>';
+    if (Yii::$app->getSession()->hasFlash('reSent')) {
+        \yii\bootstrap\Alert::begin([
+            'options' => [
+                'class' => 'alert alert-success',
+            ],
+        ]);
+
+        echo Yii::$app->getSession()->getFlash('reSent');
+        \yii\bootstrap\Alert::end();
+    }
+    ?>
     <div class="row main_row">
         <?php
         $buildings = LcBuilding::find()->all();
