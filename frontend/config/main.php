@@ -33,6 +33,10 @@ return [
             'class' => 'funson86\cms\Module',
             'controllerNamespace' => 'funson86\cms\controllers\frontend'
         ],
+        'gallery' => [
+            'class' => 'johnb0\gallery\Module',
+            'imageUrl' => '/store/gallery'
+        ],
     ],
     'components' => [
         'request' => [

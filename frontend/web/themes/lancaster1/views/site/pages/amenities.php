@@ -5,6 +5,9 @@
  * Date: 9/23/2015
  * Time: 2:13 PM
  */
+use vsoft\express\models\LcHomeGallery;
+use yii\web\View;
+Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources/js/function.js', ['position'=>View::POS_END]);
 ?>
 <div class="container-fluid layoutamenities">
     <!-- Carousel
@@ -26,8 +29,16 @@
             <li class="" data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/01.png" alt="First slide">
+            <?php
+            $slideHome = LcHomeGallery::find()->where(['code'=>'AMENITIES'])->one();
+            if($slideHome->getGallery()->one()){
+                $photos = $slideHome->getGallery()->one()->getPhotos()->all();
+            }
+            if(!empty($photos)){
+                foreach($photos as $key=>$photo){
+            ?>
+            <div class="item<?=($key==0) ? ' active' : ''?>">
+                <img class="first-slide" src="<?=$photo->getThumbUrl('original')?>" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <div class="viewbanner">
@@ -51,27 +62,11 @@
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/02.png" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/03.png" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/04.png" alt="First slide">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-            </div>
+            <?php
+                }
+            }
+            ?>
+
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

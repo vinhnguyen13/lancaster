@@ -14,10 +14,10 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
         <div class="ckeckitem">
             <ul class="carousel-indicators">
                 <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Living room</li>
-                <li data-target="#myCarousel" data-slide-to="1">Kitchen</li>
-                <li data-target="#myCarousel" data-slide-to="2">Bathroom</li>
-                <li data-target="#myCarousel" data-slide-to="3">Bedroom</li>
-                 <li data-target="#myCarousel" data-slide-to="4">Bedroom</li>
+                <li data-target="#myCarousel" data-slide-to="1"><span class="arrow-up"></span>Kitchen</li>
+                <li data-target="#myCarousel" data-slide-to="2"><span class="arrow-up"></span>Bathroom</li>
+                <li data-target="#myCarousel" data-slide-to="3"><span class="arrow-up"></span>Bedroom</li>
+                 <li data-target="#myCarousel" data-slide-to="4"><span class="arrow-up"></span>Bedroom</li>
             </ul>
         </div>
         <ol class="carousel-indicators">
