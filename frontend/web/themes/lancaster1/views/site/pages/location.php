@@ -22,6 +22,7 @@ use vsoft\express\models\LcBuilding;
                         <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse"
                              data-parent="#accordion1" data-target="#collapse<?= $i ?>">
                             <h4 class="panel-title linetext"><?= $building->building_name ?></h4>
+                            <span class="linetitleboder">View Address<i class="glyphicon glyphicon-menu-down"></i></span>
                         </div>
                         <div id="collapse<?= $i ?>" class="panel-collapse collapse <?= $i == 1 ? 'in' : '' ?>">
                             <div class="panel-body">
