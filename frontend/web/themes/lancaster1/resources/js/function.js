@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $(".btn_hide, .btn_show").click(function() {
         if ($(this).attr('class') == 'btn_hide') {
             $(".viewbanner").slideToggle("slow");
@@ -10,16 +9,10 @@ $(document).ready(function() {
         }
     });
 
-});
-
-$(document).ready(function() {
     $(".forximg").first().addClass('big');
-});
-$(document).ready(function() {
+
     $(".mainblockitem").first().addClass('mainblockbig');
-});
-/*-----------demo------------------------*/
-$(document).ready(function() {
+    
     var scroll_start = 0;
     var startchange = $('#startchange');
     var offset = startchange.offset();
