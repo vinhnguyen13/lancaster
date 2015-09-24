@@ -23,12 +23,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
             </div>
            
         </div>
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-            <li class="" data-target="#myCarousel" data-slide-to="1"></li>
-            <li class="active" data-target="#myCarousel" data-slide-to="2"></li>
-            <li class="" data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+       
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <div class="imgcontent"><img class="first-slide" src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/01.png" alt="First slide"></div>
