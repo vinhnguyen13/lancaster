@@ -4,6 +4,15 @@
 
 $this->title = 'My Yii Application';
 ?>
+<style>
+    body{
+        overflow: hidden;
+    }
+    .main_content img{
+        min-height: 100%;
+        min-width: 100%;
+    }
+</style>
 <div class="container-fluid layoutindex">
     <div class="row main_content">
         <img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/01.png">
