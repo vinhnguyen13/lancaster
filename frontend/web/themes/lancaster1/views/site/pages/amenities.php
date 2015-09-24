@@ -38,7 +38,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
                 foreach($photos as $key=>$photo){
             ?>
             <div class="item<?=($key==0) ? ' active' : ''?>">
-                <img class="first-slide" src="<?=$photo->getThumbUrl('original')?>" alt="First slide">
+                <div class="imgcontent"><img class="first-slide" src="<?=$photo->getThumbUrl('original')?>" alt="First slide"></div>
                 <div class="container">
                     <div class="carousel-caption">
                         <div class="viewbanner">
