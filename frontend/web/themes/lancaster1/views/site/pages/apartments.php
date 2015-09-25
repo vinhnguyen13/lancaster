@@ -25,10 +25,10 @@ Yii::$app->getView()->registerJs('
         <div class="ckeckitem">
             <div class="livercenter">
                  <ul class="carousel-indicators">
-                    <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up"></span>Living room</li>
-                    <li data-target="#myCarousel" data-slide-to="1"><span class="arrow-up"></span>Kitchen</li>
-                    <li data-target="#myCarousel" data-slide-to="2"><span class="arrow-up"></span>Bathroom</li>
-                    <li data-target="#myCarousel" data-slide-to="3"><span class="arrow-up"></span>Bedroom</li>
+                    <li class="active" data-target="#myCarousel" data-slide-to="0"><span class="arrow-up glyphicon glyphicon-triangle-top"></span>Living room</li>
+                    <li data-target="#myCarousel" data-slide-to="1"><span class="arrow-up glyphicon glyphicon-triangle-top"></span>Kitchen</li>
+                    <li data-target="#myCarousel" data-slide-to="2"><span class="arrow-up glyphicon glyphicon-triangle-top"></span>Bathroom</li>
+                    <li data-target="#myCarousel" data-slide-to="3"><span class="arrow-up glyphicon glyphicon-triangle-top"></span>Bedroom</li>
                 </ul>
             </div>
         </div>
