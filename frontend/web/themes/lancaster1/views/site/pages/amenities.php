@@ -50,8 +50,8 @@ Yii::$app->getView()->registerJs('
                         <div class="viewbanner">
                             <ul>
                                 <li class="boleft"></li>
-                                <li>Swimming Pool</li>
-                                <li class="robotoitalic">Swimming Pool</li>
+                                <li class="noticaitalic">Swimming Pool</li>
+                                <li class="noticaitalic titleshow">Swimming Pool <span class="linebuttom"></span></li>
                                 <li>Lancaster offers you a sweeping panoramic view of the city skyline from virtually every window.
                                     Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.</li>
                                 <li class="btn_hide">Hide<span class="glyphicon glyphicon-menu-up"></span></li>
@@ -61,7 +61,7 @@ Yii::$app->getView()->registerJs('
                             <ul>
                                 <li class="boleft"></li>                                
                                 <li class="noticaitalic">Swimming Pool</li>
-                                <li class="btn_show">Info<span class="glyphicon glyphicon-menu-down"></span></li>
+                                <li class="btn_show"><b>Info</b><span class="glyphicon glyphicon-menu-down"></span></li>
                             </ul>
                             <span class="lineg"></span>
                         </div>
