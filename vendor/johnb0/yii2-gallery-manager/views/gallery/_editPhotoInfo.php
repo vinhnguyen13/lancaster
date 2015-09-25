@@ -1,3 +1,10 @@
+<?php
+$settings = \yii\helpers\Json::decode($model->settings, false);
+$options = [];
+if(isset($settings->displayCaption)){
+    $options = [$settings->displayCaption => ['selected ' => true]];
+}
+?>
 <div class="gallery-form">
     <?php $form = \yii\widgets\ActiveForm::begin([
         'action' => \yii\helpers\Url::current(),
@@ -5,7 +12,10 @@
     ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => 255]) ?>
-    <?= $form->field($model, 'settings')->dropDownList([1=>'Show',0=>'Hide'], ['name'=>'GalleryPhoto[settings][display]'])->label('Display') ?>
+    <?= $form->field($model, 'settings')->dropDownList([1=>'Show',0=>'Hide'],
+        ['name'=>'GalleryPhoto[settings][displayCaption]',
+            'options' =>$options
+        ])->label('Display Caption') ?>
     <?= $form->field($model, 'description')->widget(\mihaildev\ckeditor\CKEditor::className(),[
         'editorOptions' => [
             'preset' => 'full',
