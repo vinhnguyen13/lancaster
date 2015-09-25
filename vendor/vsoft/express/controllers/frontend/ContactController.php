@@ -16,15 +16,19 @@ class ContactController extends \yii\web\Controller
 
     public function actionSendContact(){
         $model = new LcContact();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-//            return $this->redirect(['view', 'id' => $model->id]);
-            Yii::$app->getSession()->setFlash('reSent', 'Your contact is sent. Thank you!');
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->save()) {
+                // call send mail method after click submit button
+                $model->sendContactMail($model);
+                Yii::$app->getSession()->setFlash('reSent', 'Your contact is sent. Thank you!');
+            }
             return $this->redirect(['/contact']);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
         }
+//        else {
+//            return $this->render('create', [
+//                'model' => $model,
+//            ]);
+//        }
     }
 
 }

@@ -86,4 +86,13 @@ class LcBooking extends LcBookingBase
     {
         return $this->hasOne(LcApartmentType::className(), ['id' => 'apart_type']);
     }
+
+    public function sendBookingMail(LcBooking $objContact){
+        return Yii::$app->mailer->compose(['text' => 'notifyReceivedEmail-text',], ['contact' => $objContact, 'isbooking' => 'Y'])
+            ->setFrom(Yii::$app->params['adminEmail'])
+            ->setTo([$objContact->email])
+            ->setSubject('[No-reply] Notify contact email***')
+            ->send();
+    }
+
 }

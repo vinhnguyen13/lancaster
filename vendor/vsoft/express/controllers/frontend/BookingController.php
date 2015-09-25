@@ -43,21 +43,16 @@ class BookingController extends Controller
     {
         $booking = new LcBooking();
 
-        if ($booking->load(Yii::$app->request->post()) && $booking->save()) {
-            Yii::$app->getSession()->setFlash('reSuccess', 'Create booking successfully.');
+        if ($booking->load(Yii::$app->request->post())) {
+            if($booking->save()) {
+                // call send mail method after click submit button
+                $booking->sendBookingMail($booking);
+                Yii::$app->getSession()->setFlash('reSuccess', 'Create booking successfully.');
+            }
             return $this->redirect(['/booking']);
         } else
             return $this->redirect(['/']);
 
     }
 
-    public function actionSendEmail($id)
-    {
-        $booking = LcBooking::findOne($id);
-        return \Yii::$app->mailer->compose(['html' => 'passwordResetToken-html', 'text' => 'notifyReceivedBooking-text'], ['booking' => $booking])
-            ->setFrom([\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot'])
-            ->setTo($booking->email)
-            ->setSubject('Notify received booking of ' . $booking->fullname)
-            ->send();
-    }
 }

@@ -34,6 +34,7 @@ class LcContact extends LcContactBase
             parent::rules(),
             [
                 [['name', 'address', 'title'], 'required'],
+                [['address'], 'email']
             ]);
     }
 
@@ -56,8 +57,12 @@ class LcContact extends LcContactBase
         return parent::beforeSave($insert);
     }
 
-    public function sendContactMail(){
-        return Yii::$app->mailer->compose(['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text']);
+    public function sendContactMail(LcContact $objContact){
+        return Yii::$app->mailer->compose(['text' => 'notifyReceivedEmail-text',], ['contact' => $objContact])
+            ->setFrom(Yii::$app->params['adminEmail'])
+            ->setTo([$objContact->address])
+            ->setSubject('[No-reply]Notify contact email')
+            ->send();
     }
 
 }

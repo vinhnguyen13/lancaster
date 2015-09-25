@@ -69,9 +69,9 @@ $this->title = Yii::t('express/contact', 'Contact');
         <div class="blockfrom">
             <p>Contact form</p>
             <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'tabIndex' => '1', 'class' => 'name', 'placeholder' => 'Your Name'])->label(false) ?>
-            <?= $form->field($model, 'address')->textInput(['maxlength' => true, 'tabIndex' => '2', 'class' => 'address', 'placeholder' => 'Your Address'])->label(false) ?>
+            <?= $form->field($model, 'address')->textInput(['maxlength' => true, 'tabIndex' => '2', 'class' => 'address', 'placeholder' => 'Your Email Address'])->label(false) ?>
             <?= $form->field($model, 'title')->textInput(['maxlength' => true, 'tabIndex' => '3', 'class' => 'inputdefault', 'placeholder' => 'Title'])->label(false) ?>
-            <?= $form->field($model, 'message')->textarea(['maxlength' => true, 'tabIndex' => '4', 'class' => 'textareadefault', 'placeholder' => 'Your message', 'rows' => '6'])->label(false) ?>
+            <?= $form->field($model, 'message')->textarea(['maxlength' => true, 'tabIndex' => '4', 'class' => 'textareadefault', 'placeholder' => 'Your Message', 'rows' => '6'])->label(false) ?>
             <?= Html::submitButton('Submit', ['class' => 'btnsend']) ?>
         </div>
         <?php \yii\widgets\ActiveForm::end(); ?>

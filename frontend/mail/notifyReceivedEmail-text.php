@@ -2,7 +2,10 @@
 
 /* @var $this yii\web\View */
 /* @var $user common\models\User */
-?>
-Hello ,
 
-We are receied your booking. Thank you !
+?>
+Hello <?= $isbooking === 'Y' ? $contact->fullname : $contact->name ?> ,
+
+We are received your <?= $isbooking === 'Y' ? 'booking' : 'contact' ?> and reply to you later.
+
+Thank you!
