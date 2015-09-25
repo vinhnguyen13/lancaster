@@ -56,4 +56,8 @@ class LcContact extends LcContactBase
         return parent::beforeSave($insert);
     }
 
+    public function sendContactMail(){
+        return Yii::$app->mailer->compose(['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text']);
+    }
+
 }

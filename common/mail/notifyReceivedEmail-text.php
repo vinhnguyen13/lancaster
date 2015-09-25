@@ -5,6 +5,6 @@
 //
 //$resetLink = Yii::$app->urlManager->createAbsoluteUrl(['site/reset-password', 'token' => $user->password_reset_token]);
 ?>
-Hello <?= $booking->fullname ?>,
+Hello <?= $object->fullname ?>,
 
 We are receied your booking. Thank you !
