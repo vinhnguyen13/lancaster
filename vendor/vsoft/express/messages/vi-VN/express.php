@@ -17,5 +17,5 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'About Us' => 'Về chúng tôi',
+    'We offer exceptional amenities and renowned white - glove services' => 'We offer exceptional amenities and renowned white - glove services',
 ];

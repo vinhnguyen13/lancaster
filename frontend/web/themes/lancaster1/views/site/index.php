@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = Yii::t('express','We offer exeptional amenities and renowned white - glove services');
 ?>
 <style>
     body{
