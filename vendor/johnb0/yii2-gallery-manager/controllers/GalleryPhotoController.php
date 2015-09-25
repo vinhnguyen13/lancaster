@@ -5,6 +5,7 @@ namespace johnb0\gallery\controllers;
 use Yii;
 use johnb0\gallery\models\GalleryPhoto;
 use johnb0\gallery\Module;
+use yii\helpers\Json;
 use yii\web\Response;
 use yii\helpers\Url;
 
@@ -71,6 +72,7 @@ class GalleryPhotoController extends \yii\web\Controller
         $model = GalleryPhoto::findOne($id);
         if(Yii::$app->request->isAjax && Yii::$app->request->post()){
             $model->load(Yii::$app->request->post());
+            $model->settings = Json::encode($model->settings);
             $model->validate();
             if(!$model->hasErrors()){
                 $model->save();

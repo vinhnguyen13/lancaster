@@ -5,7 +5,7 @@
     ]); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => 255]) ?>
-
+    <?= $form->field($model, 'settings')->dropDownList([1=>'Show',0=>'Hide'], ['name'=>'GalleryPhoto[settings][display]'])->label('Display') ?>
     <?= $form->field($model, 'description')->widget(\mihaildev\ckeditor\CKEditor::className(),[
         'editorOptions' => [
             'preset' => 'full',

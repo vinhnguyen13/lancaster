@@ -51,7 +51,7 @@ AppAsset::register($this);
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
             </ul>
-            <div class="text_pagecontent"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"> <i class="glyphicon glyphicon-menu-down"></i></div>
+            <div class="text_pagecontent"><a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a> <i class="glyphicon glyphicon-menu-down"></i></div>
             <ul class="nav navbar-nav navbar-right">
                 <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
                 <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking/index')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>

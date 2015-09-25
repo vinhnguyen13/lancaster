@@ -44,9 +44,9 @@ use newerton\fancybox\FancyBox;
     <?php if(count($photos) > 0): ?>    
         <ul class="list-inline">
             <?php foreach($photos as $photo): ?>                    
-            <li>                
+            <li>
                 <p>
-                    <?= Html::a(Html::img($photo->getThumbUrl('small')), $photo->url, ['rel' => 'fancybox']); ?>                   
+                    <?= Html::a(Html::img($photo->getThumbUrl('small')), $photo->url, ['rel' => 'fancybox', 'data-toggle'=>'tooltip', 'data-placement'=>'top', 'title'=>$photo->name]); ?>
                 </p>
                 <p class="text-center">
                     <?= Html::button('<i class="glyphicon glyphicon-edit"></i> Edit',
@@ -99,6 +99,7 @@ $this->registerJs('
             });
 
         });
+        $(\'[data-toggle="tooltip"]\').tooltip();
     })(jQuery);
 ');
 ?>

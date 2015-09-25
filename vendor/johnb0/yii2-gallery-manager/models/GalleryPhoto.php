@@ -24,6 +24,7 @@ use yii\helpers\Inflector;
  * @property string $dirname
  * @property string $alt
  * @property string $thumbs
+ * @property string $settings
  *
  * @property Gallery $gallery
  */
@@ -51,7 +52,7 @@ class GalleryPhoto extends ActiveRecord
     {
         return [
             [['gallery_id', 'sort'], 'integer'],
-            [['description', 'thumbs', 'alt'], 'string'],
+            [['description', 'thumbs', 'alt', 'settings'], 'string'],
             [['size'], 'integer'],
             [['name', 'filename', 'dirname', 'type'], 'string', 'max' => 255],
             [['file'], 'file']
@@ -75,6 +76,7 @@ class GalleryPhoto extends ActiveRecord
             'thumbs' => 'Thumbs',
             'dirname' => 'Dirname',
             'alt' => 'Alt',
+            'settings' => 'Settings',
         ];
     }
 
