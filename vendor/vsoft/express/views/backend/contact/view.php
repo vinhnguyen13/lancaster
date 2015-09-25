@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model vsoft\express\models\LcContact */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Lc Contacts', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-contact-view">

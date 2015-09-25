@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model vsoft\express\models\LcBanner */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Lc Banners', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Banners', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-banner-view">

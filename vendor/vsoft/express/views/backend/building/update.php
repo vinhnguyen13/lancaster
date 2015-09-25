@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vsoft\express\models\LcBuilding */
 
-$this->title = 'Update Lc Building: ' . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Lc Buildings', 'url' => ['index']];
+$this->title = 'Update Building: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Buildings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

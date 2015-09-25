@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model vsoft\express\models\LcBuilding */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Lc Buildings', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Buildings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-building-view">

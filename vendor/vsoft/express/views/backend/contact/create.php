@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vsoft\express\models\LcContact */
 
-$this->title = 'Create Lc Contact';
-$this->params['breadcrumbs'][] = ['label' => 'Lc Contacts', 'url' => ['index']];
+$this->title = 'Create Contact';
+$this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-contact-create">

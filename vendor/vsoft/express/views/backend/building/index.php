@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel vsoft\express\models\LcBuildingSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lc Buildings';
+$this->title = 'Buildings';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-building-index">

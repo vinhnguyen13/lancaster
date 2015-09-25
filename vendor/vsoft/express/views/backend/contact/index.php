@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel vsoft\express\models\LcContactSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lc Contacts';
+$this->title = 'Contacts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-contact-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lc Contact', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Contact', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

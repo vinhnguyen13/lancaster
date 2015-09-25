@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vsoft\express\models\LcBanner */
 
-$this->title = 'Create Lc Banner';
-$this->params['breadcrumbs'][] = ['label' => 'Lc Banners', 'url' => ['index']];
+$this->title = 'Create Banner';
+$this->params['breadcrumbs'][] = ['label' => 'Banners', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-banner-create">

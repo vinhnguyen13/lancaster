@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $searchModel vsoft\express\models\LcPricingSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('pricing', 'Lc Pricings');
+$this->title = Yii::t('pricing', 'Pricings');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-pricing-index">

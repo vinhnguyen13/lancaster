@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model vsoft\express\models\LcBuilding */
 
-$this->title = 'Create Lc Building';
-$this->params['breadcrumbs'][] = ['label' => 'Lc Buildings', 'url' => ['index']];
+$this->title = 'Create Building';
+$this->params['breadcrumbs'][] = ['label' => 'Buildings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lc-building-create">
