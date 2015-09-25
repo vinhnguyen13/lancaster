@@ -76,10 +76,10 @@ use vsoft\express\models\LcBuilding;
                 <li>Lancaster Hanoi</li>
             </ul>
             <ul class="list-inline ulmenu">
-                <li>About Us</li>
-                <li>News</li>
-                <li>Contact</li>
-                <li>Newsletter</li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index');?>">About Us</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index');?>">News</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index');?>">Contact</a></li>
+                <li><a href="javascript:;">Newsletter</a></li>
                 <li class="btnfooter">
                     <a href="<?= \yii\helpers\Url::toRoute('/booking') ?>" style="text-decoration: none;">
                         <button type="submit" class="btn-lg btn_primary btn-block">
