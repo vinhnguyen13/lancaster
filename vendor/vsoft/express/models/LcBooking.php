@@ -45,6 +45,7 @@ class LcBooking extends LcBookingBase
             [
                 [['checkin','checkout','phone', 'fullname', 'email'], 'required'],
                 [['email'], 'email'],
+//                [['phone'], 'number'],
 //                [['checkin'], 'compare', 'compareAttribute'=>'checkout', 'operator'=>'<', 'skipOnEmpty'=>true],
                 [['checkout'], 'compare', 'compareAttribute'=>'checkin', 'operator'=>'>'],
             ]);

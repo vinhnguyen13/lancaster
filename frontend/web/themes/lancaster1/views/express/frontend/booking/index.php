@@ -163,7 +163,10 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Phone number" type=""/>-->
-                    <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+
+                    <?= $form->field($model, 'phone')->widget(\yii\widgets\MaskedInput::className(),[
+                        'mask' => '9999 999 999[9]'
+                    ]) ?>
                 </div>
                 <div class="deafall">
 <!--                    <input class="form-control" name="" placeholder="Email" type=""/>-->
