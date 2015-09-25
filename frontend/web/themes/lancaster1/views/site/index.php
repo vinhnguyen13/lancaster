@@ -20,7 +20,7 @@ $this->title = 'My Yii Application';
     <div class="bannerblock">
         <ul>
             <li><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logo_01.png"></li>
-            <li class="title">Lancaster Legacy offers you a sweeping panoramic view of the city skyline </li>
+            <li class="title noticaitalic">Lancaster Legacy offers you a sweeping panoramic view of the city skyline<span class="linebuttom"></span> </li>
             <li>Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.</li>
         </ul>
     </div>
