@@ -81,7 +81,7 @@ use vsoft\express\models\LcBuilding;
                 <li>Contact</li>
                 <li>Newsletter</li>
                 <li class="btnfooter">
-                    <a href="<?= \yii\helpers\Url::toRoute('/express/booking') ?>" style="text-decoration: none;">
+                    <a href="<?= \yii\helpers\Url::toRoute('/booking') ?>" style="text-decoration: none;">
                         <button type="submit" class="btn-lg btn_primary btn-block">
                             booknow
                         </button>
