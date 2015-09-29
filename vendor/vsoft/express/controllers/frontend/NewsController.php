@@ -6,6 +6,7 @@ use funson86\cms\models\CmsCatalog;
 use funson86\cms\models\CmsShow;
 use funson86\cms\models\Status;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 
 class NewsController extends \yii\web\Controller
 {
@@ -41,7 +42,21 @@ class NewsController extends \yii\web\Controller
 
         $detail = CmsShow::findOne($id);
 
-        return $this->render('detail', ['detail'=>$detail]);
+        /**
+         * Related post
+         */
+
+        $catids = ArrayHelper::map(CmsCatalog::find()->where([
+            'surname' => 'NEWS',
+        ])->asArray()->all(),
+        'id', 'id');
+
+        $relatedPost = CmsShow::find()->where([
+            'status' => Status::STATUS_ACTIVE,
+            'catalog_id' => $catids,
+        ])->andWhere(['<>', 'id', $id])->all();
+
+        return $this->render('detail', ['detail'=>$detail, 'relatedPost'=>$relatedPost]);
     }
 
 }
