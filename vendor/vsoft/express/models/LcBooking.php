@@ -51,15 +51,6 @@ class LcBooking extends LcBookingBase
             ]);
     }
 
-    public function attributeLabels()
-    {
-        return [
-            'checkin' => Yii::t('building', 'Check In'),
-            'checkout' => Yii::t('building', 'Check Out'),
-            'fullname' => Yii::t('building', 'Full Name'),
-            'floorplan' => Yii::t('building', 'Floor'),
-        ];
-    }
 
     public function beforeSave($insert)
     {

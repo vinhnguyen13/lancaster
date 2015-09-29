@@ -1,5 +1,5 @@
 <?php
-$this->title = Yii::t('booking', 'Booking');
+$this->title = Yii::t('express/booking', 'Booking');
 /**
  * Created by PhpStorm.
  * User: Nhut Tran
@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
         <span class="btn_back"><img src="<?= Yii::$app->view->theme->baseUrl ?>/resources/IMG/btn_back.png"><a
                 href="<?= \yii\helpers\Url::home() ?>">Back to Lancaster Legacy</a></span>
 
-        <h1>booking</h1>
+        <h1><?= Yii::t('express/booking', 'Booking'); ?></h1>
         <?php
         if(Yii::$app->getSession()->hasFlash('reSuccess')) {
             \yii\bootstrap\Alert::begin([
@@ -192,7 +192,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 <!--                    <button class="btn btn-lg btn_primary btn-block" type="submit">-->
 <!--                        Submit-->
 <!--                    </button>-->
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-lg btn_primary btn-block']) ?>
+                    <?= Html::submitButton(Yii::t('express/booking','Submit'), ['class' => 'btn btn-lg btn_primary btn-block']) ?>
                 </div>
             </div>
             <?php \yii\widgets\ActiveForm::end(); ?>

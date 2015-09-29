@@ -45,8 +45,10 @@ class BookingController extends Controller
 
         if ($booking->load(Yii::$app->request->post())) {
             if($booking->save()) {
-                // call send mail method after click submit button
-                $booking->sendBookingMail($booking);
+                if(!empty($booking->email)) {
+                    // call send mail method after click submit button
+                    $booking->sendBookingMail($booking);
+                }
                 Yii::$app->getSession()->setFlash('reSuccess', 'Create booking successfully.');
             }
             return $this->redirect(['/booking']);

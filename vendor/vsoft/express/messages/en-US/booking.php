@@ -18,4 +18,18 @@
  */
 return [
     'Book Now' => 'Book Now',
+    'Booking' => 'Booking Form',
+    'Submit' => 'Submit',
+    'Lc Building ID' => 'Building',
+    'Checkin' => 'Checkin date',
+    'Checkout' => 'Checkout date',
+    'Apart Type' => 'Apartment type',
+    'Floorplan' => 'Floorplan',
+    'Fullname' => 'Full name',
+    'Phone' => 'Phone number',
+    'Email' => 'Email',
+    'Address' => 'Address',
+    'Passport No' => 'Passport No.',
+    'Nationality' => 'Nationality',
+    'Info' => 'Information',
 ];

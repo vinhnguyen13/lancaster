@@ -18,4 +18,18 @@
  */
 return [
     'Book Now' => 'Đặt Ngay',
+    'Booking' => 'Thông Tin Đặt Phòng',
+    'Submit' => 'Đặt phòng',
+    'Lc Building ID' => 'Tòa nhà',
+    'Checkin' => 'Từ ngày',
+    'Checkout' => 'Đến ngày',
+    'Apart Type' => 'Loại phòng',
+    'Floorplan' => 'Tầng',
+    'Fullname' => 'Họ tên',
+    'Phone' => 'Điện thoại',
+    'Email' => 'Email',
+    'Address' => 'Địa chỉ',
+    'Passport No' => 'Số CMND/Hộ chiếu',
+    'Nationality' => 'Quốc tịch',
+    'Info' => 'Thông tin khác',
 ];

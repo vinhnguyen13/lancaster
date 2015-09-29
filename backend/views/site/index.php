@@ -43,6 +43,10 @@ $this->title = 'My Yii Application';
                 <ol class="list-unstyled">
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['user/admin'])?>">User</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['admin'])?>">User ACL</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/booking'])?>">Booking</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/building'])?>">Building</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/contact'])?>">Contact</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/banner'])?>">Banner</a></li>
                 </ol>
             </div>
 
