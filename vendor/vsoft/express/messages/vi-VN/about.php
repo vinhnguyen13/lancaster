@@ -17,5 +17,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Back to Lancaster Legacy' => 'Trở về Lancaster Legacy',
     'About Us' => 'Về chúng tôi',
 ];

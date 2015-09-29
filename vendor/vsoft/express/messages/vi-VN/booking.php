@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Back to Lancaster Legacy' => 'Trở về Lancaster Legacy',
     'Book Now' => 'Đặt Ngay',
     'Booking' => 'Thông Tin Đặt Phòng',
     'Submit' => 'Đặt phòng',

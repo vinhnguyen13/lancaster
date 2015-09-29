@@ -17,5 +17,6 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Back to Lancaster Legacy' => 'Back to Lancaster Legacy',
     'News' => 'News',
 ];

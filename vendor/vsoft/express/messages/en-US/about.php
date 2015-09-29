@@ -18,4 +18,5 @@
  */
 return [
     'About Us' => 'About Us',
+    'Back to Lancaster Legacy' => 'Back to Lancaster Legacy',
 ];

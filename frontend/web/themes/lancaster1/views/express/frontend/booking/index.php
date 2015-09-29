@@ -18,7 +18,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 <div class="container-fluid booking">
     <div class="row main_content">
         <span class="btn_back"><img src="<?= Yii::$app->view->theme->baseUrl ?>/resources/IMG/btn_back.png"><a
-                href="<?= \yii\helpers\Url::home() ?>">Back to Lancaster Legacy</a></span>
+                href="<?= \yii\helpers\Url::home() ?>"><?=Yii::t('express/booking', 'Back to Lancaster Legacy')?></a></span>
 
         <h1><?= Yii::t('express/booking', 'Booking'); ?></h1>
         <?php

@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Back to Lancaster Legacy' => 'Back to Lancaster Legacy',
     'Book Now' => 'Book Now',
     'Booking' => 'Booking Form',
     'Submit' => 'Submit',

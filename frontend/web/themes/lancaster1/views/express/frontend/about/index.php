@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 <div class="container-fluid abaout">
     <div class="row main_content">
-        <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
+        <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>"><?= Yii::t('express/about', 'Back to Lancaster Legacy') ?></a></span>
         <h1 class="title"><?=Yii::t('express/about','About Us') ?></h1>
 
         <?php foreach ($news as $key=>$new) {?>
