@@ -19,4 +19,5 @@
 return [
     'Back to Lancaster Legacy' => 'Trở về Lancaster Legacy',
     'News' => 'Tin Tức',
+
 ];
