@@ -56,21 +56,21 @@ class LcContactBase extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('contact', 'ID'),
-            'name' => Yii::t('contact', 'Name'),
-            'address' => Yii::t('contact', 'Address'),
-            'title' => Yii::t('contact', 'Title'),
-            'message' => Yii::t('contact', 'Message'),
-            'ip' => Yii::t('contact', 'Ip'),
-            'agent' => Yii::t('contact', 'Agent'),
-            'browser_type' => Yii::t('contact', 'Browser Type'),
-            'browser_name' => Yii::t('contact', 'Browser Name'),
-            'browser_version' => Yii::t('contact', 'Browser Version'),
-            'platform' => Yii::t('contact', 'Platform'),
-            'created_at' => Yii::t('contact', 'Created At'),
-            'updated_at' => Yii::t('contact', 'Updated At'),
-            'created_by' => Yii::t('contact', 'Created By'),
-            'updated_by' => Yii::t('contact', 'Updated By'),
+            'id' => Yii::t('express/contact', 'ID'),
+            'name' => Yii::t('express/contact', 'Name'),
+            'address' => Yii::t('express/contact', 'Address'),
+            'title' => Yii::t('express/contact', 'Title'),
+            'message' => Yii::t('express/contact', 'Message'),
+            'ip' => Yii::t('express/contact', 'Ip'),
+            'agent' => Yii::t('express/contact', 'Agent'),
+            'browser_type' => Yii::t('express/contact', 'Browser Type'),
+            'browser_name' => Yii::t('express/contact', 'Browser Name'),
+            'browser_version' => Yii::t('express/contact', 'Browser Version'),
+            'platform' => Yii::t('express/contact', 'Platform'),
+            'created_at' => Yii::t('express/contact', 'Created At'),
+            'updated_at' => Yii::t('express/contact', 'Updated At'),
+            'created_by' => Yii::t('express/contact', 'Created By'),
+            'updated_by' => Yii::t('express/contact', 'Updated By'),
         ];
     }
 }

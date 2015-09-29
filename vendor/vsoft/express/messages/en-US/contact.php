@@ -18,4 +18,12 @@
  */
 return [
     'About Us' => 'About Us',
+    'Name' => 'Name',
+    'Address' => 'Email',
+    'Title' => 'Title',
+    'Message' => 'Message',
+    'Your Name' => 'Your Name',
+    'Your Email Address' => 'Your Email Address',
+    'Your Message' => 'Your Message',
+    'Submit' => 'Submit'
 ];

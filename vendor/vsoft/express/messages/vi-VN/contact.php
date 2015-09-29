@@ -18,4 +18,12 @@
  */
 return [
     'Contact' => 'Liên Hệ',
+    'Name' => 'Tên',
+    'Address' => 'Địa chỉ email',
+    'Title' => 'Chủ đề',
+    'Message' => 'Lời nhắn',
+    'Your Name' => 'Họ tên',
+    'Your Email Address' => 'Địa chỉ email',
+    'Your Message' => 'Lời nhắn',
+    'Submit' => 'Gửi'
 ];
