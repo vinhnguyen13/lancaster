@@ -10,7 +10,7 @@ use yii\helpers\Html;
 </style>
 <div class="container-fluid news">
     <div class="row main_content">
-        <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>"><?=Yii::t('express/news', 'Back to Lancaster Legacy') ?></a></span>
+        <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>"><?=Yii::t('express/news', 'Back to Lancaster Legacy')?></a></span>
         <h1 class="title"><?=Yii::t('express/news', 'News')?></h1>
         <?php if($pagination && $pagination->totalCount > $pagination->defaultPageSize){?>
         <div class="btn_paging">
