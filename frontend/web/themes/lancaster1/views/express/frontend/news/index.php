@@ -11,7 +11,7 @@ use yii\helpers\Html;
 <div class="container-fluid news">
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
-        <h1>news</h1>
+        <h1 class="title">news</h1>
         <div class="btn_paging">
             <?php if($pagination){?>
             <?=\yii\widgets\LinkPager::widget([
