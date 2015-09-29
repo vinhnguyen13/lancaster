@@ -12,16 +12,16 @@ use yii\helpers\Html;
     <div class="row main_content">
         <span class="btn_back"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_back.png"><a href="<?=\yii\helpers\Url::home()?>">Back to Lancaster Legacy</a></span>
         <h1 class="title">news</h1>
+        <?php if($pagination && $pagination->totalCount > $pagination->defaultPageSize){?>
         <div class="btn_paging">
-            <?php if($pagination){?>
             <?=\yii\widgets\LinkPager::widget([
                 'pagination' => $pagination,
                 'nextPageLabel' => 'next',
                 'prevPageLabel' => 'prev',
             ]) ?>
-            <?php }?>
             <span aria-hidden="true"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/btn_next.png"></span>
         </div>
+        <?php }?>
         <?php foreach ($news as $key=>$new) {?>
 
             <?php
