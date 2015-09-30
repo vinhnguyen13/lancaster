@@ -47,6 +47,8 @@ $this->title = 'My Yii Application';
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['express/building'])?>">Building</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['express/contact'])?>">Contact</a></li>
                     <li><a href="<?=Yii::$app->urlManager->createUrl(['express/banner'])?>">Banner</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/pricing'])?>">Pricing</a></li>
+                    <li><a href="<?=Yii::$app->urlManager->createUrl(['express/apartment-type'])?>">Apartment Type</a></li>
                 </ol>
             </div>
 
