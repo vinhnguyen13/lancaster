@@ -74,6 +74,10 @@ $this->title = Yii::t('express/contact', 'Contact');
             <?= $form->field($model, 'message')->textarea(['maxlength' => true, 'tabIndex' => '4', 'class' => 'textareadefault', 'placeholder' => Yii::t('express/contact','Your Message'), 'rows' => '6'])->label(false) ?>
             <?= Html::submitButton(Yii::t('express/contact','Submit'), ['class' => 'btnsend']) ?>
         </div>
+
         <?php \yii\widgets\ActiveForm::end(); ?>
+
+
+
     </div>
 </div>

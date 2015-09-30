@@ -5,6 +5,7 @@ namespace vsoft\express\controllers\frontend;
 use funson86\cms\models\CmsCatalog;
 use funson86\cms\models\CmsShow;
 use funson86\cms\models\Status;
+use Yii;
 use yii\data\Pagination;
 use yii\helpers\ArrayHelper;
 
