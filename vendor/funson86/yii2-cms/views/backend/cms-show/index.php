@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use funson86\cms\Module;
+use funson86\cms\models\CmsCatalog;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CmsShowSearch */
@@ -31,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function ($model) {
                     return $model->catalog->title;
                 },
+                'filter' => Html::activeDropDownList($searchModel, 'catalog_id', ArrayHelper::map(CmsCatalog::find()->asArray()->all(), 'id', 'title'),['class'=>'form-control','prompt' => '- Category -']),
             ],
             [
                 'attribute' => 'title',
