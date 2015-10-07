@@ -26,14 +26,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             [
                 'attribute' => 'catalog_id',
                 'value' => function ($model) {
                     return $model->catalog->title;
                 },
             ],
-            'title',
+            [
+                'attribute' => 'title',
+                'value' => function ($model) {
+                    return Html::a($model->title, ['update', 'id' => $model->id]);
+                },
+                'format' => 'raw',
+            ],
             'surname',
             // 'brief',
             // 'content:ntext',
