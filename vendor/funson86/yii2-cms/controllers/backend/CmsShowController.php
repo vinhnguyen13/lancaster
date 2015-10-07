@@ -84,7 +84,10 @@ class CmsShowController extends Controller
             $model->catalog_id = Yii::$app->request->get('catalog_id');
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->upload();
+            $model->validate();
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -104,9 +107,13 @@ class CmsShowController extends Controller
         //if(!Yii::$app->user->can('updateYourAuth')) throw new ForbiddenHttpException(Yii::t('app', 'No Auth'));
 
         $model = $this->findModel($id);
+        $oldBanner = $model->banner;
 
         if ($model->load(Yii::$app->request->post())) {
             $model->upload();
+            if(empty($model->banner)){
+                $model->banner = $oldBanner;
+            }
             $model->validate();
             $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
