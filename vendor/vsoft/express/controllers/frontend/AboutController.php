@@ -21,7 +21,7 @@ class AboutController extends \yii\web\Controller
         ]);
 
         $pagination = new Pagination([
-            'defaultPageSize' => isset(\Yii::$app->params['cmsListPageCount']) ? Yii::$app->params['cmsListPageCount'] : 2,
+            'defaultPageSize' => isset(\Yii::$app->params['cmsListPageCount']) ? Yii::$app->params['cmsListPageCount'] : 20,
             'totalCount' => $query->count(),
         ]);
 
