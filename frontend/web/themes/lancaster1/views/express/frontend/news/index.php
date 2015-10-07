@@ -38,7 +38,7 @@ use yii\helpers\Html;
                         Html::tag('div',
                             Html::tag('ul',
                                 Html::tag('li',Html::a($new->title, \yii\helpers\Url::toRoute(['/express/about/detail', 'id' => $new->id, 'slug' => $new->slug])), ['class'=>'title']).
-                                Html::tag('li',\yii\helpers\StringHelper::truncate($new->content, 300, "", false, true), [])
+                                Html::tag('li',\yii\helpers\StringHelper::truncate(strip_tags($new->content), 300, "", false, true), [])
                             ),
                             ['class'=>'lockcontentleft']
                         ),
