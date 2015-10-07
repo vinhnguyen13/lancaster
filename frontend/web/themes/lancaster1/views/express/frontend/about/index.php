@@ -24,7 +24,7 @@ use yii\helpers\Html;
                         ['class'=>'mainright']
                     )
                     ,
-                    ['class'=>'forximg flush-col'.(($key == 0) ? ' big' : '')]
+                    ['class'=>'forximg flush-col'.((1) ? ' big' : '')]
                 );
             ?>
         <?php } ?>
