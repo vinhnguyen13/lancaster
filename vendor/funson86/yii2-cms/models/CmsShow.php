@@ -160,6 +160,7 @@ class CmsShow extends \yii\db\ActiveRecord
             $file = \Yii::getAlias('@store/cms').'/' . $fileName;
             list($width, $height, $type, $attr) = getimagesize($image->tempName);
 
+            $master = Image::WIDTH;
             if($width > 950){
                 $master = Image::WIDTH;
             }elseif($height > 610){
