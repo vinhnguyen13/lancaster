@@ -26,10 +26,6 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
 
-    <?= $form->field($model, 'surname')->textInput(['maxlength' => 128]) ?>
-
-    <?= $form->field($model, 'brief')->textInput(['maxlength' => 1022]) ?>
-
     <?= $form->field($model, 'content')->widget(CKEditor::className(),[
         'editorOptions' => [
             'preset' => 'full',
@@ -43,29 +39,7 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'seo_description')->textInput(['maxlength' => 128]) ?>
 
-    <?= $form->field($model, 'banner')->textInput(['maxlength' => 255]) ?>
-
-    <?= \dosamigos\fileupload\FileUpload::widget([
-        'model' => $model,
-        'attribute' => 'banner',
-        'url' => ['media/upload', 'id' => $model->banner], // your url, this is just for demo purposes,
-        'options' => ['accept' => 'image/*'],
-        'clientOptions' => [
-            'maxFileSize' => 2000000
-        ],
-        // Also, you can specify jQuery-File-Upload events
-        // see: https://github.com/blueimp/jQuery-File-Upload/wiki/Options#processing-callback-options
-        'clientEvents' => [
-            'fileuploaddone' => 'function(e, data) {
-	                            console.log(e);
-	                            console.log(data);
-	                        }',
-            'fileuploadfail' => 'function(e, data) {
-	                            console.log(e);
-	                            console.log(data);
-                            }',
-        ],
-    ]);?>
+    <?= $form->field($model, 'banner')->fileInput() ?>
 
     <?= $form->field($model, 'template_show')->textInput(['maxlength' => 255]) ?>
 
