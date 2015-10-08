@@ -34,11 +34,10 @@ AppAsset::register($this);
         <!-- Brand and toggle get grouped for better mobile display -->
 
         <div class="navbar-header">
-        <div class="logoheader">
+            <div class="logoheader">
                 <a href="<?=\yii\helpers\Url::home()?>" class="logoindexlancaster"></a>
                 <a href="<?=\yii\helpers\Url::home()?>" class="booklancaster"></a>
-
-             </div>
+             </div>             
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -49,11 +48,20 @@ AppAsset::register($this);
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
-             <div class="text_pagecontent">
-                <a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
+             <div class="text_pagecontent">               
+                
+                <ul class="dropdown">
+                  <li><a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
+                    <ul class="sub_menu">
+                      <li><a href="#">Artificial Turf</a></li>
+                      <li> <a href="#">Batting Cages</a> </li>
+                      <li><a href="#">Benches &amp; Bleachers</a></li>
+                    </ul>
+                  </li>
+                </ul>
                 <a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a>
-
-             </div>
+             </div>            
+             
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
@@ -85,6 +93,8 @@ AppAsset::register($this);
 <?= $content ?>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/bootstrap.js"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/ie10-viewport-bug-workaround.js"></script>
+<script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/hoverIntent.js"></script>
+<script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/screenlancaster.js"></script>
 
 <?php $this->endBody() ?>
 </body>
