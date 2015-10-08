@@ -59,8 +59,8 @@ AppAsset::register($this);
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
                 <li><a>|</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
             </ul>
             <!--
             <ul class="nav navbar-nav navbar-right">
