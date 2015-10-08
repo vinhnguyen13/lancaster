@@ -15,7 +15,7 @@ use yii\helpers\Html;
                     <?php foreach($relatedPost as $key=>$new):?>
                         <div class="imgpost">
                             <ul>
-                                <li><img src="<?=$new->getUrlBanner($new->banner);?>"></li>
+                                <li><?=Html::a(Html::img($new->getUrlBanner($new->banner)), \yii\helpers\Url::toRoute(['/express/about/detail', 'id' => $new->id, 'slug' => $new->slug]));?></li>
                                 <li class="bodertext"><?=Html::a($new->title, \yii\helpers\Url::toRoute(['/express/about/detail', 'id' => $new->id, 'slug' => $new->slug]));?> </li>
                             </ul>
                         </div>
