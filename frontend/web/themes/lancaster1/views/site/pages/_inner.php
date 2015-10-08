@@ -1,6 +1,6 @@
 <?php
 $settings = \yii\helpers\Json::decode($photo->settings, false);
-$displayCaption = true;
+$displayCaption = false;
 if(isset($settings->displayCaption)){
     $displayCaption = $settings->displayCaption;
 }

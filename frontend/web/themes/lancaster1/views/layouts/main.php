@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use vsoft\express\models\LcBuilding;
 
 AppAsset::register($this);
 ?>
@@ -50,17 +51,22 @@ AppAsset::register($this);
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
             <div class="logoheaderpage"><a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a></div>
              <div class="text_pagecontent">               
-                
+                 <?php
+                 $buildings = LcBuilding::getDb()->cache(function ($db) {
+                     return LcBuilding::find()->all();
+                 });
+                 if(!empty($buildings)):
+                 ?>
                 <ul class="dropdown">
-                  <li><a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
-                    <ul class="sub_menu">
-                      <li><a href="#">Artificial Turf</a></li>
-                      <li> <a href="#">Batting Cages</a> </li>
-                      <li><a href="#">Benches &amp; Bleachers</a></li>
-                    </ul>
-                  </li>
+                    <li><a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
+                        <ul class="sub_menu">
+                            <?php foreach($buildings as $building):?>
+                                <li><a href="<?=Url::toRoute(['/site/page', 'view'=>'location'])?>"><?= $building->building_name ?></a></li>
+                            <?php endforeach;?>
+                        </ul>
+                    </li>
                 </ul>
-                
+                <?php endif;?>
              </div>            
              
             <ul class="nav navbar-nav navbar-right">
@@ -71,16 +77,6 @@ AppAsset::register($this);
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
             </ul>
-            <!--
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
-                <li><a>|</a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
-                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
-            </ul>
-            -->
             <ul class="nav navbar-nav navbar-right">                
                 <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking/index')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
                 <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
