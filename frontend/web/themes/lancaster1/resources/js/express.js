@@ -21,7 +21,7 @@ var Express = {
         });
     },
     cropResize: function () {
-        var height = $(window).height() - $('.navbar').height() - $('.menubar').height();
+        var height = $(window).height() - $('.navbar').height();
         $(".imgcontent").css({height: height, width: $(window).width()})
         $('.item .imgcontent img').each(function(i, item) {
             var img_height = $(item).height();
