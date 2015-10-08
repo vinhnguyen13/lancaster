@@ -33,7 +33,7 @@ AppAsset::register($this);
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
 
-        <div class="navbar-header">
+        <div class="navbar-header">            
             <div class="logoheader">
                 <a href="<?=\yii\helpers\Url::home()?>" class="logoindexlancaster"></a>
                 <a href="<?=\yii\helpers\Url::home()?>" class="booklancaster"></a>
@@ -48,6 +48,7 @@ AppAsset::register($this);
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
+            <div class="logoheaderpage"><a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a></div>
              <div class="text_pagecontent">               
                 
                 <ul class="dropdown">
@@ -59,7 +60,7 @@ AppAsset::register($this);
                     </ul>
                   </li>
                 </ul>
-                <a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a>
+                
              </div>            
              
             <ul class="nav navbar-nav navbar-right">
