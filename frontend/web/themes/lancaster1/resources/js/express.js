@@ -5,7 +5,7 @@ $(function(){
 
 var Express = {
     init: function () {
-
+        $("#myCarousel").css({backgroundColor: '#234959'});
     },
     HomeToogleInfomation: function () {
         $(".viewbanner").hide();
