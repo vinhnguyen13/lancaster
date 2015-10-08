@@ -32,7 +32,13 @@ AppAsset::register($this);
 <nav class="navbar navbar-default menubar">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header">
+        <div class="logoheader">
+                <a href="<?=\yii\helpers\Url::home()?>" class="logoindexlancaster"></a>
+                <a href="<?=\yii\helpers\Url::home()?>" class="booklancaster"></a>
+
+             </div>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -43,7 +49,21 @@ AppAsset::register($this);
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse bar_bg" id="bs-example-navbar-collapse-1">
             <?php $supportedLanguages = Yii::$app->bootstrap['languageSelector']['supportedLanguages']; ?>
-            <ul class="nav navbar-nav">
+             <div class="text_pagecontent">
+                <a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
+                <a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a>
+
+             </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
+                <li><a>|</a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
+                <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
+            </ul>
+            <!--
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
@@ -51,11 +71,13 @@ AppAsset::register($this);
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
                 <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
             </ul>
-            <div class="text_pagecontent"><a href="<?=\yii\helpers\Url::home()?>" class="book"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/textimages.png" alt="LANCASTER LEGACY"></a> <i class="glyphicon glyphicon-menu-down"></i></div>
-            <ul class="nav navbar-nav navbar-right">
-                <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
+            -->
+            <ul class="nav navbar-nav navbar-right">                
                 <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking/index')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
+                <li><i class="glyphicon glyphicon-earphone icon"></i><a href="#" class="sdt">0903 090 909</a></li>
             </ul>
+           
+            
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
