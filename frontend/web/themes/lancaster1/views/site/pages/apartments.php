@@ -27,12 +27,12 @@ $inner = $indicator = '';
 if(!empty($photos)){
     foreach($photos as $key=>$photo):
         $inner .= $this->render('_inner', ['key'=>$key, 'photo'=>$photo]);
-        $indicator .= $this->render('_indicator', ['key'=>$key, 'photo'=>$photo]);
+        $indicator .= $this->render('_indicator', ['key'=>$key, 'photo'=>$photo, 'target'=>'apartments']);
     endforeach;
 }
 ?>
 <div class="container-fluid layoutapartments">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div id="apartments" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <?php if(!empty($indicator)):?>
         <div class="ckeckitem">
@@ -46,11 +46,11 @@ if(!empty($photos)){
         <div class="carousel-inner" role="listbox">
             <?=$inner;?>
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#apartments" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <a class="right carousel-control" href="#apartments" role="button" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
