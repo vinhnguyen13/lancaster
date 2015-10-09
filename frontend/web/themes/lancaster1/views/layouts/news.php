@@ -49,12 +49,12 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>">Vi</a></li>
-                    <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>">En</a></li>
+                    <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[1]) ? $supportedLanguages[1] : ''])?>" <?=(!empty($supportedLanguages[1]) && Yii::$app->language == $supportedLanguages[1]) ? 'class="active"' : '';?>>Vi</a></li>
+                    <li><a href="<?=\yii\helpers\Url::toRoute(['/site/language', 'language' => !empty($supportedLanguages[0]) ? $supportedLanguages[0] : ''])?>" <?=(!empty($supportedLanguages[0]) && Yii::$app->language == $supportedLanguages[0]) ? 'class="active"' : '';?>>En</a></li>
                     <li><a>|</a></li>
-                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (Url::current()==Url::toRoute('/express/contact/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
-                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (Url::current()==Url::toRoute('/express/about/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
-                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (Url::current()==Url::toRoute('/express/news/index')) ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
+                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/contact/index')?>" <?= (\Yii::$app->controller->id=='contact') ? 'class="active"' : ''?>><?=\Yii::t('express/contact', 'Contact');?></a></li>
+                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/about/index')?>" <?= (\Yii::$app->controller->id=='about') ? 'class="active"' : ''?>><?=\Yii::t('express/about', 'About Us');?><span class="sr-only">(current)</span></a></li>
+                    <li><a href="<?=\yii\helpers\Url::toRoute('/express/news/index')?>" <?= (\Yii::$app->controller->id=='news') ? 'class="active"' : ''?>><?=\Yii::t('express/news', 'News');?></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="rightbgmenu"><a href="<?=\yii\helpers\Url::toRoute('/express/booking/index')?>" class="book"><?=\Yii::t('express/booking', 'Book Now');?></a></li>
