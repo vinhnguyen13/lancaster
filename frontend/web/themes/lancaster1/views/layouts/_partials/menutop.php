@@ -11,11 +11,18 @@ $array = [
 ];
 if(in_array(Url::current(), $array)){
 ?>
+<style>
+    .carousel-indicators div{
+        padding: 0;
+        margin: 0;
+    }
+</style>
 <script>
     $(function(){
         $('.layoutapartments').css({backgroundColor: '#537989'});
         $('.carousel-indicators li').popover({
             html : true,
+            container : 'body',
             trigger: "hover",
             placement: 'auto top',
             content: function() {
