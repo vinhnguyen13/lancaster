@@ -13,7 +13,7 @@ if(in_array(Url::current(), $array)){
 ?>
 <script>
     $(function(){
-        $('.layoutapartments').css({backgroundColor: '#234959'});
+        $('.layoutapartments').css({backgroundColor: '#537989'});
         $('.carousel-indicators li').popover({
             html : true,
             trigger: "hover",
