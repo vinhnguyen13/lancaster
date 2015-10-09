@@ -13,6 +13,7 @@ use yii\web\Controller;
 
 class BookingController extends Controller
 {
+    public $layout = '@app/views/layouts/news';
     public function actionIndex()
     {
         return $this->render('index');

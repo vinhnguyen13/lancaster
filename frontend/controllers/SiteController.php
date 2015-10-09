@@ -55,6 +55,7 @@ class SiteController extends Controller
      */
     public function actions()
     {
+        $this->layout = '@app/views/layouts/news';
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -76,8 +77,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = '@app/views/layouts/news';
         \Yii::$app->getSession()->setFlash('reLog', 'Password Changed Successfully.');
         return $this->render('index');
+    }
+
+    public function actionTest()
+    {
+        return $this->render('test');
     }
 
     /**

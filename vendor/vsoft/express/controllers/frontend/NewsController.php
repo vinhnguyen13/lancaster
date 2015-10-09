@@ -11,6 +11,7 @@ use yii\helpers\ArrayHelper;
 
 class NewsController extends \yii\web\Controller
 {
+    public $layout = '@app/views/layouts/news';
     public function actionIndex()
     {
         $ids = CmsCatalog::getArraySubCatalogId(0, CmsCatalog::find()->where([
