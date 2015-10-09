@@ -67,8 +67,8 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
     </nav>
     <?php $this->beginContent('@app/views/layouts/_partials/menutop.php'); ?><?php $this->endContent();?>
     <?= $content ?>
-<?php $this->endContent();?>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/bootstrap.js"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/ie10-viewport-bug-workaround.js"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/hoverIntent.js"></script>
 <script src="<?=Yii::$app->view->theme->baseUrl?>/resources/js/screenlancaster.js"></script>
+<?php $this->endContent();?>

@@ -8,8 +8,8 @@ var Express = {
         $("#myCarousel").css({backgroundColor: '#234959'});
     },
     HomeToogleInfomation: function () {
-        $(".viewbanner").hide();
-        $(".viewshow").show();
+        $(".viewbanner").show();
+        $(".viewshow").hide();
         $(".btn_hide, .btn_show").click(function() {
             if ($(this).attr('class') == 'btn_hide') {
                 $(".viewbanner").slideToggle("slow");

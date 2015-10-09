@@ -11,6 +11,19 @@ $array = [
 ];
 if(in_array(Url::current(), $array)){
 ?>
+<script>
+    $(function(){
+        $('.carousel-indicators li').popover({
+            html : true,
+            trigger: "hover",
+            placement: 'auto top',
+            content: function() {
+                var dataSlideTo = $(this).attr('data-slide-to');
+                return $('.item:eq('+dataSlideTo+') .caption').html();
+            }
+        });
+    });
+</script>
 <div class="container-fluid menutop">
     <?php
     echo \yii\widgets\Menu::widget([
