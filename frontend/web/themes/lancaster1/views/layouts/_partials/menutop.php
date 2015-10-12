@@ -38,10 +38,10 @@ if(in_array(Url::current(), $array)){
 //        $('.carousel').bcSwipe({ threshold: 50 });
         $(".carousel").touchwipe({
             wipeLeft: function() {
-                $("#bsCarousel").carousel('next');
+                $(".carousel").carousel('next');
             },
             wipeRight: function() {
-                $("#bsCarousel").carousel('prev');
+                $(".carousel").carousel('prev');
             },
             wipeUp: function() { console.log("up"); },
             wipeDown: function() { console.log("down"); },
