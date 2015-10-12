@@ -37,10 +37,14 @@ if(in_array(Url::current(), $array)){
 
 //        $('.carousel').bcSwipe({ threshold: 50 });
         $(".carousel").touchwipe({
-            wipeLeft: function() { alert("left"); },
-            wipeRight: function() { alert("right"); },
-            wipeUp: function() { alert("up"); },
-            wipeDown: function() { alert("down"); },
+            wipeLeft: function() {
+                $("#bsCarousel").carousel('next');
+            },
+            wipeRight: function() {
+                $("#bsCarousel").carousel('prev');
+            },
+            wipeUp: function() { console.log("up"); },
+            wipeDown: function() { console.log("down"); },
             min_move_x: 20,
             min_move_y: 20,
             preventDefaultEvents: true
