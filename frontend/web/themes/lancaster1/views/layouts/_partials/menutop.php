@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\web\View;
 $array = [
     '/site/index',
     Url::toRoute(['/site/page', 'view'=>'apartments']),
@@ -17,6 +18,9 @@ if(in_array(Url::current(), $array)){
         margin: 0;
     }
 </style>
+<?php
+    Yii::$app->getView()->registerJsFile('http://www.netcu.de/templates/netcu/js/jquery.touchwipe.1.1.1.js', ['position'=>View::POS_BEGIN]);
+?>
 <script>
     $(function(){
         $('.layoutapartments').css({backgroundColor: '#537989'});
@@ -29,6 +33,17 @@ if(in_array(Url::current(), $array)){
                 var dataSlideTo = $(this).attr('data-slide-to');
                 return $('.item:eq('+dataSlideTo+') .caption').html();
             }
+        });
+
+//        $('.carousel').bcSwipe({ threshold: 50 });
+        $(".carousel").touchwipe({
+            wipeLeft: function() { alert("left"); },
+            wipeRight: function() { alert("right"); },
+            wipeUp: function() { alert("up"); },
+            wipeDown: function() { alert("down"); },
+            min_move_x: 20,
+            min_move_y: 20,
+            preventDefaultEvents: true
         });
     });
 </script>
