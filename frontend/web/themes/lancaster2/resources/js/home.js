@@ -171,17 +171,6 @@ var home = {
 		}).on('mousewheel', function(){
 			$('html, body').stop(true, false);
 		});
-		
-		var currentScrollTop = 0;
-		
-		doc.on('scrollstop', function(){
-			var scrolltop = win.scrollTop();
-			
-			if(currentScrollTop != scrolltop) {
-				home.slideNavItem(home.paralaxNavItem.index(home.paralaxNavItem.filter('.active')));
-				currentScrollTop = scrolltop;
-			}
-		});
 	},
 	attachHomeMenuClick: function() {
 		this.paralaxNavItem.find('> a').click(function(e){
@@ -199,13 +188,15 @@ var home = {
 			
 			$('html, body').stop(true, false).animate({
 				scrollTop: top
-			}, duration, easing);
+			}, duration, 'easeOutCubic');
 		});
 	},
 	activeHomeItem: function(index) {
 		this.paralaxNavItem.filter('.active').removeClass('active');
 		this.paralaxNavItem.eq(index).addClass('active');
 		home.currentActiveSection = index;
+		
+		this.slideNavItem(index);
 	},
 	slideNavItem: function(index) {
 		if(isMobile) {
@@ -221,9 +212,9 @@ var home = {
 			
 			left =  left - (win.width() / 2) + (activeItem.width() / 2);
 			
-			$('#paralax-nav').animate({
+			$('#paralax-nav').stop(true, false).animate({
 				scrollLeft: left
-			}, 200);
+			});
 		}
 	},
 	pushSectionTop: function() {

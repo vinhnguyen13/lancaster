@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="css/swiper.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
 		<script src="js/swiper.jquery.min.js"></script>
 		<script src="js/jquery.easing.js"></script>
 		<script src="js/jquery.scrollspeed.js"></script>
