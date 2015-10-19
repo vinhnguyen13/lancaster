@@ -108,6 +108,9 @@ header {
 	line-height: 49px;
 	font-weight: bold;
 }
+.book-now:hover {
+	background-color: #868FD0;
+}
 header .book-now br {
 	display: none;
 }
@@ -472,6 +475,9 @@ span.hr {
 	color: #234858;
 	display: block;
 }
+.lancaster-list .title:hover {
+	color: #0C0242;
+}
 .lancaster-list .content-wrap {
     height: 0px;
     overflow: hidden;
@@ -510,6 +516,9 @@ span.hr {
     background-position: center center;
     background-size: 17px 26px;
     margin-top: -30px;
+}
+.swiper-button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
 }
 .swiper-button-prev {
 	background-image: url('images/slide-prev.png');
@@ -613,6 +622,9 @@ footer .footer-top {
 	display: inline-block;
 	margin-right: 20px;
 }
+.lancasters-footer a:hover {
+	color: #D7BB7E;
+}
 .lancasters-footer a:last-child {
 	margin-right: 0px;	
 }
@@ -631,6 +643,9 @@ footer .menu {
 }
 footer .menu a:first-child {
 	padding-left: 0px;
+}
+footer .menu a:hover {
+	color: #D7BB7E;
 }
 .foot-nav {
 	padding-top: 22px;
