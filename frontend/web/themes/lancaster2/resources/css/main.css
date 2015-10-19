@@ -925,8 +925,8 @@ footer .menu a:first-child {
 		display: none;
 	}
 	.section-building {
-		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-top: 80px;
+		padding-bottom: 80px;
 	}
 	.section {
 		min-height: initial !important;
