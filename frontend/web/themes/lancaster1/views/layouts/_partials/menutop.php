@@ -56,7 +56,7 @@ if(in_array(Url::current(), $array)){
     echo \yii\widgets\Menu::widget([
         'activeCssClass' => 'active',
         'items' => [
-            ['label' => 'THE BUILDING', 'url' => Url::home(), 'active' => (Url::current()==Url::toRoute('/site/index')) ? true : false],
+            ['label' => 'THE BUILDING', 'url' => Url::to(['/frontend/web/themes/lancaster2/resources/']), 'active' => (Url::current()==Url::toRoute('/site/index')) ? true : false],
             ['label' => 'APARTMENTS', 'url' => Url::toRoute(['/site/page', 'view'=>'apartments']), 'active' => (Url::current()==Url::toRoute(['/site/page', 'view'=>'apartments'])) ? true : false],
             ['label' => 'AMENITIES', 'url' => Url::toRoute(['/site/page', 'view'=>'amenities']), 'active' => (Url::current()==Url::toRoute(['/site/page', 'view'=>'amenities'])) ? true : false],
             ['label' => 'VIEWS', 'url' => Url::toRoute(['/site/page', 'view'=>'views']), 'active' => (Url::current()==Url::toRoute(['/site/page', 'view'=>'views'])) ? true : false],
