@@ -281,7 +281,7 @@ var home = {
 			    position: {lat: Number(self.data('lat')), lng: Number(self.data('lng'))}
 			});
 			
-			var infowindow = new google.maps.InfoWindow({content: '<div style="font-size: 12px;">' + self.text() + '</div>'});
+			var infowindow = new google.maps.InfoWindow({content: '<div style="font-size: 12px; font-weight: bold; color: #234959;">' + self.text() + '</div>'});
 			infowindow.open(home.map, marker);
 		});
 	}
