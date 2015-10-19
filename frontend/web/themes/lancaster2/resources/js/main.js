@@ -25,7 +25,7 @@ var main = {
 			e.preventDefault();
 			e.stopPropagation();
 			
-			$('#branch-wrap').toggleClass('show');
+			$('#branch-wrap').toggleClass('show-force').removeClass('show');
 		});
 	},
 	menuNavClick: function() {

@@ -183,6 +183,12 @@ header .book-now br {
 	visibility: visible;
 	opacity: 1;
 }
+#branch-wrap.show-force {
+	top: 51px;
+    left: 20px;
+	visibility: visible;
+	opacity: 1;
+}
 #branch-wrap ul {
 	list-style-type: none;
     padding: 10px 0px;
