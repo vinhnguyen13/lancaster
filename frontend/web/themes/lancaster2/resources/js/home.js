@@ -1,4 +1,6 @@
 var isMobile;
+var readyInitialMap = false;
+var isInitMap = false;
 
 doc.ready(function(){
 	isMobile = ($('#mobile-menu-button').css('display') == 'none') ? false : true;
@@ -7,6 +9,8 @@ doc.ready(function(){
 });
 
 var home = {
+	collapseButton: null,
+	map: null,
 	ratio: 1920/996,
 	sections: null,
 	sectionTop: [],
@@ -149,6 +153,7 @@ var home = {
 		this.paralaxNav = $('#paralax-nav');
 		this.paralaxNavItem = this.paralaxNav.find('.items > li');
 		this.offsetHeader = $('header').outerHeight() + $('#paralax-nav').outerHeight();
+		this.collapseButton = $('.lancaster-list').find('.title');
 	},
 	attachWindowEvent: function() {
 		win.resize(function(){
@@ -230,11 +235,15 @@ var home = {
 		});
 	},
 	attachLancasterList: function() {
+		if(readyInitialMap == true && isInitMap == false) {
+			home.initMap();
+		} else {
+			readyInitialMap = true;
+		}
+		
 		var beforeActive = $();
 		
-		var collapseButton = $('.lancaster-list').find('.title');
-		
-		collapseButton.click(function(e) {
+		this.collapseButton.click(function(e) {
 			e.preventDefault();
 			
 			var self = $(this);
@@ -248,8 +257,40 @@ var home = {
 				
 				home.pushSectionTop();
 			}
+			
+			home.map.setCenter({lat: Number(self.data('lat')), lng: Number(self.data('lng'))});
 		});
 		
-		collapseButton.eq(0).trigger('click');
+		setTimeout(function(){
+			home.collapseButton.eq(0).trigger('click');
+		}, 500);
+	},
+	initMap: function() {
+		this.map = new google.maps.Map(document.getElementById('map'), {
+			center: {lat: 10.753647, lng: 106.711543},
+		    zoom: 16
+		});
+		
+		this.collapseButton.each(function(){
+			var self = $(this);
+			
+			var marker = new google.maps.Marker({
+				draggable: false,
+			    animation: google.maps.Animation.DROP,
+			    map: home.map,
+			    position: {lat: Number(self.data('lat')), lng: Number(self.data('lng'))}
+			});
+			
+			var infowindow = new google.maps.InfoWindow({content: '<div style="font-size: 12px;">' + self.text() + '</div>'});
+			infowindow.open(home.map, marker);
+		});
+	}
+}
+
+function initMap() {
+	if(readyInitialMap == true && isInitMap == false) {
+		home.initMap();
+	} else {
+		readyInitialMap = true;
 	}
 }

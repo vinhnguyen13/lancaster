@@ -12,6 +12,7 @@
 		<script src="js/jquery.scrollspeed.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/home.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASTv_J_7DuXskr5SaCZ_7RVEw7oBKiHi4&callback=initMap"></script>
 	</head>
 	<body>
 		<header>
@@ -32,9 +33,9 @@
 					<a href="#" class="menu-button" id="menu-nav"></a>
 					<div class="right nav">
 						<ul class="menu clear">
-							<li><a href="#">Về Chúng Tôi</a></li>
-							<li><a href="#">Tin Tức</a></li>
-							<li><a href="#">Liên Hệ</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Contact Us</a></li>
 						</ul>
 						<i class="separator"></i>
 						<ul class="langs clear">
@@ -312,11 +313,11 @@
 									<div class="left">
 										<ul class="lancaster-list">
 											<li>
-												<a href="#" class="title noti">Lancaster Legacy</a>
+												<a data-lat="10.753647" data-lng="106.711543" href="#" class="title noti">Lancaster Legacy</a>
 												<div class="content-wrap">
 													<div class="content">
 														<div class="label">ADDRESS</div>
-														<div class="text">78 Ton That Thuyet St, 16 Ward, Dist 4, HCMC, Vietnam</div>
+														<div class="text">78 Ton That Thuyet Street, Ward 16, District 4, HCMC, Viet Nam</div>
 														<div class="label">PHONE</div>
 														<div class="text">+ 84 8 3 8246810</div>
 														<div class="label">FAX</div>
@@ -329,11 +330,28 @@
 												</div>
 											</li>
 											<li>
-												<a href="#" class="title noti">Lancaster Le Thanh Ton</a>
+												<a data-lat="10.780980" data-lng="106.704539" href="#" class="title noti">Lancaster Le Thanh Ton</a>
 												<div class="content-wrap">
 													<div class="content">
 														<div class="label">ADDRESS</div>
-														<div class="text">78 Ton That Thuyet St, 16 Ward, Dist 4, HCMC, Vietnam</div>
+														<div class="text">22 – 22 Bis Le Thanh Ton Street, Ben Nghe </div>
+														<div class="label">PHONE</div>
+														<div class="text">+ 84 8 3 8246666</div>
+														<div class="label">FAX</div>
+														<div class="text">+ 84 8 3 8299556 – 3 8298700</div>
+														<div class="label">EMAIL</div>
+														<div class="text">sales@trungthuygroup.vn</div>
+														<div class="label">HOTLINE</div>
+														<div class="text">0903 090 909</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<a data-lat="10.764702" data-lng="106.686850" href="#" class="title noti">Lancaster Nguyen Trai</a>
+												<div class="content-wrap">
+													<div class="content">
+														<div class="label">ADDRESS</div>
+														<div class="text">230 Nguyen Trai Street, District 1, HCMC, Viet Nam</div>
 														<div class="label">PHONE</div>
 														<div class="text">+ 84 8 3 8246810</div>
 														<div class="label">FAX</div>
@@ -346,40 +364,35 @@
 												</div>
 											</li>
 											<li>
-												<a href="#" class="title noti">Lancaster Nguyen Trai</a>
+												<a data-lat="21.029205" data-lng="105.823676" href="#" class="title noti">Lancaster Ha Noi</a>
 												<div class="content-wrap">
 													<div class="content">
 														<div class="label">ADDRESS</div>
-														<div class="text">78 Ton That Thuyet St, 16 Ward, Dist 4, HCMC, Vietnam</div>
+														<div class="text">20 Nui Truc Street, Ba Dinh District, Ha Noi, Viet Nam</div>
 														<div class="label">PHONE</div>
-														<div class="text">+ 84 8 3 8246810</div>
+														<div class="text">+ 84 4 3 726 3865</div>
 														<div class="label">FAX</div>
-														<div class="text">+ 84 8 3 8298163</div>
+														<div class="text">+ 84 4 3 726 3864</div>
 														<div class="label">EMAIL</div>
-														<div class="text">sales@trungthuygroup.vn</div>
+														<div class="text">sales.lhb@trungthuygroup.vn</div>
 														<div class="label">HOTLINE</div>
-														<div class="text">0903 090 909</div>
-													</div>
-												</div>
-											</li>
-											<li>
-												<a href="#" class="title noti">Lancaster Ha Noi</a>
-												<div class="content-wrap">
-													<div class="content">
-														<div class="label">ADDRESS</div>
-														<div class="text">78 Ton That Thuyet St, 16 Ward, Dist 4, HCMC, Vietnam</div>
-														<div class="label">PHONE</div>
-														<div class="text">+ 84 8 3 8246810</div>
-														<div class="label">FAX</div>
-														<div class="text">+ 84 8 3 8298163</div>
-														<div class="label">EMAIL</div>
-														<div class="text">sales@trungthuygroup.vn</div>
-														<div class="label">HOTLINE</div>
-														<div class="text">0903 090 909</div>
+														<div class="text">0939 44 2222</div>
 													</div>
 												</div>
 											</li>
 										</ul>
+									</div>
+									<div class="location-right-wrap">
+										<div class="right">
+											<div class="social">
+												<a href="#" class="icon-social icon-facebook"></a>
+												<a href="#" class="icon-social icon-instagram"></a>
+												<a href="#" class="icon-social icon-youtube"></a>
+											</div>
+											<div class="ratio-wrap" id="map-wrap">
+												<div class="ratio"><div id="map"></div></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
