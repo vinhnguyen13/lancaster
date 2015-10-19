@@ -842,7 +842,7 @@ footer .menu a:hover {
 	    padding: 8px 0px;
 	}
 	#mobile-menu .book-now {
-		float: right;
+		display: inline-block;
 	    height: 36px;
 	    line-height: 36px;
 	    padding: 0px 28px;
