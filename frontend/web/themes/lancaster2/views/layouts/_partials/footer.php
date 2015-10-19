@@ -15,13 +15,13 @@
                 <div class="clear foot-nav">
                     <div class="left">
                         <ul class="menu clear">
-                            <li><a href="#">V? Chúng Tôi</a></li>
-                            <li><a href="#">Tin T?c</a></li>
-                            <li><a href="#">Liên H?</a></li>
-                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#"><?=\Yii::t('express/about', 'About Us');?></a></li>
+                            <li><a href="#"><?=\Yii::t('express/news', 'News');?></a></li>
+                            <li><a href="#"><?=\Yii::t('express/contact', 'Contact');?></a></li>
+                            <li><a href="#"><?=\Yii::t('express/contact', 'Newsletter');?></a></li>
                         </ul>
                     </div>
-                    <div class="right"><a href="#" class="book-now">BOOK NOW</a></div>
+                    <div class="right"><a href="#" class="book-now"><?=\Yii::t('express/booking', 'Book Now');?></a></div>
                 </div>
             </div>
         </div>
