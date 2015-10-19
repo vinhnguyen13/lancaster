@@ -76,11 +76,11 @@ return [
         ],
         'view' => [
             'theme' => [
-                'basePath' => '@webroot/themes/lancaster1',
-                'baseUrl' => '/frontend/web/themes/lancaster1',
+                'basePath' => '@webroot/themes/lancaster2',
+                'baseUrl' => '/frontend/web/themes/lancaster2',
                 'pathMap' => [
-                    '@app/views' => '@webroot/themes/lancaster1/views',
-                    '@vsoft/express/views' => '@webroot/themes/lancaster1/views/express',
+                    '@app/views' => '@webroot/themes/lancaster2/views',
+                    '@vsoft/express/views' => '@webroot/themes/lancaster2/views/express',
                 ],
             ],
         ],
@@ -93,7 +93,11 @@ return [
                     'css' => [],
                 ],
                 'yii\web\JqueryAsset' => [
-                    'jsOptions' => ['position'=>\yii\web\View::POS_HEAD]
+                    'sourcePath' => null,
+                    'jsOptions' => ['position'=>\yii\web\View::POS_HEAD],
+                    'js' => [
+//                        '//code.jquery.com/jquery-1.10.2.min.js',
+                    ]
                 ],
                 'yii\web\YiiAsset' => [
                     'jsOptions' => ['position'=>\yii\web\View::POS_HEAD]
