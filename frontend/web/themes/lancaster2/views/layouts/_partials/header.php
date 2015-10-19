@@ -3,9 +3,9 @@
         <div id="branch-wrap">
             <ul>
                 <li><a href="#">Lancaster Legacy</a></li>
-                <li><a href="#">Lancaster Lê Thánh Tôn</a></li>
-                <li><a href="#">Lancaster Nguy?n Trãi</a></li>
-                <li><a href="#">Lancaster Hà N?i</a></li>
+                <li><a href="#">Lancaster LÃª ThÃ¡nh TÃ´n</a></li>
+                <li><a href="#">Lancaster Nguyá»…n TrÃ£i</a></li>
+                <li><a href="#">Lancaster HÃ  Ná»™i</a></li>
             </ul>
         </div>
         <a href="#" id="logo" class="left"><span class="logo"></span><span class="arrow"></span></a>
