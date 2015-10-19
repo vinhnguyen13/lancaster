@@ -172,8 +172,15 @@ var home = {
 			$('html, body').stop(true, false);
 		});
 		
+		var currentScrollTop = 0;
+		
 		doc.on('scrollstop', function(){
-			home.slideNavItem(home.paralaxNavItem.index(home.paralaxNavItem.filter('.active')));
+			var scrolltop = win.scrollTop();
+			
+			if(currentScrollTop != scrolltop) {
+				home.slideNavItem(home.paralaxNavItem.index(home.paralaxNavItem.filter('.active')));
+				currentScrollTop = scrolltop;
+			}
 		});
 	},
 	attachHomeMenuClick: function() {
