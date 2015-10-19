@@ -41,7 +41,8 @@ var main = {
 			
 			nav.css('left', left).toggleClass('show');
 		});
-		$('#mobile-menu-button').click(function(){
+		$('#mobile-menu-button').click(function(e){
+			e.preventDefault();
 			$('#mobile-menu').toggleClass('show');
 		});
 	}
