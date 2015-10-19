@@ -37,7 +37,7 @@ Yii::$app->getView()->registerJsFile(Yii::$app->view->theme->baseUrl.'/resources
                     if(!empty($buildings)):
                         ?>
                         <ul class="dropdown">
-                            <li><a href="<?=\yii\helpers\Url::home()?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
+                            <li><a href="<?=\yii\helpers\Url::to(['/frontend/web/themes/lancaster2/resources/'])?>" class="logoindex"><img src="<?=Yii::$app->view->theme->baseUrl?>/resources/IMG/logolancter.png" alt="LANCASTER LEGACY"></a>
                                 <ul class="sub_menu">
                                     <?php foreach($buildings as $building):?>
                                         <li><a href="<?=Url::toRoute(['/site/page', 'view'=>'location'])?>"><?= $building->building_name ?></a></li>
