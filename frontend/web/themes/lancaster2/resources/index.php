@@ -28,8 +28,7 @@
 				<a href="#" id="logo" class="left"><span class="logo"></span><span class="arrow"></span></a>
 				<a href="#" class="menu-button" id="mobile-menu-button"></a>
 				<div id="mobile-menu">
-					<a href="#" class="book-now right">BOOK<br /> NOW</a>
-					<a href="#" class="phone right"><i class="icon icon-phone"></i><span>0903 090 909</span></a>
+					<a href="#" class="book-now right">BOOK NOW</a>
 					<a href="#" class="menu-button" id="menu-nav"></a>
 					<div class="right nav">
 						<ul class="menu clear">
