@@ -928,6 +928,7 @@ footer .menu a:hover {
 	}
 	.lancasters-footer a {
 		display: block;
+		font-size: 14px;
 	}
 	footer .book-now {
 		display: inline-block;
