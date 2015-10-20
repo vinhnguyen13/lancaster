@@ -3,8 +3,8 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/main.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-		<script src="js/jquery.min.js"></script>
+		<script src="js/plugins/webfont.js"></script>
+		<script src="js/plugins/jquery.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/news.js"></script>
 	</head>

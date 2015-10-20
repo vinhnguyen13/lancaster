@@ -19,7 +19,7 @@ use yii\web\Cookie;
  */
 class SiteController extends Controller
 {
-    public $layout = '@app/views/layouts/news';
+    public $layout = '@app/views/layouts/layout';
     /**
      * @inheritdoc
      */
@@ -56,7 +56,7 @@ class SiteController extends Controller
      */
     public function actions()
     {
-        $this->layout = '@app/views/layouts/news';
+        $this->layout = '@app/views/layouts/layout';
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -78,7 +78,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = '@app/views/layouts/news';
+        $this->layout = '@app/views/layouts/layout';
         \Yii::$app->getSession()->setFlash('reLog', 'Password Changed Successfully.');
         return $this->render('index');
     }
