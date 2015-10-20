@@ -11,12 +11,18 @@ var news = {
 	items: $(),
 	init: function() {
 		this.items = $('.item');
-		news.adjustBorderLeft();
+		this.adjustBorderLeft();
+		this.attachWindowEvent();
 	},
 	adjustBorderLeft: function() {
 		this.items.each(function() {
 			var itemBoder = $(this).find('.item-content-border');
-			itemBoder.height(itemBoder.height() - 13);
+			itemBoder.height($(this).find('.item-content').height() - 13);
+		});
+	},
+	attachWindowEvent: function() {
+		win.resize(function(){
+			news.adjustBorderLeft();
 		});
 	}
 };

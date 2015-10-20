@@ -44,6 +44,7 @@
 		</header>
 		<main>
 			<div id="news-page">
+				<h1 class="title">News</h1>
 				<div class="news-list clear">
 					<div class="item">
 						<a class="img-wrap" href="#">
@@ -52,19 +53,10 @@
 								<span class="date">27</span>
 								<span class="month">AUG</span>
 							</span>
-						</a>
-						<div class="item-content">
-							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
-							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur ... <a href="#">more</a></div>
-							<span class="item-content-border"></span>
-						</div>
-					</div>
-					<div class="item">
-						<a class="img-wrap" href="#">
-							<img alt="" src="images/new-1.jpg" />
-							<span class="post-date">
-								<span class="date">27</span>
-								<span class="month">AUG</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
 							</span>
 						</a>
 						<div class="item-content">
@@ -75,10 +67,15 @@
 					</div>
 					<div class="item">
 						<a class="img-wrap" href="#">
-							<img alt="" src="images/new-1.jpg" />
+							<img alt="" src="images/new-2.jpg" />
 							<span class="post-date">
 								<span class="date">27</span>
 								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
 							</span>
 						</a>
 						<div class="item-content">
@@ -89,10 +86,15 @@
 					</div>
 					<div class="item">
 						<a class="img-wrap" href="#">
-							<img alt="" src="images/new-1.jpg" />
+							<img alt="" src="images/new-3.jpg" />
 							<span class="post-date">
 								<span class="date">27</span>
 								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
 							</span>
 						</a>
 						<div class="item-content">
@@ -103,10 +105,110 @@
 					</div>
 					<div class="item">
 						<a class="img-wrap" href="#">
-							<img alt="" src="images/new-1.jpg" />
+							<img alt="" src="images/new-4.jpg" />
 							<span class="post-date">
 								<span class="date">27</span>
 								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-5.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-2.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-3.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-4.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-5.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+							<span class="overlay">
+								<span class="overlay-border">
+									<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+								</span>
 							</span>
 						</a>
 						<div class="item-content">
