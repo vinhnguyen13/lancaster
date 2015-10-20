@@ -258,32 +258,34 @@ var home = {
 				home.pushSectionTop();
 			}
 			
-			home.map.setCenter({lat: Number(self.data('lat')), lng: Number(self.data('lng'))});
+			var position = {lat: Number(self.data('lat')), lng: Number(self.data('lng'))};
+			
+			if(!self.data('marker')) {
+				home.addMarker(position, self.text());
+				self.data('marker', true);
+			}
+			
+			home.map.setCenter(position);
 		});
 		
-		setTimeout(function(){
-			home.collapseButton.eq(0).trigger('click');
-		}, 600);
+		home.collapseButton.eq(0).trigger('click');
 	},
 	initMap: function() {
 		this.map = new google.maps.Map(document.getElementById('map'), {
 			center: {lat: 10.753647, lng: 106.711543},
 		    zoom: 16
 		});
-		
-		this.collapseButton.each(function(){
-			var self = $(this);
-			
-			var marker = new google.maps.Marker({
-				draggable: false,
-			    animation: google.maps.Animation.DROP,
-			    map: home.map,
-			    position: {lat: Number(self.data('lat')), lng: Number(self.data('lng'))}
-			});
-			
-			var infowindow = new google.maps.InfoWindow({content: '<div style="font-size: 12px; font-weight: bold; color: #234959;">' + self.text() + '</div>'});
-			infowindow.open(home.map, marker);
+	},
+	addMarker: function(position, text) {
+		var marker = new google.maps.Marker({
+			draggable: false,
+		    animation: google.maps.Animation.DROP,
+		    map: home.map,
+		    position: position
 		});
+		
+		var infowindow = new google.maps.InfoWindow({content: '<div style="font-size: 12px; font-weight: bold; color: #234959;">' + text + '</div>'});
+		infowindow.open(home.map, marker);
 	}
 }
 
