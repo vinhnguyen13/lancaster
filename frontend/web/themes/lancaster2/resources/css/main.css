@@ -547,6 +547,7 @@ span.hr {
 #map-wrap {
 	width: 550px;
 	float: right;
+	margin-top: 10px;
 }
 #map {
 	width: 100%;
@@ -562,7 +563,7 @@ span.hr {
 	background-image: url(images/social.png);
 	margin-bottom: 28px;
     margin-right: 40px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 .icon-instagram {
 	background-position: -25px 0px;
@@ -711,6 +712,7 @@ footer .menu a:hover {
 	}
 	#map-wrap {
 		width: 100%;
+		margin-top: 0px;
 	}
 	.social:after {
 		content: '';

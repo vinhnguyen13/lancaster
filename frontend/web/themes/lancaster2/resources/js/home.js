@@ -263,7 +263,7 @@ var home = {
 		
 		setTimeout(function(){
 			home.collapseButton.eq(0).trigger('click');
-		}, 500);
+		}, 600);
 	},
 	initMap: function() {
 		this.map = new google.maps.Map(document.getElementById('map'), {
