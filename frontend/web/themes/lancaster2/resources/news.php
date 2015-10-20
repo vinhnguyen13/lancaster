@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Noticia+Text:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
 		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.scrollspeed.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/news.js"></script>
 	</head>
 	<body>
 		<header>
@@ -42,7 +41,78 @@
 		</header>
 		<main>
 			<div id="news-page">
-				
+				<div class="news-list clear">
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-1.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-1.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-1.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-1.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+					<div class="item">
+						<a class="img-wrap" href="#">
+							<img alt="" src="images/new-1.jpg" />
+							<span class="post-date">
+								<span class="date">27</span>
+								<span class="month">AUG</span>
+							</span>
+						</a>
+						<div class="item-content">
+							<a href="#" class="title">Lorem ipsum dolor sit amet dolor sit amet</a>
+							<div class="excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ... <a href="#">more</a></div>
+							<span class="item-content-border"></span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
 		<footer>
