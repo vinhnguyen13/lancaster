@@ -6,10 +6,10 @@
 		<link href='https://fonts.googleapis.com/css?family=Noticia+Text:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/swiper.css" />
 		<link rel="stylesheet" href="css/main.css" />
-		<script src="js/jquery.min.js"></script>
-		<script src="js/swiper.jquery.min.js"></script>
-		<script src="js/jquery.easing.js"></script>
-		<script src="js/jquery.scrollspeed.js"></script>
+		<script src="js/plugins/jquery.min.js"></script>
+		<script src="js/plugins/swiper.jquery.min.js"></script>
+		<script src="js/plugins/jquery.easing.js"></script>
+		<script src="js/plugins/jquery.scrollspeed.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/home.js"></script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASTv_J_7DuXskr5SaCZ_7RVEw7oBKiHi4&callback=initMap"></script>
