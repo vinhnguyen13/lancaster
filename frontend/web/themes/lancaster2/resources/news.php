@@ -2,10 +2,13 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Common css + js -->
 		<link rel="stylesheet" href="css/main.css" />
-		<script src="js/plugins/webfont.js"></script>
 		<script src="js/plugins/jquery.min.js"></script>
 		<script src="js/main.js"></script>
+		<!-- Common css + js -->
+		
+		<script src="js/plugins/webfont.js"></script>
 		<script src="js/news.js"></script>
 	</head>
 	<body>
