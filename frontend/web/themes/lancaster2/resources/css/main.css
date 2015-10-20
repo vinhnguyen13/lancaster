@@ -107,6 +107,7 @@ header {
 	color: #FFF;
 	line-height: 49px;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 .book-now:hover {
 	background-color: #868FD0;
