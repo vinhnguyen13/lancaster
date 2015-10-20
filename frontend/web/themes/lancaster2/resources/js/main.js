@@ -26,6 +26,7 @@ var main = {
 			e.stopPropagation();
 			
 			$('#branch-wrap').toggleClass('show-force').removeClass('show');
+			$('#mobile-menu').removeClass('show');
 		});
 	},
 	menuNavClick: function() {
@@ -44,6 +45,7 @@ var main = {
 		$('#mobile-menu-button').click(function(e){
 			e.preventDefault();
 			$('#mobile-menu').toggleClass('show');
+			$('#branch-wrap').removeClass('show-force');
 		});
 	}
 }
