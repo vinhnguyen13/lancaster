@@ -10,11 +10,12 @@ WebFont.load({
 var news = {
 	items: $(),
 	init: function() {
-		this.items = $('.item');
 		this.adjustBorderLeft();
 		this.attachWindowEvent();
 	},
 	adjustBorderLeft: function() {
+		this.items = $('.item');
+		
 		this.items.each(function() {
 			var itemBoder = $(this).find('.item-content-border');
 			itemBoder.height($(this).find('.item-content').height() - 13);
