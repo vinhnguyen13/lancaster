@@ -58,13 +58,13 @@
 									<div class="table-row">
 										<label class="table-cell">Checkin date *</label>
 										<div class="table-cell">
-											<input class="date-picker text-field" type="text" />
+											<input class="date-picker text-field" type="text" readonly />
 										</div>
 									</div>
 									<div class="table-row">
 										<label class="table-cell">Checkout date *</label>
 										<div class="table-cell">
-											<input class="date-picker text-field" type="text" />
+											<input class="date-picker text-field" type="text" readonly />
 										</div>
 									</div>
 									<div class="table-row">
