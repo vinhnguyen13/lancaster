@@ -81,12 +81,28 @@ var home = {
 				bottom: bottom
 			});
 			
+			self.addClass('hover');
 			slideContent.addClass('show');
 		}, function() {
 			var self = $(this);
 			var index = swiperMapSlides.index(self);
-			
+
+			self.removeClass('hover');
 			slideContents.eq(index).removeClass('show');
+		});
+		
+		slideContents.hover(function(){
+			var self = $(this);
+			var index = slideContents.index(self);
+			
+			swiperMapSlides.eq(index).addClass('hover');
+			$(this).addClass('show');
+		}, function() {
+			var self = $(this);
+			var index = slideContents.index(self);
+
+			swiperMapSlides.eq(index).removeClass('hover');
+			$(this).removeClass('show');
 		});
 		
 		var swiperMap = swiperMapEl.swiper({

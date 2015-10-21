@@ -2,15 +2,18 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Noticia+Text:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Noticia+Text:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/swiper.css" />
+		
+		<!-- Common css + js -->
 		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/plugins/jquery.min.js"></script>
+		<script src="js/main.js"></script>
+		<!-- Common css + js -->
+		
 		<script src="js/plugins/swiper.jquery.min.js"></script>
 		<script src="js/plugins/jquery.easing.js"></script>
 		<script src="js/plugins/jquery.scrollspeed.js"></script>
-		<script src="js/main.js"></script>
 		<script src="js/home.js"></script>
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASTv_J_7DuXskr5SaCZ_7RVEw7oBKiHi4&callback=initMap"></script>
 	</head>
