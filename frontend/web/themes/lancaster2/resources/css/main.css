@@ -853,10 +853,10 @@ a.title:hover {
 }
 .select2-container .select2-choice .select2-arrow b {
 	background: url(images/select.png) center center no-repeat;
+	background-size: 14px 10px !important;
 }
 .select2-container:hover .select2-choice .select2-arrow b {
 	background-image: url(images/select-hover.png);
-	background-size: 14px 10px;
 }
 .select2-drop-active {
 	margin-top: 0px;
