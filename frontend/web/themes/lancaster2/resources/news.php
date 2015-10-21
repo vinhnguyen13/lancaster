@@ -49,7 +49,7 @@
 					<div class="news-list clear">
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-1.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-2.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-3.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -112,7 +112,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-4.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -133,7 +133,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-5.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -154,7 +154,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-2.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -175,7 +175,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-3.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -196,7 +196,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-4.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>
@@ -217,7 +217,7 @@
 						</div>
 						<div class="item">
 							<div class="item-wrap-content">
-								<a class="img-wrap" href="#">
+								<a class="item-img-wrap" href="#">
 									<img alt="" src="images/new-5.jpg" />
 									<span class="post-date">
 										<span class="date">27</span>

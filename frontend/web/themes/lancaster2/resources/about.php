@@ -46,6 +46,89 @@
 			<div id="about-page">
 				<div class="container">
 					<h1 class="title">About Us</h1>
+					<div class="first-about clear">
+						<div class="left">
+							<img src="images/about-1.jpg" />
+						</div>
+						<div class="first-about-right">
+							<div class="title">Lancaster</div>
+							<div class="excerpt">Being one of the pioneering brands to usher in a new period of modern living and working environment in Ho Chi Minh City from early 2004, the Lancaster branded projects by Trung Thuy Group always dignify modernity, comfort and elegance with the hope to provide our customers with a modern living and a high-class working environment in which service quality is always the top priority.</div>
+						</div>
+					</div>
+					<div class="about-list clear">
+						<div class="about-item">
+							<div class="item-wrap-content">
+								<div class="item-img-wrap-out">
+									<a class="item-img-wrap" href="#">
+										<img alt="" src="images/about-2.jpg" />
+										<span class="overlay">
+											<span class="overlay-border">
+												<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+											</span>
+										</span>
+									</a>
+								</div>
+								<div class="item-content">
+									<a href="#" class="title">Lancaster Legacy</a>
+									<div class="excerpt">The city skyline from virtually every window. Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space for setting up professional and supreme offices.In addition, Lancaster also offers you all of the exceptional amenities ...</div>
+								</div>
+							</div>
+						</div>
+						<div class="about-item">
+							<div class="item-wrap-content">
+								<div class="item-img-wrap-out">
+									<a class="item-img-wrap" href="#">
+										<img alt="" src="images/about-3.jpg" />
+										<span class="overlay">
+											<span class="overlay-border">
+												<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+											</span>
+										</span>
+									</a>
+								</div>
+								<div class="item-content">
+									<a href="#" class="title">Lancaster Nguyen Trai</a>
+									<div class="excerpt">Located on an area of over 5.000 m2, the building Lancaster Nguyen Trai is a complex including commercial center, office area and apartments for the upper class value ...</div>
+								</div>
+							</div>
+						</div>
+						<div class="about-item about-item-right">
+							<div class="item-wrap-content">
+								<div class="item-img-wrap-out">
+									<a class="item-img-wrap" href="#">
+										<img alt="" src="images/about-4.jpg" />
+										<span class="overlay">
+											<span class="overlay-border">
+												<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+											</span>
+										</span>
+									</a>
+								</div>
+								<div class="item-content">
+									<a href="#" class="title">Lancaster Le Thanh Ton</a>
+									<div class="excerpt">Lancaster offers you a sweeping panoramic view of the city skyline from virtually every window. Besides 109 ultra-luxury and graciously furnished apartments ranging from studios to penthouses, the building also features 6 floors of working space ...</div>
+								</div>
+							</div>
+						</div>
+						<div class="about-item about-item-right">
+							<div class="item-wrap-content">
+								<div class="item-img-wrap-out">
+									<a class="item-img-wrap" href="#">
+										<img alt="" src="images/about-5.jpg" />
+										<span class="overlay">
+											<span class="overlay-border">
+												<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+											</span>
+										</span>
+									</a>
+								</div>
+								<div class="item-content">
+									<a href="#" class="title">Lancaster Ha Noi</a>
+									<div class="excerpt">Hanoi – The capital of Vietnam today was once known as Thang Long and was highly praised by King Ly Cong Uan as a place where “Dragon resides, tiger crouches and the promising land that four skies gather, most suitable to create a strong ...</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
