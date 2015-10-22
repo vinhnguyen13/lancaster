@@ -796,8 +796,8 @@ a.title:hover {
 	padding-left: 14px;
 }
 .first-about .title {
-	font-size: 38px;
-	margin-top: -16px;
+	font-size: 32px;
+	margin-top: -12px;
 	margin-bottom: 22px;
 	font-style: italic;
 	font-family: 'Noticia Text', serif;
@@ -845,9 +845,9 @@ a.title:hover {
 	clear: left;
 }
 #about-page .about-item .title {
-    font-size: 32px;
+    font-size: 25px;
     margin-top: -8px;
-    line-height: 36px;
+    line-height: 32px;
 	margin-bottom: 22px;
 	font-style: italic;
 	font-family: 'Noticia Text', serif;
