@@ -249,6 +249,10 @@ header .book-now br {
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
 /* Detail */
+#detail-page .container {
+	margin-top: 46px;
+    margin-bottom: 80px;
+}
 .detail .title {
 	color: #234959;
 	font-size: 32px;
@@ -275,6 +279,28 @@ header .book-now br {
 }
 #detail-page .item {
 	width: 100%;
+}
+#detail-page .item .title {
+	font-size: 20px;
+	line-height: 26px;
+}
+#detail-page .item-content {
+	margin-top: 12px;
+	padding-left: 16px;
+}
+#detail-page .item {
+	margin-bottom: 60px;
+}
+#detail-page .related-title {
+	font-size: 24px;
+	color: #234959;
+	font-family: 'Noticia Text', serif;
+	font-style: italic;
+	margin-top: 4px;
+    margin-bottom: 21px;
+}
+#detail-page .overlay-center {
+	margin-top: -8px;
 }
 /* Detail */
 
@@ -756,7 +782,7 @@ a.title:hover {
 	position: absolute;
 	height: 100%;
 	left: 0px;
-	top: 8px;
+	top: 2px;
 	background-color: #d1b78a;
 }
 .item-img-wrap .overlay {

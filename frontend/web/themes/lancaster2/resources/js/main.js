@@ -47,13 +47,5 @@ var main = {
 			$('#mobile-menu').toggleClass('show');
 			$('#branch-wrap').removeClass('show-force');
 		});
-	},
-	adjustBorderLeft: function() {
-		this.items = $('.item');
-		
-		this.items.each(function() {
-			var itemBoder = $(this).find('.item-content-border');
-			itemBoder.height($(this).find('.item-content').height() - 13);
-		});
 	}
 }

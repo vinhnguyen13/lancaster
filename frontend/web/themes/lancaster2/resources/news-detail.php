@@ -10,11 +10,6 @@
 		<!-- Common css + js -->
 		
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Noticia+Text:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
-		<script>
-			doc.ready(function(){
-				main.adjustBorderLeft();
-			});
-		</script>
 	</head>
 	<body>
 		<header>
@@ -65,6 +60,7 @@
 							</div>
 						</div>
 						<div class="right">
+							<div class="related-title">Related post</div>
 							<div class="news-list clear">
 								<div class="item">
 									<div class="item-wrap-content">
@@ -76,7 +72,7 @@
 											</span>
 											<span class="overlay">
 												<span class="overlay-border">
-													<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+													<span class="overlay-center">Read More</span>
 												</span>
 											</span>
 										</a>
@@ -96,7 +92,7 @@
 											</span>
 											<span class="overlay">
 												<span class="overlay-border">
-													<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+													<span class="overlay-center">Read More</span>
 												</span>
 											</span>
 										</a>
@@ -116,7 +112,7 @@
 											</span>
 											<span class="overlay">
 												<span class="overlay-border">
-													<span class="overlay-center"><i class="icon-read-more"></i><br />Read More</span>
+													<span class="overlay-center">Read More</span>
 												</span>
 											</span>
 										</a>

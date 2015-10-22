@@ -10,12 +10,6 @@ WebFont.load({
 var news = {
 	items: $(),
 	init: function() {
-		main.adjustBorderLeft();
-		this.attachWindowEvent();
-	},
-	attachWindowEvent: function() {
-		win.resize(function(){
-			news.adjustBorderLeft();
-		});
+		
 	}
 };
