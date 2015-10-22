@@ -1320,6 +1320,9 @@ footer .menu a:hover {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+	#contact-page .social {
+		right: 18px;
+	}
 }
 @media screen and (max-width: 767px) {
 	.left, .right {
