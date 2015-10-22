@@ -1283,6 +1283,9 @@ footer .menu a:hover {
 		width: 45%;
 		margin-right: 10%;
 	}
+	#detail-page .right {
+		padding-left: 40px;
+	}
 }
 @media screen and (min-width: 768px) and (max-width: 1040px) {
 	header .phone, .nav {
@@ -1766,6 +1769,33 @@ footer .menu a:hover {
 	    margin-top: 0px;
 	    margin-right: 32px;
 	    float: none;
+	}
+	#detail-page .left, #detail-page .right {
+		float: none;
+		width: auto;
+	}
+	#detail-page .right {
+		padding-left: 0px;
+	}
+	#detail-page .item-content {
+		margin-left: 0px;
+		margin-right: 0px;
+		padding-left: 0px;
+	}
+	#detail-page .item {
+		margin-bottom: 40px;
+	}
+	.detail .title {
+	    font-size: 26px;
+	    line-height: 30px;
+	}
+	#detail-page .container {
+	    margin-top: 34px;
+	    margin-bottom: 50px;
+	}
+	#detail-page .content {
+		font-size: 15px;
+		line-height: 21px;
 	}
 }
 /* Media Query */
