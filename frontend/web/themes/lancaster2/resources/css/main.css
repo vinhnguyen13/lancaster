@@ -248,6 +248,36 @@ header .book-now br {
 
 /* ------------------------------------------------------------------------------------------------------------------------------ */
 
+/* Detail */
+.detail .title {
+	color: #234959;
+	font-size: 32px;
+	line-height: 36px;
+	font-family: 'Noticia Text', serif;
+	font-style: italic;
+}
+.detail .content {
+	font-size: 16px;
+	color: #3c3c3c;
+	line-height: 24px;
+}
+.detail img {
+	width: 100%;
+	height: auto;
+	margin: 22px 0px;
+}
+#detail-page .left {
+	width: 70%;
+}
+#detail-page .right {
+	width: 30%;
+	padding-left: 60px;
+}
+#detail-page .item {
+	width: 100%;
+}
+/* Detail */
+
 /* Contact */
 .contact-item .title {
 	font-family: 'Noticia Text', serif;
