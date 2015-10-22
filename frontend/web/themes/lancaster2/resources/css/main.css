@@ -1779,11 +1779,17 @@ footer .menu a:hover {
 	}
 	#detail-page .item-content {
 		margin-left: 0px;
-		margin-right: 0px;
-		padding-left: 0px;
+	    margin-right: 0px;
+	    overflow: hidden;
+	    padding-left: 12px;
 	}
 	#detail-page .item {
-		margin-bottom: 40px;
+		margin-bottom: 20px;
+	}
+	#detail-page .item:after {
+		content: '';
+		display: block;
+		clear: left;
 	}
 	.detail .title {
 	    font-size: 26px;
@@ -1796,6 +1802,21 @@ footer .menu a:hover {
 	#detail-page .content {
 		font-size: 15px;
 		line-height: 21px;
+	}
+	.detail img {
+		margin: 12px 0px 0px 0px;
+	}
+	#detail-page .related-title {
+	    font-size: 22px;
+	    margin-top: 34px;
+	}
+	#detail-page .item-img-wrap {
+		float: left;
+    	width: 36%;
+	}
+	#detail-page .item .title {
+	    margin-top: -5px;
+	    display: block;
 	}
 }
 /* Media Query */
