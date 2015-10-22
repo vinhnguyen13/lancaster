@@ -46,6 +46,11 @@
 			<div id="contact-page">
 				<div class="container">
 					<h1 class="title">Contact</h1>
+					<div class="social">
+						<a href="#" class="icon-social icon-facebook"></a>
+						<a href="#" class="icon-social icon-instagram"></a>
+						<a href="#" class="icon-social icon-youtube"></a>
+					</div>
 					<div class="contact-list clear">
 						<div class="contact-item">
 							<div class="title">Lancaster Legacy</div>

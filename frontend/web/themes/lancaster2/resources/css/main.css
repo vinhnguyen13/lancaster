@@ -305,6 +305,22 @@ header .book-now br {
 	line-height: 35px;
 	padding: 0px;
 }
+#contact-page .container {
+	position: relative;
+}
+#contact-page .social {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+#contact-page .icon-social {
+	float: left;
+	margin-top: 8px;
+	margin-right: 32px;
+}
+#contact-page .icon-social:last-child {
+	margin-right: 0px;
+}
 /* Contact */
 
 /* Home */
@@ -1676,6 +1692,16 @@ footer .menu a:hover {
 	.contact-form-wrap {
 		margin-top: 24px;
 		padding-bottom: 8px;
+	}
+	#contact-page .social {
+		position: static;
+		text-align: center;
+	}
+	#contact-page .icon-social {
+	    display: inline-block;
+	    margin-top: 0px;
+	    margin-right: 32px;
+	    float: none;
 	}
 }
 /* Media Query */
