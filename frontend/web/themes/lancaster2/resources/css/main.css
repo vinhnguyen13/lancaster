@@ -1558,12 +1558,20 @@ footer .menu a:hover {
 	.form-wrap .table, .form-wrap .table-row, .form-wrap .table-cell, #book-page .form-wrap {
 		display: block;
 		padding: 0px;
+		font-size: 15px;
+	}
+	.table-row.break {
+		margin-bottom: 52px;
 	}
 	.table-row.break .table-cell {
 		padding-bottom: 0px;
 	}
 	.text-field, .textarea-field {
 		width: 100%;
+		font-size: 15px;
+	}
+	.custom-select, .select2-container .select2-choice > .select2-chosen {
+		font-size: 15px;
 	}
 	.form-wrap label {
 		display: block;
