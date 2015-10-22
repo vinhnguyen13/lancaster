@@ -82,7 +82,7 @@ h1.title {
 .table-cell {
 	display: table-cell;
 }
-input {
+input, textarea {
     -webkit-appearance: none;
     border-radius: 0;
 }
