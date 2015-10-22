@@ -20,7 +20,7 @@ var book = {
 		});
 	},
 	attachCustomSelect: function() {
-		$('.custom-select:not(.no)').select2({
+		$('.custom-select').select2({
 			minimumResultsForSearch: -1
 		});
 	}
