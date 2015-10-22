@@ -62,6 +62,9 @@ return [
 
             ]
         ],
+        'meta' =>[
+            'class' => 'frontend\components\MetaExt',
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

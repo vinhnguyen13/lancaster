@@ -161,7 +161,6 @@ return array(
                     '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker-master',
                     '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base-master',
                     '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers-master',
-                    '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers-master',
                     '@kartik/money' => $vendorDir . '/kartik-v/yii2-money-master',
                 ),
         ),
@@ -173,6 +172,5 @@ return array(
                     '@mervick/image/drivers' => $vendorDir . '/mervick/yii2-image-master/drivers',
                 ),
         ),
-
 
 );
