@@ -25,15 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'url:url',
-//            'metadata:ntext',
-            [
-                'attribute' => 'metadata',
-                'format' => 'raw',
-                'value' => function ($model) {return $model->metadata;},
-//                'options' => ['width' => 'auto'],
-            ],
+            'metadata:ntext',
+//            [
+//                'attribute' => 'metadata',
+//                'format' => 'raw',
+//                'value' => function ($model) {return $model->metadata;},
+////                'options' => ['width' => 'auto'],
+//            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

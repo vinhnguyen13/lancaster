@@ -22,23 +22,23 @@ $metadata = \yii\helpers\Json::decode($model->metadata,true);
     // Object Type => 'article',
     // Localizations => 'vi_VN' and alter => 'en_US'
 
-    echo Html::label('Title');
-    echo Html::input('text','seo_title',$metadata["seo_title"],['class'=>'form-control form-group']);
-
     echo Html::label('Keywords');
-    echo Html::input('text','seo_keywords',$metadata["seo_keywords"],['class'=>'form-control form-group']);
+    echo Html::input('text','keywords',$metadata["keywords"],['class'=>'form-control form-group']);
 
     echo Html::label('Description');
-    echo Html::input('text','seo_description',$metadata["seo_description"],['class'=>'form-control form-group']);
+    echo Html::input('text','description',$metadata["description"],['class'=>'form-control form-group']);
+
+    echo Html::label('Title');
+    echo Html::input('text','og:title',$metadata["og:title"],['class'=>'form-control form-group']);
 
     echo Html::label('Image');
-    echo Html::input('text','seo_image',$metadata["seo_image"],['class'=>'form-control form-group']);
+    echo Html::input('text','og:image',$metadata["og:image"],['class'=>'form-control form-group']);
 
     echo Html::label('Author');
-    echo Html::input('text','seo_author',$metadata["seo_author"],['class'=>'form-control form-group']);
+    echo Html::input('text','article:author',$metadata["article:author"],['class'=>'form-control form-group']);
 
     echo Html::label('Publisher');
-    echo Html::input('text','seo_publisher',$metadata["seo_publisher"],['class'=>'form-control form-group']);
+    echo Html::input('text','article:publisher',$metadata["article:publisher"],['class'=>'form-control form-group']);
 
     ?>
     <br>

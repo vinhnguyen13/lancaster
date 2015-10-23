@@ -64,24 +64,24 @@ class MetaController extends Controller
         $model = new LcMeta();
         if(!empty($_POST)){
             $data = Yii::$app->request->post();
-            $seo_url = ['seo_url'=>$data["LcMeta"]["url"]];
+            $seo = [
+                'og:description' => $data["description"],
+                'og:url'=>$data["LcMeta"]["url"],
+            ];
+            unset($data["_csrf"]);
+            unset($data["LcMeta"]);
 
-            foreach($data as $key => $value){
-                if(substr($key, 0, strlen('seo_')) !== 'seo_'){
-                    unset($data[$key]);
-                }
-            }
-
-            $arr_data = array_merge($data, $seo_url, [
-                'seo_fb_app_id' => '856286731156793',
-                'seo_site_name' => 'Lancaster',
-                'seo_type' => 'article',
-                'seo_local' => 'vi_VN',
-                'seo_local_alternate' => 'en_US',
+            $arr_data = array_merge($data, $seo, [
+                'fb:app_id' => '856286731156793',
+                'og:site_name' => 'Lancaster',
+                'og:type' => 'article',
+                'og:locale' => 'vi_VN',
+                'og:locale:alternate' => 'en_US',
             ]);
 
             $metadata = Json::encode($arr_data);
             $model->metadata = $metadata;
+
         }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -97,11 +97,6 @@ class MetaController extends Controller
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
-     *
-     * '"site_name"=>"Lancaster News",' +
-    '"type"=>"article",' +
-    '"local"=>"vi_VN",' +
-    '"local_alternate"=>"en_US"' +
      */
     public function actionUpdate($id)
     {
@@ -110,20 +105,19 @@ class MetaController extends Controller
 
         if(!empty($_POST)){
             $data = Yii::$app->request->post();
-            $seo_url = ['seo_url'=>$data["LcMeta"]["url"]];
+            $seo = [
+                'og:description' => $data["description"],
+                'og:url'=>$data["LcMeta"]["url"],
+            ];
+            unset($data["_csrf"]);
+            unset($data["LcMeta"]);
 
-            foreach($data as $key => $value){
-                if(substr($key, 0, strlen('seo_')) !== 'seo_'){
-                    unset($data[$key]);
-                }
-            }
-
-            $arr_data = array_merge($data, $seo_url, [
-                'seo_fb_app_id' => '856286731156793',
-                'seo_site_name' => 'Lancaster',
-                'seo_type' => 'article',
-                'seo_local' => 'vi_VN',
-                'seo_local_alternate' => 'en_US',
+            $arr_data = array_merge($data, $seo, [
+                'fb:app_id' => '856286731156793',
+                'og:site_name' => 'Lancaster',
+                'og:type' => 'article',
+                'og:locale' => 'vi_VN',
+                'og:locale:alternate' => 'en_US',
             ]);
 
             $metadata = Json::encode($arr_data);
