@@ -80,9 +80,10 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $meta = Yii::$app->meta->getMeta(Yii::$app->request->absoluteUrl);
-        $json_data = Json::decode($meta->metadata, true);
-        Yii::$app->meta->addMeta($json_data);
-
+        if(!empty($meta)) {
+            $json_data = Json::decode($meta->metadata, true);
+            Yii::$app->meta->addMeta($json_data);
+        }
         $this->layout = '@app/views/layouts/layout';
         \Yii::$app->getSession()->setFlash('reLog', 'Password Changed Successfully.');
         return $this->render('index');
