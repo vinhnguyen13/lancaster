@@ -27,8 +27,7 @@ class MetaExt extends Component
     public function getMeta($url)
     {
         $model = LcMeta::find()
-            ->where(['LIKE', 'url', $url])
-            ->orderBy(['id' => SORT_DESC])
+            ->where('url = :_url', [':_url' => $url])
             ->one();
         return $model;
     }
